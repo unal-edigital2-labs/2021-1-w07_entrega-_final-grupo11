@@ -102,9 +102,21 @@ _io = [
     ("iR", 0, Pins("G18"), IOStandard("LVCMOS33")),
 
     ("left", 0, Pins("H16"), IOStandard("LVCMOS33")),
-    ("right", 0, Pins("G13"), IOStandard("LVCMOS33")),
-
+    ("left", 1, Pins("G13"), IOStandard("LVCMOS33")),
+    ("right", 0, Pins("F13"), IOStandard("LVCMOS33")),
+    ("right", 1, Pins("E16"), IOStandard("LVCMOS33")),
     
+    ("uart1", 0,
+        Subsignal("tx", Pins("G1")),
+        Subsignal("rx", Pins("G3")),
+        IOStandard("LVCMOS33"),
+    ),
+
+    ("uart2", 0,
+        Subsignal("tx", Pins("C17")),
+        Subsignal("rx", Pins("D18")),
+        IOStandard("LVCMOS33"),
+    ),
 
     ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
     ("clk", 0, Pins("E3"), IOStandard("LVCMOS33")),

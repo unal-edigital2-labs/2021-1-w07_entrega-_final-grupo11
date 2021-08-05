@@ -11,6 +11,9 @@ from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
 from litex.soc.interconnect.csr import *
 
+from litex.soc.cores.uart import UARTWishboneBridge
+from litex.soc.cores.uart import UARTPHY, UART
+
 from litex.soc.cores import gpio
 from module import rgbled
 from module import sevensegment
@@ -47,7 +50,6 @@ class BaseSoC(SoCCore):
 			clk_freq=100e6,
 			integrated_rom_size=0x6000,
 			integrated_main_ram_size=16*1024)
-
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
 
@@ -108,7 +110,57 @@ class BaseSoC(SoCCore):
 
 		#Wheels
 		SoCCore.add_csr(self,"wheels_cntrl")
-		self.submodules.wheels_cntrl = wheels.wheels(platform.request("right"), platform.request("left"))
+		right = Cat(*[platform.request("right", i) for i in range(2)])
+		left = Cat(*[platform.request("left", i) for i in range(2)])
+		self.submodules.wheels_cntrl = wheels.wheels(right, left)
+
+
+		from litex.soc.cores import uart
+		self.submodules.uart1_phy = uart.UARTPHY(
+			pads     = platform.request("uart1"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart1_phy", use_loc_if_exists=True)
+		self.csr.add("uart1", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart1", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+		self.submodules.uart2_phy = uart.UARTPHY(
+			pads     = platform.request("uart2"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart2 = ResetInserter()(uart.UART(self.uart2_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart2_phy", use_loc_if_exists=True)
+		self.csr.add("uart2", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart2", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+
+		#self.add_csr("bluetooth")
+		#self.submodules.bluetooth = ResetInserter()(UART(
+        #phy=UARTPHY(platform.request("bluetooth", 0), 100e6, baudrate=9600),
+        #tx_fifo_depth=16,
+        #rx_fifo_depth=16,
+        #phy_cd="sys"))
+		#self.add_constant("UART_POLLING")
+
+		#SoCCore.add_uart(self, "crossover", baudrate=9600)
+
+		#self.add_csr("bluetooth")
+		#self.submodules.bluetooth = UARTWishboneBridge(platform.request("serial"), 100e6)
+		#self.add_wb_master(self.bluetooth.wishbone)
+
+		#self.add_constant("UART_POLLING")
+		#self.add_csr("bluetooth")
 
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":

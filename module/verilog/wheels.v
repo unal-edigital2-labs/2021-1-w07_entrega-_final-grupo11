@@ -21,29 +21,49 @@
 
 
 module wheels(input clk,
-            input [1:0]state,
-            output reg right,
-            output reg left);
+            input [2:0]state,
+            output reg [1:0]right,
+            output reg [1:0]left);
     
 always@(posedge clk)begin	
 	case(state)
-        2'b00:  begin
-                    right = 1;
-                    left  = 1;
+        3'b000:  begin
+                    right[0] = 1;
+                    right[1] = 0;
+                    left[0]  = 1;
+                    left[1]  = 0;
                 end
-        2'b01:  begin
-                    right = 0;
-                    left  = 1;
+        3'b001:  begin
+                    right[0] = 0;
+                    right[1] = 0;
+                    left[0]  = 1;
+                    left[1]  = 0;
                 end
-        2'b10:  begin
-                    right = 1;
-                    left  = 0;
+        3'b010:  begin
+                    right[0] = 1;
+                    right[1] = 0;
+                    left[0]  = 0;
+                    left[1]  = 0;
                 end
-        2'b11:  begin
-                    right = 0;
-                    left  = 0;
+        3'b011:  begin
+                    right[1] = 0;
+                    right[0] = 0;
+                    left[1]  = 0;
+                    left[0]  = 0;
                 end
-                    
+
+        3'b100:  begin
+                    right[1] = 1;
+                    right[0] = 0;
+                    left[1]  = 0;
+                    left[0]  = 1;
+                end
+   	3'b101:  begin
+                    right[1] = 1;
+                    right[0] = 0;
+                    left[1]  = 1;
+                    left[0]  = 0;
+                end
 	endcase
 end
 endmodule

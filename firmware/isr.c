@@ -16,6 +16,7 @@ void isr(void)
 	if(irqs & (1 << UART_INTERRUPT))
 		uart_isr();
 
+
 	if(irqs & (1 << CAMARA_CNTRL_INTERRUPT))
 		camara_isr();
 }

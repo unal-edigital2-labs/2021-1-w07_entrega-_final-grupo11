@@ -318,12 +318,36 @@ set_property LOC D17 [get_ports {iL}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iL}]
 
 # right:0
-set_property LOC G13 [get_ports {right}]
-set_property IOSTANDARD LVCMOS33 [get_ports {right}]
+set_property LOC F13 [get_ports {right0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {right0}]
+
+# right:1
+set_property LOC E16 [get_ports {right1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {right1}]
 
 # left:0
-set_property LOC H16 [get_ports {left}]
-set_property IOSTANDARD LVCMOS33 [get_ports {left}]
+set_property LOC H16 [get_ports {left0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {left0}]
+
+# left:1
+set_property LOC G13 [get_ports {left1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {left1}]
+
+# uart1:0.tx
+set_property LOC G1 [get_ports {uart1_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
+
+# uart1:0.rx
+set_property LOC G3 [get_ports {uart1_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
+
+# uart2:0.tx
+set_property LOC C17 [get_ports {uart2_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart2_tx}]
+
+# uart2:0.rx
+set_property LOC D18 [get_ports {uart2_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart2_rx}]
 
 ################################################################################
 # Design constraints

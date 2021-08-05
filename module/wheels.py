@@ -6,7 +6,7 @@ from litex.soc.interconnect.csr_eventmanager import *
 class wheels(Module, AutoCSR):
     def __init__(self, right, left):
             self.clk = ClockSignal()
-            self.state = CSRStorage(2)
+            self.state = CSRStorage(3)
             self.right = right
             self.left = left
 
