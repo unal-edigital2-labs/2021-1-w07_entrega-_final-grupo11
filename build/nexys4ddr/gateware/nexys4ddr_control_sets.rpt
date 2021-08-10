@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Aug  4 18:07:29 2021
+| Date         : Thu Aug  5 07:35:52 2021
 | Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_control_sets -verbose -file nexys4ddr_control_sets.rpt
 | Design       : nexys4ddr
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             240 |          112 |
+| No           | No                    | No                     |             240 |          125 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             878 |          295 |
-| Yes          | No                    | No                     |             627 |          229 |
+| No           | Yes                   | No                     |             878 |          284 |
+| Yes          | No                    | No                     |             627 |          218 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            1259 |          405 |
+| Yes          | Yes                   | No                     |            1259 |          404 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,155 +73,155 @@ Table of Contents
 +-----------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal     |                      Enable Signal                     |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
 +-----------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG        | uart2_tx_i_2_n_0                                       | uart2_tx_i_1_n_0                           |                1 |              1 |         1.00 |
-|  ultraSound/freq1/CLK | ultraSound/trig_i_1_n_0                                |                                            |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    | picorv32/instr_jalr_i_1_n_0                |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG        |                                                        | ledRGB1_r_i_1_n_0                          |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG        |                                                        | ledRGB2_g_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG        | serial_tx_i_2_n_0                                      | serial_tx_i_1_n_0                          |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        |                                                        | ledRGB1_r_i_1_n_0                          |                1 |              1 |         1.00 |
 |  ultraSound/freq1/CLK |                                                        |                                            |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        | uart2_tx_i_2_n_0                                       | uart2_tx_i_1_n_0                           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        |                                                        | ledRGB2_b_i_1_n_0                          |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG        |                                                        | ledRGB1_b_i_1_n_0                          |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG        | uart1_tx_i_2_n_0                                       | uart1_tx_i_1_n_0                           |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG        |                                                        | ledRGB2_r_i_1_n_0                          |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG        |                                                        | ledRGB1_g_i_1_n_0                          |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG        |                                                        | ledRGB2_b_i_1_n_0                          |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        |                                                        | ledRGB2_r_i_1_n_0                          |                1 |              1 |         1.00 |
+|  ultraSound/freq1/CLK | ultraSound/trig_i_1_n_0                                |                                            |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    | picorv32/instr_jalr_i_1_n_0                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        | serial_tx_i_2_n_0                                      | serial_tx_i_1_n_0                          |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_wrport_we__0              | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_phy_tx_tick                              | p_22_in                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_tx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_tx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_rx_tick                                | p_26_in                                    |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG        | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we__0     | basesoc_int_rst                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG        | basesoc_uart2_phy_tx_tick                              | p_13_in                                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/basesoc_uart0_tx_fifo_wrport_we__0            | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_wrport_we__0                     | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_tx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_timeout_counter[3]_i_2_n_0               | picorv32/pcpi_mul/SS[0]                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_timer_i_1_n_0               |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_phy_rx_tick                              | p_17_in                                    |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/pcpi_mul/instr_mulhu_i_1_n_0      |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart2_phy_rx_tick                              | p_8_in                                     |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/basesoc_uart1_tx_fifo_wrport_we__0            | basesoc_int_rst                            |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_wrport_we__0                     | basesoc_int_rst                            |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG        | basesoc_basesoc_tx_tick                                | basesoc_basesoc_tx_phase[31]_i_1_n_0       |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/pcpi_mul/instr_mulhu_i_1_n_0      |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/basesoc_uart1_tx_fifo_wrport_we__0            | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/basesoc_uart0_tx_fifo_wrport_we__0            | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we__0     | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_wrport_we__0              | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_wrport_we__0                     | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_rx_tick                                | p_26_in                                    |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_phy_tx_tick                              | p_22_in                                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart2_phy_tx_tick                              | p_13_in                                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart2_phy_rx_tick                              | p_8_in                                     |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_timeout_counter[3]_i_2_n_0               | picorv32/pcpi_mul/SS[0]                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_phy_rx_tick                              | p_17_in                                    |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/pcpi_div/instr_rem_i_1_n_0        |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_tx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart0_tx_fifo_consume[2]_i_1_n_0               | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | wheels/right[1]_i_1_n_0                                |                                            |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_tx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_timer_i_1_n_0               |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_level0[4]_i_1_n_0         | basesoc_int_rst                            |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG        | picorv32/E[0]                                          | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_level0[4]_i_1_n_0                | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_level0[4]_i_1_n_0                | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_mul/instr_jal_reg                        | picorv32/pcpi_mul/mem_do_prefetch_reg      |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | picorv32/basesoc_uart0_tx_fifo_level0_reg[3][0]        | basesoc_int_rst                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/pcpi_div/instr_rem_i_1_n_0        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | wheels/right[1]_i_1_n_0                                |                                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    | picorv32/decoded_rs1__0[4]                 |                1 |              5 |         5.00 |
 |  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_lhu_i_1_n_0                 |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    | picorv32/decoded_rs1__0[4]                 |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | picorv32/basesoc_basesoc_uart_tx_fifo_level0_reg[3][0] | basesoc_int_rst                            |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG        | picorv32/latched_rd[5]_i_1_n_0                         |                                            |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG        | basesoc_uart2_phy_tx_data1_in0                         |                                            |                1 |              7 |         7.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_level0[4]_i_1_n_0         | basesoc_int_rst                            |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG        | picorv32/basesoc_basesoc_uart_tx_fifo_level0_reg[3][0] | basesoc_int_rst                            |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_level0[4]_i_1_n_0                | basesoc_int_rst                            |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_level0[4]_i_1_n_0                | basesoc_int_rst                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG        | picorv32/E[0]                                          | basesoc_int_rst                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG        | picorv32/basesoc_uart0_tx_fifo_level0_reg[3][0]        | basesoc_int_rst                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_mul/instr_jal_reg                        | picorv32/pcpi_mul/mem_do_prefetch_reg      |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG        | picorv32/latched_rd[5]_i_1_n_0                         |                                            |                3 |              6 |         2.00 |
 |  clk_IBUF_BUFG        | basesoc_uart1_phy_tx_data1_in0                         |                                            |                1 |              7 |         7.00 |
+|  clk_IBUF_BUFG        | basesoc_uart2_phy_tx_data1_in0                         |                                            |                1 |              7 |         7.00 |
 |  clk_IBUF_BUFG        | basesoc_basesoc_tx_data1_in0                           |                                            |                1 |              7 |         7.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_22[0]                       | basesoc_int_rst                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_18[0]                       | basesoc_int_rst                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_rdport_re                        |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_tx_fifo_syncfifo_re               |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_phy_rx_data_rs232phyrx1_next_value_ce1   |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_23[0]                       | basesoc_int_rst                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_20[0]                       | basesoc_int_rst                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart0_tx_fifo_syncfifo0_re                     |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_phy_rx_data_rs232phyrx1_next_value_ce1   |                                            |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_12[0]           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_22[0]                       | basesoc_int_rst                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_20[0]                       | basesoc_int_rst                            |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_24[0]                       | basesoc_int_rst                            |                4 |              8 |         2.00 |
 |  clk_IBUF_BUFG        | picorv32/mem_addr_reg[3]_0[0]                          | basesoc_int_rst                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_tx_fifo_syncfifo1_re                     |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_21[0]                       | basesoc_int_rst                            |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_24[0]                       | basesoc_int_rst                            |                7 |              8 |         1.14 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_19[0]                       | basesoc_int_rst                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_rdport_re                        |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_rx_data_rs232phyrx0_next_value_ce1     |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_12[0]           |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG        | basesoc_uart2_phy_rx_data_rs232phyrx2_next_value_ce1   |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_rdport_re                 |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_29[0]           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_21[0]                       | basesoc_int_rst                            |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_18[0]                       | basesoc_int_rst                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_31              |                3 |              8 |         2.67 |
 |  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_17[0]           |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_11[0]           |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_31              |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_29[0]           |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_tx_fifo_syncfifo_re               |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_23[0]                       | basesoc_int_rst                            |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG        | basesoc_uart2_phy_rx_data_rs232phyrx2_next_value_ce1   |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_rdport_re                        |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_tx_fifo_syncfifo0_re                     |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_19[0]                       | basesoc_int_rst                            |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_rx_data_rs232phyrx0_next_value_ce1     |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_11[0]           |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_rdport_re                 |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart1_tx_fifo_syncfifo1_re                     |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_rdport_re                        |                                            |                2 |              8 |         4.00 |
 |  clk_IBUF_BUFG        |                                                        | picorv32/SR[0]                             |                4 |              9 |         2.25 |
-|  ultraSound/freq1/CLK | ultraSound/distance[8]_i_1_n_0                         |                                            |                5 |             10 |         2.00 |
+|  ultraSound/freq1/CLK | ultraSound/distance[8]_i_1_n_0                         |                                            |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG        | basesoc_h_count                                        | clear                                      |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG        | basesoc_pxl_tick                                       | RSTC                                       |                5 |             10 |         2.00 |
 |  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[11]_1[0]             |                2 |             10 |         5.00 |
-|  clk_IBUF_BUFG        | basesoc_h_count                                        | clear                                      |                6 |             10 |         1.67 |
-|  clk_IBUF_BUFG        | basesoc_pxl_tick                                       | RSTC                                       |                3 |             10 |         3.33 |
-|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/decoded_imm[30]_i_1_n_0           |                3 |             11 |         3.67 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_13[0]                       | basesoc_int_rst                            |                3 |             12 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[14]_0[0]             |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/decoded_imm[30]_i_1_n_0           |                2 |             11 |         5.50 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_13[0]                       | basesoc_int_rst                            |                8 |             12 |         1.50 |
 |  clk_IBUF_BUFG        | picorv32/builder_state_reg_15[0]                       | basesoc_int_rst                            |                2 |             15 |         7.50 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_wrport_we__0              |                                            |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_wrport_we__0                     |                                            |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_wrport_we__0                     |                                            |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[14]_0[0]             |                5 |             15 |         3.00 |
 |  clk_IBUF_BUFG        | picorv32/basesoc_uart1_tx_fifo_wrport_we__0            |                                            |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG        | basesoc_uart0_rx_fifo_wrport_we__0                     |                                            |                2 |             16 |         8.00 |
 |  clk_IBUF_BUFG        | picorv32/basesoc_uart0_tx_fifo_wrport_we__0            |                                            |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_uart_rx_fifo_wrport_we__0              |                                            |                2 |             16 |         8.00 |
 |  clk_IBUF_BUFG        | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we__0     |                                            |                2 |             16 |         8.00 |
-|  ultraSound/freq1/CLK | ultraSound/FSM_sequential_status[1]_i_1_n_0            |                                            |               10 |             17 |         1.70 |
-|  clk_IBUF_BUFG        | picorv32/mem_xfer                                      |                                            |                7 |             18 |         2.57 |
+|  clk_IBUF_BUFG        | basesoc_uart1_rx_fifo_wrport_we__0                     |                                            |                2 |             16 |         8.00 |
+|  ultraSound/freq1/CLK | ultraSound/FSM_sequential_status[1]_i_1_n_0            |                                            |               11 |             17 |         1.55 |
+|  clk_IBUF_BUFG        | picorv32/mem_xfer                                      |                                            |                6 |             18 |         3.00 |
 |  clk_IBUF_BUFG        |                                                        | basesoc_dgt_tick_count[0]_i_1_n_0          |                5 |             18 |         3.60 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[11]_0[0]             |               10 |             19 |         1.90 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[11]_0[0]             |                9 |             19 |         2.11 |
 |  clk_IBUF_BUFG        | picorv32/builder_error                                 | picorv32/mem_valid_reg_0                   |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/mem_addr_reg[11]_2[0]                         | basesoc_int_rst                            |                7 |             20 |         2.86 |
-|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/mem_state2                        |                8 |             22 |         2.75 |
+|  clk_IBUF_BUFG        | picorv32/mem_addr_reg[11]_2[0]                         | basesoc_int_rst                            |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/mem_state2                        |                6 |             22 |         3.67 |
 |  clk_IBUF_BUFG        |                                                        | ultraSound/freq1/clear                     |                8 |             29 |         3.62 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_div/divisor                              | picorv32/pcpi_div/divisor[30]_i_1_n_0      |               13 |             31 |         2.38 |
 |  clk_IBUF_BUFG        |                                                        | p_13_in                                    |                8 |             31 |         3.88 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_div/divisor                              | picorv32/pcpi_div/divisor[30]_i_1_n_0      |               12 |             31 |         2.58 |
 |  clk_IBUF_BUFG        |                                                        | p_8_in                                     |                8 |             31 |         3.88 |
-|  clk_IBUF_BUFG        |                                                        | p_22_in                                    |                8 |             31 |         3.88 |
 |  clk_IBUF_BUFG        |                                                        | p_17_in                                    |                8 |             31 |         3.88 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_b_width0_re                  | picorv32/builder_state_reg_4               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_2_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_div/quotient_msk                         | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG        |                                                        | p_26_in                                    |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_g_width0_re                  | picorv32/builder_state_reg_8               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | basesoc_basesoc_timer_update_value_re                  | basesoc_int_rst                            |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_14[0]           |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_div/divisor                              |                                            |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_g_width0_re                  | picorv32/builder_state_reg_2               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_r_width0_re                  | picorv32/builder_state_reg_0               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_28[0]                       | basesoc_int_rst                            |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG        | picorv32/mem_wdata[31]_i_1_n_0                         |                                            |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_mul/pcpi_wr0                             |                                            |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_2_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_26[0]           |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_g_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_16[0]           |               21 |             32 |         1.52 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_r_width0_re                  | picorv32/builder_state_reg_6               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[14]_1[0]             |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG        | picorv32/irq_mask                                      | picorv32/mem_state2                        |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_g_period0_re                 | picorv32/builder_state_reg_7               |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_b_period0_re                 | picorv32/builder_state_reg_9               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_b_width0_re                  | picorv32/builder_state_reg_10              |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_g_period0_re                 | picorv32/builder_state_reg_1               |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_div/dividend                             |                                            |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/reg_op2[31]_i_1_n_0                           |                                            |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG        | picorv32/reg_op1[31]_i_1_n_0                           |                                            |               26 |             32 |         1.23 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_27[0]                       | basesoc_int_rst                            |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_r_period0_re                 | picorv32/builder_state_reg_5               |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG        |                                                        | p_22_in                                    |                8 |             31 |         3.88 |
 |  clk_IBUF_BUFG        |                                                        | basesoc_basesoc_tx_phase[31]_i_1_n_0       |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_r_period0_re                 | picorv32/builder_state_reg                 |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_r_width0_re                  | picorv32/builder_state_reg_6               |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_div/quotient_msk                         | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_b_period0_re                 | picorv32/builder_state_reg_3               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_mul/pcpi_wr0                             |                                            |               17 |             32 |         1.88 |
 |  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_2_g_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_div/quotient                             | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_b_period0_re                 | picorv32/builder_state_reg_3               |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_25[0]                       | basesoc_int_rst                            |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_2_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        | basesoc_basesoc_timer_update_value_re                  | basesoc_int_rst                            |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_div/dividend                             |                                            |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_2_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_16[0]           |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_g_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | p_26_in                                    |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG        | basesoc_basesoc_bus_errors                             | basesoc_int_rst                            |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG        | picorv32/timer                                         | picorv32/mem_state2                        |               18 |             32 |         1.78 |
-|  clk_IBUF_BUFG        | picorv32/builder_state_reg_25[0]                       | basesoc_int_rst                            |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG        | picorv32/mem_addr[31]_i_1_n_0                          |                                            |               23 |             34 |         1.48 |
-|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    |                                            |               11 |             34 |         3.09 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_mul/basesoc_int_rst_reg                  | picorv32/pcpi_mul/mul_counter[6]           |               18 |             47 |         2.61 |
-|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           |                                            |               18 |             52 |         2.89 |
-|  clk_IBUF_BUFG        | picorv32/reg_pc                                        | picorv32/mem_state2                        |               19 |             64 |         3.37 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/mem_addr_reg[14]_1[0]             |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_r_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_14[0]           |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_ledRGB_1_b_counter[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/builder_state_reg_26[0]           |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_r_period0_re                 | picorv32/builder_state_reg                 |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_r_period0_re                 | picorv32/builder_state_reg_5               |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_g_width0_re                  | picorv32/builder_state_reg_2               |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG        | picorv32/reg_op1[31]_i_1_n_0                           |                                            |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG        | picorv32/timer                                         | picorv32/mem_state2                        |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG        | picorv32/irq_mask                                      | picorv32/mem_state2                        |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG        | picorv32/reg_op2[31]_i_1_n_0                           |                                            |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_g_period0_re                 | picorv32/builder_state_reg_7               |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_27[0]                       | basesoc_int_rst                            |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_b_period0_re                 | picorv32/builder_state_reg_9               |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG        | picorv32/builder_state_reg_28[0]                       | basesoc_int_rst                            |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_g_width0_re                  | picorv32/builder_state_reg_8               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_r_width0_re                  | picorv32/builder_state_reg_0               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_g_period0_re                 | picorv32/builder_state_reg_1               |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank6_b_width0_re                  | picorv32/builder_state_reg_4               |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG        | picorv32/mem_wdata[31]_i_1_n_0                         |                                            |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_div/divisor                              |                                            |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_div/quotient                             | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank7_b_width0_re                  | picorv32/builder_state_reg_10              |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG        | picorv32/instr_lui0                                    |                                            |               10 |             34 |         3.40 |
+|  clk_IBUF_BUFG        | picorv32/mem_addr[31]_i_1_n_0                          |                                            |               18 |             34 |         1.89 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_mul/basesoc_int_rst_reg                  | picorv32/pcpi_mul/mul_counter[6]           |               19 |             47 |         2.47 |
+|  clk_IBUF_BUFG        | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           |                                            |               14 |             52 |         3.71 |
+|  clk_IBUF_BUFG        | picorv32/reg_pc                                        | picorv32/mem_state2                        |               25 |             64 |         2.56 |
 |  clk_IBUF_BUFG        | picorv32/irq_delay                                     | picorv32/mem_state2                        |               17 |             65 |         3.82 |
-|  clk_IBUF_BUFG        | picorv32/builder_csrbank15_mem_adr0_re                 | basesoc_int_rst                            |               16 |             67 |         4.19 |
-|  clk_IBUF_BUFG        |                                                        | picorv32/mem_state2                        |               29 |             81 |         2.79 |
+|  clk_IBUF_BUFG        | picorv32/builder_csrbank15_mem_adr0_re                 | basesoc_int_rst                            |               23 |             67 |         2.91 |
+|  clk_IBUF_BUFG        |                                                        | picorv32/mem_state2                        |               28 |             81 |         2.89 |
 |  clk_IBUF_BUFG        | picorv32/p_0_in__0                                     |                                            |               22 |             88 |         4.00 |
-|  clk_IBUF_BUFG        |                                                        | basesoc_int_rst                            |               55 |            135 |         2.45 |
-|  clk_IBUF_BUFG        | picorv32/pcpi_mul/basesoc_int_rst_reg                  |                                            |               44 |            166 |         3.77 |
-|  clk_IBUF_BUFG        |                                                        |                                            |              111 |            239 |         2.15 |
+|  clk_IBUF_BUFG        |                                                        | basesoc_int_rst                            |               53 |            135 |         2.55 |
+|  clk_IBUF_BUFG        | picorv32/pcpi_mul/basesoc_int_rst_reg                  |                                            |               47 |            166 |         3.53 |
+|  clk_IBUF_BUFG        |                                                        |                                            |              124 |            239 |         1.93 |
 +-----------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
 
 

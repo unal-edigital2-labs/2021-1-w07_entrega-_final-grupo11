@@ -90,10 +90,10 @@ _io = [
     ("cam_data_in", 6, Pins("U11"), IOStandard("LVCMOS33")),
     ("cam_data_in", 7, Pins("V10"), IOStandard("LVCMOS33")),
 
-    ("echo", 0, Pins("G16"), IOStandard("LVCMOS33")),
-    ("trig", 0, Pins("F16"), IOStandard("LVCMOS33")),
+    ("echo", 0, Pins("G2"), IOStandard("LVCMOS33")),
+    ("trig", 0, Pins("G4"), IOStandard("LVCMOS33")),
 
-    ("servo", 0, Pins("H14"), IOStandard("LVCMOS33")),
+    ("servo", 0, Pins("F3"), IOStandard("LVCMOS33")),
 
     ("iL", 0, Pins("D17"), IOStandard("LVCMOS33")),
     ("iLC", 0, Pins("E17"), IOStandard("LVCMOS33")),
@@ -107,8 +107,8 @@ _io = [
     ("right", 1, Pins("E16"), IOStandard("LVCMOS33")),
     
     ("uart1", 0,
-        Subsignal("tx", Pins("G1")),
-        Subsignal("rx", Pins("G3")),
+        Subsignal("tx", Pins("J2")),
+        Subsignal("rx", Pins("G6")),
         IOStandard("LVCMOS33"),
     ),
 

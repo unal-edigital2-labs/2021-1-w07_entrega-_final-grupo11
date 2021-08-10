@@ -6,14 +6,14 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/camara.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/divFreq.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/ultraSound.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/PWMUS.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/infraRed.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/module/verilog/wheels.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/camara.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/divFreq.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/ultraSound.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/PWMUS.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/infraRed.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/module/verilog/wheels.v}
 read_verilog {/home/camilo/Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/build/nexys4ddr/gateware/nexys4ddr.v}
+read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
 

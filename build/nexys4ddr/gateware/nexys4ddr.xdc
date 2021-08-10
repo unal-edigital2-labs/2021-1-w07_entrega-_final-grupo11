@@ -286,15 +286,15 @@ set_property LOC P18 [get_ports {cam_pclk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {cam_pclk}]
 
 # echo:0
-set_property LOC G16 [get_ports {echo}]
+set_property LOC G2 [get_ports {echo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
 
 # trig:0
-set_property LOC F16 [get_ports {trig}]
+set_property LOC G4 [get_ports {trig}]
 set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 
 # servo:0
-set_property LOC H14 [get_ports {servo}]
+set_property LOC F3 [get_ports {servo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
 
 # iR:0
@@ -334,11 +334,11 @@ set_property LOC G13 [get_ports {left1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {left1}]
 
 # uart1:0.tx
-set_property LOC G1 [get_ports {uart1_tx}]
+set_property LOC J2 [get_ports {uart1_tx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
 
 # uart1:0.rx
-set_property LOC G3 [get_ports {uart1_rx}]
+set_property LOC G6 [get_ports {uart1_rx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
 
 # uart2:0.tx

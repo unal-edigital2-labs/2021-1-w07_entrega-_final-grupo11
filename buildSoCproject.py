@@ -114,7 +114,7 @@ class BaseSoC(SoCCore):
 		left = Cat(*[platform.request("left", i) for i in range(2)])
 		self.submodules.wheels_cntrl = wheels.wheels(right, left)
 
-
+		#UART BLUETHOOT
 		from litex.soc.cores import uart
 		self.submodules.uart1_phy = uart.UARTPHY(
 			pads     = platform.request("uart1"),
@@ -130,6 +130,8 @@ class BaseSoC(SoCCore):
 		else:
 			self.add_constant("UART_POLLING")
 
+
+		#UART MP3
 		self.submodules.uart2_phy = uart.UARTPHY(
 			pads     = platform.request("uart2"),
 			clk_freq = self.sys_clk_freq,

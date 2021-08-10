@@ -58,7 +58,7 @@ always@(posedge clk)begin
                     left[1]  = 0;
                     left[0]  = 1;
                 end
-   	3'b101:  begin
+   	    3'b101:  begin
                     right[1] = 1;
                     right[0] = 0;
                     left[1]  = 1;

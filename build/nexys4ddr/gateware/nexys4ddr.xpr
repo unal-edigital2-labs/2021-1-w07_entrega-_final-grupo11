@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/build/nexys4ddr/gateware/nexys4ddr.xpr">
+<Project Version="7" Minor="54" Path="/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="19d60b5a8c734a078f52179d1d285ff2"/>
+    <Option Name="Id" Val="b070147bc4384beeb8b955279a020495"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -115,7 +115,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v">
+      <File Path="$PPRDIR/../../../../../../Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

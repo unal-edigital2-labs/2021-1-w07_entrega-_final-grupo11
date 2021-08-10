@@ -336,11 +336,11 @@ static int * US(void){
 				char distances[3];
 				printf("----------\n");
 				bluetooth_write("----------\n");
-				for(int i = 0; i<3; i++){
+				for(int i = 2; i>=0; i--){
 					printf("%d", d[i]);
 					sprintf(distances, "%d", d[i]);
 					bluetooth_write(distances);
-					if(i<2){
+					if(i>0){
 						printf(" - ");
 						bluetooth_write(" - ");
 					}
@@ -519,13 +519,6 @@ static void direction(void){
             map[i][k] = 0;
         }    
     }
-    map[0][0] = 2;
-    map[1][0] = 1;
-    map[0][1] = 2;
-    map[1][1] = 2;
-    map[2][0] = 2;
-    map[2][1] = 2;
-
 
 	char *tempMap = "A";
 	while(!(buttons_in_read()&1)){
@@ -534,26 +527,39 @@ static void direction(void){
 		bool C = IR_cntrl_C_read();
 		bool RC = IR_cntrl_RC_read();
 		bool R = IR_cntrl_R_read();
-		char direction = 'a';
 
 		if(buttons_in_read()&2){
 			rotate = 0;
 			orientation = 0;
-			posV = 0;
+			posV = 1;
 			posH = 0;
 			for(int i=0;i<10;i++){
 				for(int k=0;k<10;k++){  
 					map[i][k] = 0;
 				}    
 			}
-			map[0][0] = 1;
 			wheels_cntrl_state_write(0);
 		}
 
 		
 
-		if(rotate == 0 || rotate == 1){
-			//00100
+		if(rotate == 2){
+			wheels_cntrl_state_write(4);
+			//01110
+			if(L==0 && LC==1 && C==1 && RC==1 && R==0){
+				rotate = 0;
+				//01100
+			}else if(L==0 && LC==1 && C==1 && RC==0 && R==0){
+				rotate = 0;
+				
+				//00110
+			}else if(L==0 && LC==0 && C==1 && RC==1 && R==0){
+				rotate = 0;
+				
+				//01000
+			}
+		}else{
+				//00100
 			if(L==0 && LC==0 && C==1 && RC==0 && R==0){
 				wheels_cntrl_state_write(0);
 				rotate = 0;
@@ -565,12 +571,12 @@ static void direction(void){
 				
 				//01100
 			}else if(L==0 && LC==1 && C==1 && RC==0 && R==0){
-				wheels_cntrl_state_write(1);
+				wheels_cntrl_state_write(0);
 				rotate = 0;
 				
 				//00110
 			}else if(L==0 && LC==0 && C==1 && RC==1 && R==0){
-				wheels_cntrl_state_write(2);
+				wheels_cntrl_state_write(0);
 				rotate = 0;
 				
 				//01000
@@ -587,7 +593,6 @@ static void direction(void){
 			}else if(L==1 && LC==0 && C==0 && RC==0 && R==0){
 				wheels_cntrl_state_write(1);
 
-				
 				//00001
 			}else if(L==0 && LC==0 && C==0 && RC==0 && R==1){
 				wheels_cntrl_state_write(2);
@@ -602,71 +607,59 @@ static void direction(void){
 				if(d[0] >= 35 && d[1] >= 35 && d[2] >= 35){
 					mp3(1);
 					wheels_cntrl_state_write(2);
-					delay_ms(200);
-					rotate = 1;
-					orientation = 0;
-					direction = 'r';
+					delay_ms(400);
+					orientation = orientation + 1;
 				}else if(d[0] >= 35 && d[1] >= 35 && d[2] < 35){
 					mp3(1);
 					wheels_cntrl_state_write(2);
-					delay_ms(200);
-					rotate = 1;
-					orientation = 0;
-					direction = 'r';
+					delay_ms(400);
+					orientation = orientation + 1;
 				}else if(d[0] >= 35 && d[1] < 35 && d[2] < 35){
 					mp3(1);
 					wheels_cntrl_state_write(2);
-					delay_ms(200);
-					rotate = 1;
-					orientation = 0;
-					direction = 'r';
+					delay_ms(400);
+					orientation = orientation + 1;
 				}else if(d[0] < 35 && d[1] >= 35 && d[2] >= 35){
-					mp3(3);
+					
 					wheels_cntrl_state_write(0);
-					rotate = 1;
-					orientation = 0;
-					direction = 'f';
+					delay_ms(200);
+					mp3(3);
 				}else if(d[0] < 35 && d[1] < 35 && d[2] >= 35){
 					mp3(2);
 					wheels_cntrl_state_write(1);
 					delay_ms(200);
-					rotate = 1;
-					orientation = 0;
-					direction = 'l';
+					orientation = orientation - 1;
 				}else if(d[0] < 35 && d[1] >= 35 && d[2] < 35){			
+					wheels_cntrl_state_write(0);
+					delay_ms(200);
 					mp3(3);
-					wheels_cntrl_state_write(3);
-					rotate = 1;
-					orientation = 0;
-					direction = 'f';
 				}else if(d[0] < 35 && d[1] < 35 && d[2] < 35){			
 					mp3(4);
-					wheels_cntrl_state_write(4);
+					wheels_cntrl_state_write(5);
 					delay_ms(200);
+					wheels_cntrl_state_write(4);
+					delay_ms(500);
 					rotate = 2;
-					orientation = 1;
-					direction = 'f';
+					orientation = orientation + 2;
 				}
+				
+				if(orientation >= 4)
+					orientation = orientation - 4; 
+				else if(orientation < 0) 
+					orientation = orientation + 4;
 
+				//Arreglar
 				if(orientation == 0){
-					if(direction=='r'){
-						posV++;
-					}else if(direction=='l'){
-						posV--;
-					}else if(direction=='f'){
-						posH++;
-					}
-				}else{
-					if(direction=='l'){
-						posV++;
-					}else if(direction=='r'){
-						posV--;
-					}else if(direction=='f'){
-						posH--;
-					}
-
+					posH++;
+				}else if(orientation == 1){
+					posV++;
+				}else if(orientation == 2){
+					posH--;
+				}else if(orientation == 3){
+					posV--;
 				}
 
+				//Desplazamiento de la matriz
 				if(posV < 0){
 					for(int i=10;i>=0;i--){
 						for(int k=0;k<10;k++){  
@@ -697,42 +690,47 @@ static void direction(void){
 					for(int k=0;k<10;k++){
 						map[posV][posH] = 1;
 						if(posV!=0 && posH != 0){
-                        if(map[posV][posH-1]==0)
-                            map[posV][posH-1]=2;
-                        if(map[posV][posH+1]==0)
-                            map[posV][posH+1]=2;
-                        if(map[posV-1][posH]==0)
-                            map[posV-1][posH]=2;
-                        if(map[posV+1][posH]==0)
-                            map[posV+1][posH]=2;
-
-                        if(map[posV-1][posH-1]==0)
-                            map[posV-1][posH-1]=2;
-                        if(map[posV-1][posH+1]==0)
-                            map[posV-1][posH+1]=2;
-                        if(map[posV+1][posH-1]==0)
-                            map[posV+1][posH-1]=2;
-                        if(map[posV+1][posH+1]==0)
-                            map[posV+1][posH+1]=2;
-                    }else if(posV!=0 && posH == 0){
-                        if(map[posV-1][posH]==0)
-                            map[posV-1][posH]=2;
-                        if(map[posV+1][posH]==0)
-                            map[posV+1][posH]=2;
-                        if(map[posV-1][posH+1]==0)
-                            map[posV-1][posH+1]=2;
-                        if(map[posV+1][posH+1]==0)
-                            map[posV+1][posH+1]=2;
-                    }else if(posV==0 && posH != 0){
-                        if(map[posV+1][posH-1]==0)
-                            map[posV+1][posH-1]=2;
-                        if(map[posV+1][posH+1]==0)
-                            map[posV+1][posH+1]=2;
-                        if(map[posV][posH-1]==0)
-                            map[posV][posH-1]=2;
-                        if(map[posV][posH+1]==0)
-                            map[posV][posH+1]=2;
-                    }
+							if(map[posV][posH-1]==0)
+								map[posV][posH-1]=2;
+							if(map[posV][posH+1]==0)
+								map[posV][posH+1]=2;
+							if(map[posV-1][posH]==0)
+								map[posV-1][posH]=2;
+							if(map[posV+1][posH]==0)
+								map[posV+1][posH]=2;
+							if(map[posV-1][posH-1]==0)
+								map[posV-1][posH-1]=2;
+							if(map[posV-1][posH+1]==0)
+								map[posV-1][posH+1]=2;
+							if(map[posV+1][posH-1]==0)
+								map[posV+1][posH-1]=2;
+							if(map[posV+1][posH+1]==0)
+								map[posV+1][posH+1]=2;
+						}else if(posV!=0 && posH == 0){
+							if(map[posV-1][posH]==0)
+								map[posV-1][posH]=2;
+							if(map[posV+1][posH]==0)
+								map[posV+1][posH]=2;
+							if(map[posV-1][posH+1]==0)
+								map[posV-1][posH+1]=2;
+							if(map[posV+1][posH+1]==0)
+								map[posV+1][posH+1]=2;
+							if(map[posV][posH+1]==0)
+								map[posV][posH+1]=2;
+						}else if(posV==0 && posH != 0){
+							if(map[posV+1][posH-1]==0)
+								map[posV+1][posH-1]=2;
+							if(map[posV+1][posH+1]==0)
+								map[posV+1][posH+1]=2;
+							if(map[posV+1][posH]==0)
+								map[posV+1][posH]=2;
+							if(map[posV][posH-1]==0)
+								map[posV][posH-1]=2;
+							if(map[posV][posH+1]==0)
+								map[posV][posH+1]=2;
+							if(map[posV][posH+1]==0)
+								map[posV][posH+1]=2;
+						}
 						printf("%i",  map[i][k]);
 						sprintf(tempMap, "%d", map[i][k]);
 						bluetooth_write(tempMap);
@@ -741,25 +739,7 @@ static void direction(void){
 					bluetooth_write("\n");
 				}
 			}
-		}
-
-
-		if(rotate == 2){
-			wheels_cntrl_state_write(4);
-			//01110
-			if(L==0 && LC==1 && C==1 && RC==1 && R==0){
-				rotate = 0;
-				//01100
-			}else if(L==0 && LC==1 && C==1 && RC==0 && R==0){
-				rotate = 0;
-				
-				//00110
-			}else if(L==0 && LC==0 && C==1 && RC==1 && R==0){
-				rotate = 0;
-				
-				//01000
-			}
-		}
+		}		
 	}
 }
 

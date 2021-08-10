@@ -10,7 +10,7 @@ CPU_DIRECTORY=/home/camilo/Litex/litex/litex/soc/cores/cpu/picorv32
 SOC_DIRECTORY=/home/camilo/Litex/litex/litex/soc
 COMPILER_RT_DIRECTORY=/home/camilo/Litex/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data
 export BUILDINC_DIRECTORY
-BUILDINC_DIRECTORY=/home/camilo/Escritorio/Digital_2/WP06_SoC_initial_include_verilog/SoC_project_includeVerilog/build/nexys4ddr/software/include
+BUILDINC_DIRECTORY=/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/build/nexys4ddr/software/include
 LIBCOMPILER_RT_DIRECTORY=/home/camilo/Litex/litex/litex/soc/software/libcompiler_rt
 LIBBASE_DIRECTORY=/home/camilo/Litex/litex/litex/soc/software/libbase
 LIBFATFS_DIRECTORY=/home/camilo/Litex/litex/litex/soc/software/libfatfs
