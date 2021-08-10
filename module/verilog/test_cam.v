@@ -22,13 +22,13 @@ module test_cam(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
 
-/*	// VGA input/output  
+	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire [3:0] VGA_R,	// 4-bit VGA red output
     output wire [3:0] VGA_G,  // 4-bit VGA green output
     output wire [3:0] VGA_B,  // 4-bit VGA blue output
-*/	
+	
 	//CAMARA input/output
 	
 	output wire CAM_xclk,		// System  clock imput
@@ -50,12 +50,12 @@ parameter CAM_SCREEN_X = 160;
 parameter CAM_SCREEN_Y = 120;
 
 localparam AW = 17; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
-localparam DW = 8;
+localparam DW = 12;
 
 // El color es RGB 332
-localparam RED_VGA =   8'b11100000;
-localparam GREEN_VGA = 8'b00011100;
-localparam BLUE_VGA =  8'b00000011;
+localparam RED_VGA =   12'b111100000000;
+localparam GREEN_VGA = 12'b000011110000;
+localparam BLUE_VGA =  12'b000000001111;
 
 
 // Clk 
@@ -82,9 +82,9 @@ wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
 por lo tanto, los bits menos significactivos deben ser cero
 **************************************************************************** */
-assign VGA_R = {data_RGB332[7:5],1'b0};
-assign VGA_G = {data_RGB332[4:2],1'b0};
-assign VGA_B = {data_RGB332[1:0],2'b00};
+assign VGA_R = data_RGB332[11:8];
+assign VGA_G = data_RGB332[7:4];
+assign VGA_B = data_RGB332[3:0];
 
 
 
@@ -136,7 +136,7 @@ buffer_ram_dp #( AW,DW)
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
-/*
+
 VGA_Driver640x480 VGA640x480
 (
 	.rst(rst),
@@ -150,7 +150,7 @@ VGA_Driver640x480 VGA640x480
 
 );
 
- */
+
 /* ****************************************************************************
 LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de 
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
@@ -168,15 +168,15 @@ end
 
 
 **************************************************************************** */
- cam_read #(AW)ov7076_565_to_332(
-		.pclk(CAM_pclk),
+ cam_read #(AW,DW)cam_read(
+		.CAM_pclk(CAM_pclk),
 		.rst(rst),
-		.vsync(CAM_vsync),
-		.href(CAM_href),
-		.px_data(CAM_px_data),
+		.CAM_vsync(CAM_vsync),
+		.CAM_href(CAM_href),
+		.CAM_px_data(CAM_px_data),
 
-		.mem_px_addr(DP_RAM_addr_in),
-		.mem_px_data(DP_RAM_data_in),
-		.px_wr(DP_RAM_regW)
+		.DP_RAM_addr_in(DP_RAM_addr_in),
+		.DP_RAM_data_in(DP_RAM_data_in),
+		.DP_RAM_regW(DP_RAM_regW)
    );
 endmodule
