@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Thu Aug  5 07:35:52 2021
+| Date         : Tue Aug 10 07:42:36 2021
 | Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,13 +21,12 @@ Table of Contents
 +------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
 |     Instance     |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
 +------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
-| nexys4ddr        |             (top) |       3703 |       3567 |     136 |    0 | 3004 |    134 |      0 |          1 |
-|   (nexys4ddr)    |             (top) |       1035 |        987 |      48 |    0 | 1762 |    134 |      0 |          1 |
+| nexys4ddr        |             (top) |       3690 |       3554 |     136 |    0 | 2963 |    134 |      0 |          1 |
+|   (nexys4ddr)    |             (top) |       1034 |        986 |      48 |    0 | 1748 |    134 |      0 |          1 |
 |   PWMUS          |             PWMUS |         26 |         26 |       0 |    0 |   22 |      0 |      0 |          0 |
-|   camara         |            camara |          1 |          1 |       0 |    0 |   26 |      0 |      0 |          0 |
-|   picorv32       |          picorv32 |       2494 |       2406 |      88 |    0 | 1131 |      0 |      0 |          0 |
-|     (picorv32)   |          picorv32 |       1805 |       1717 |      88 |    0 |  676 |      0 |      0 |          0 |
-|     pcpi_div     | picorv32_pcpi_div |        445 |        445 |       0 |    0 |  200 |      0 |      0 |          0 |
+|   picorv32       |          picorv32 |       2483 |       2395 |      88 |    0 | 1130 |      0 |      0 |          0 |
+|     (picorv32)   |          picorv32 |       1795 |       1707 |      88 |    0 |  675 |      0 |      0 |          0 |
+|     pcpi_div     | picorv32_pcpi_div |        444 |        444 |       0 |    0 |  200 |      0 |      0 |          0 |
 |     pcpi_mul     | picorv32_pcpi_mul |        244 |        244 |       0 |    0 |  255 |      0 |      0 |          0 |
 |   ultraSound     |        ultraSound |        144 |        144 |       0 |    0 |   59 |      0 |      0 |          0 |
 |     (ultraSound) |        ultraSound |        136 |        136 |       0 |    0 |   29 |      0 |      0 |          0 |

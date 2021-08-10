@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="/home/camilo/Escritorio/Digital_2/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xpr">
+<Project Version="7" Minor="54" Path="/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="b070147bc4384beeb8b955279a020495"/>
+    <Option Name="Id" Val="a4269f0ee64e4743b2255c783e9da8d1"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -73,13 +73,6 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../module/verilog/camara.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../../module/verilog/divFreq.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>

@@ -245,45 +245,13 @@ set_property IOSTANDARD LVCMOS33 [get_ports {hsync}]
 set_property LOC B12 [get_ports {vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vsync}]
 
-# cam_data_in:0
-set_property LOC T8 [get_ports {cam_data_in0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in0}]
+# i2c:0.sda
+set_property LOC G6 [get_ports {i2c_sda}]
+set_property IOSTANDARD LVCMOS33 [get_ports {i2c_sda}]
 
-# cam_data_in:1
-set_property LOC U8 [get_ports {cam_data_in1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in1}]
-
-# cam_data_in:2
-set_property LOC R16 [get_ports {cam_data_in2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in2}]
-
-# cam_data_in:3
-set_property LOC T13 [get_ports {cam_data_in3}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in3}]
-
-# cam_data_in:4
-set_property LOC H6 [get_ports {cam_data_in4}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in4}]
-
-# cam_data_in:5
-set_property LOC U12 [get_ports {cam_data_in5}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in5}]
-
-# cam_data_in:6
-set_property LOC U11 [get_ports {cam_data_in6}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in6}]
-
-# cam_data_in:7
-set_property LOC V10 [get_ports {cam_data_in7}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in7}]
-
-# cam_xclk:0
-set_property LOC V11 [get_ports {cam_xclk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_xclk}]
-
-# cam_pclk:0
-set_property LOC P18 [get_ports {cam_pclk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {cam_pclk}]
+# i2c:0.scl
+set_property LOC G3 [get_ports {i2c_scl}]
+set_property IOSTANDARD LVCMOS33 [get_ports {i2c_scl}]
 
 # echo:0
 set_property LOC G2 [get_ports {echo}]
@@ -318,27 +286,27 @@ set_property LOC D17 [get_ports {iL}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iL}]
 
 # right:0
-set_property LOC F13 [get_ports {right0}]
+set_property LOC F16 [get_ports {right0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {right0}]
 
 # right:1
-set_property LOC E16 [get_ports {right1}]
+set_property LOC D14 [get_ports {right1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {right1}]
 
 # left:0
-set_property LOC H16 [get_ports {left0}]
+set_property LOC H14 [get_ports {left0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {left0}]
 
 # left:1
-set_property LOC G13 [get_ports {left1}]
+set_property LOC G16 [get_ports {left1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {left1}]
 
 # uart1:0.tx
-set_property LOC J2 [get_ports {uart1_tx}]
+set_property LOC G13 [get_ports {uart1_tx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
 
 # uart1:0.rx
-set_property LOC G6 [get_ports {uart1_rx}]
+set_property LOC H16 [get_ports {uart1_rx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
 
 # uart2:0.tx
@@ -354,6 +322,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {uart2_rx}]
 ################################################################################
 
 set_property INTERNAL_VREF 0.750 [get_iobanks 34]
+
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_pclk]
 
 ################################################################################
 # Clock constraints

@@ -19,7 +19,7 @@
 module buffer_ram_dp#( 
 	parameter AW = 15, // Cantidad de bits  de la direcci�n 
 	parameter DW = 12, // cantidad de Bits de los datos 
-	parameter   imageFILE= "/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Camara/wp02_drivercamara-grupo11/src/image.men")
+	parameter   imageFILE= "/image.men")
 	(  
 	input  clk_w, 
 	input  [AW-1: 0] addr_in, 

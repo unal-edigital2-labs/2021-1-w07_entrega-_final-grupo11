@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Thu Aug  5 07:35:16 2021
+| Date         : Tue Aug 10 07:41:58 2021
 | Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_utilization -file nexys4ddr_utilization_synth.rpt
 | Design       : nexys4ddr
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3615 |     0 |     63400 |  5.70 |
-|   LUT as Logic             | 3479 |     0 |     63400 |  5.49 |
+| Slice LUTs*                | 3604 |     0 |     63400 |  5.68 |
+|   LUT as Logic             | 3468 |     0 |     63400 |  5.47 |
 |   LUT as Memory            |  136 |     0 |     19000 |  0.72 |
 |     LUT as Distributed RAM |  136 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            | 2984 |     0 |    126800 |  2.35 |
-|   Register as Flip Flop    | 2984 |     0 |    126800 |  2.35 |
+| Slice Registers            | 2942 |     0 |    126800 |  2.32 |
+|   Register as Flip Flop    | 2942 |     0 |    126800 |  2.32 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    8 |     0 |     31700 |  0.03 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 139   |          Yes |         Set |            - |
-| 2845  |          Yes |       Reset |            - |
+| 141   |          Yes |         Set |            - |
+| 2801  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -94,9 +94,9 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   87 |    87 |       210 | 41.43 |
-|   IOB Master Pads           |   40 |       |           |       |
-|   IOB Slave Pads            |   42 |       |           |       |
+| Bonded IOB                  |   79 |    79 |       210 | 37.62 |
+|   IOB Master Pads           |   36 |       |           |       |
+|   IOB Slave Pads            |   39 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -152,22 +152,23 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 2845 |        Flop & Latch |
-| LUT6     | 1280 |                 LUT |
-| LUT4     | 1079 |                 LUT |
-| LUT1     |  523 |                 LUT |
-| LUT5     |  417 |                 LUT |
-| LUT2     |  408 |                 LUT |
-| CARRY4   |  403 |          CarryLogic |
-| LUT3     |  394 |                 LUT |
-| FDSE     |  139 |        Flop & Latch |
+| FDRE     | 2801 |        Flop & Latch |
+| LUT6     | 1275 |                 LUT |
+| LUT4     | 1101 |                 LUT |
+| LUT1     |  524 |                 LUT |
+| LUT2     |  412 |                 LUT |
+| CARRY4   |  396 |          CarryLogic |
+| LUT5     |  392 |                 LUT |
+| LUT3     |  389 |                 LUT |
+| FDSE     |  141 |        Flop & Latch |
 | RAMB36E1 |  134 |        Block Memory |
 | RAMD64E  |   88 |  Distributed Memory |
 | RAMD32   |   72 |  Distributed Memory |
 | OBUF     |   56 |                  IO |
-| IBUF     |   31 |                  IO |
 | RAMS32   |   24 |  Distributed Memory |
+| IBUF     |   23 |                  IO |
 | MUXF7    |    8 |               MuxFx |
+| OBUFT    |    1 |                  IO |
 | DSP48E1  |    1 |    Block Arithmetic |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

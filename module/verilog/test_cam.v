@@ -23,25 +23,25 @@ module test_cam(
     input wire rst,         	// reset button
 
 	// VGA input/output  
-    output wire VGA_Hsync_n,  // horizontal sync output
+    /*output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire [3:0] VGA_R,	// 4-bit VGA red output
     output wire [3:0] VGA_G,  // 4-bit VGA green output
-    output wire [3:0] VGA_B,  // 4-bit VGA blue output
+    output wire [3:0] VGA_B,  // 4-bit VGA blue output*/
 	
 	//CAMARA input/output
 	
 	output wire CAM_xclk,		// System  clock imput
-	output wire CAM_pwdn,		// power down mode 
-	output wire CAM_reset,		// clear all registers of cam
+	//output wire CAM_pwdn,		// power down mode 
+	//output wire CAM_reset,		// clear all registers of cam
 	
 	// colocar aqui las entras  y salidas de la camara  que hace falta
 
 	input wire CAM_pclk,
 	input wire CAM_vsync,
 	input wire CAM_href,
-	input wire [7:0] CAM_px_data
-
+	input wire [7:0] CAM_px_data,
+	output [11:0]data_mem
 		
 );
 
@@ -72,7 +72,7 @@ wire DP_RAM_regW;
 reg  [AW-1: 0] DP_RAM_addr_out;  
 	
 // Conexión VGA Driver
-wire [DW-1:0]data_mem;	   // Salida de dp_ram al driver VGA
+//wire [DW-1:0]data_mem;	   // Salida de dp_ram al driver VGA
 wire [DW-1:0]data_RGB332;  // salida del driver VGA al puerto
 wire [9:0]VGA_posX;		   // Determinar la pos de memoria que viene del VGA
 wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
@@ -93,8 +93,8 @@ Asignación de las señales de control xclk pwdn y reset de la camara
 **************************************************************************** */
 
 assign CAM_xclk=  clk24M;
-assign CAM_pwdn=  0;			// power down mode 
-assign CAM_reset= 1;
+//assign CAM_pwdn=  0;			// power down mode 
+//assign CAM_reset= 1;
 
 
 
@@ -106,8 +106,7 @@ assign CAM_reset= 1;
   utilizado para la camara , a partir de una frecuencia de 32 Mhz
 **************************************************************************** */
 //assign clk32M =clk;
-clk24_25_nexys4
-  clk25_24(
+clk24_25_nexys4  clk25_24(
   .CLK_IN1(clk),
   .CLK_OUT1(clk25M),
   .CLK_OUT2(clk24M),
@@ -137,7 +136,7 @@ buffer_ram_dp #( AW,DW)
 VGA_Driver640x480
 **************************************************************************** */
 
-VGA_Driver640x480 VGA640x480
+/*VGA_Driver640x480 VGA640x480
 (
 	.rst(rst),
 	.clk(clk25M), 				// 25MHz  para 60 hz de 640x480
@@ -148,7 +147,7 @@ VGA_Driver640x480 VGA640x480
 	.posX(VGA_posX), 			// posición en horizontal del pixel siguiente
 	.posY(VGA_posY) 			// posición en vertical  del pixel siguiente
 
-);
+);*/
 
 
 /* ****************************************************************************
@@ -156,12 +155,12 @@ LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
 adicionales seran iguales al color del último pixel de memoria 
 **************************************************************************** */
-always @ (VGA_posX, VGA_posY) begin
+/*always @ (VGA_posX, VGA_posY) begin
 		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
 			DP_RAM_addr_out=15'b111111111111111;
 		else
 	                DP_RAM_addr_out = VGA_posX + VGA_posY * CAM_SCREEN_X;
-end
+end*/
 
 
 /*****************************************************************************

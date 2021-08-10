@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Aug 10 00:31:53 2021
+# Process ID: 240850
+# Current directory: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/divFreq.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/ultraSound.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/PWMUS.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/infraRed.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/wheels.v}
+# read_verilog {/home/camilo/Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-83] Releasing license: Synthesis
+5 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-344] 'source' was cancelled
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 10 00:32:10 2021...

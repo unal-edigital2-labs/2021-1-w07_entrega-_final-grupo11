@@ -5,36 +5,24 @@ from litex.soc.interconnect.csr_eventmanager import *
 
 # Modulo Principal
 class Camara(Module,AutoCSR):
-    def __init__(self, xclk,pclk,cam_data_in):
+    def __init__(self, CAM_xclk,CAM_pclk,cam_data_in):
         self.clk = ClockSignal()   
         self.rst = ResetSignal()  
-        self.xclk = xclk
+        self.CAM_xclk = CAM_xclk
         
-        self.pclk = pclk
-        self.vsync= Signal()
-        self.href= Signal()
-        self.px_data = cam_data_in
-        
-        self.done= CSRStatus()
-        
-        self.mem_px_addr = CSRStorage(15)
-        self.mem_px_data = CSRStatus(8)  
+        self.CAM_pclk = CAM_pclk
+        self.CAM_vsync= Signal()
+        self.CAM_href= Signal()
+        self.CAM_px_data = cam_data_in
 
-        self.specials +=Instance("camara",
+        self.data_mem = CSRStatus(12)
+
+        self.specials +=Instance("test_cam",
             i_clk = self.clk,
             i_rst = self.rst,
-            o_xclk = self.xclk,
-            i_pclk = self.pclk,
-            i_px_data=self.px_data,
-            o_done =self.done.status,
-            i_mem_px_addr=self.mem_px_addr.storage,
-            o_mem_px_data= self.mem_px_data.status,
+            o_CAM_xclk = self.CAM_xclk,
+            i_CAM_pclk = self.CAM_pclk,
+            i_CAM_px_data=self.CAM_px_data,
+            i_data_mem=self.data_mem.status
         )
         
-        
-       
-        self.submodules.ev = EventManager()
-        self.ev.ok = EventSourceProcess()
-        self.ev.finalize()
- 
-        self.ev.ok.trigger.eq(self.done.status)
