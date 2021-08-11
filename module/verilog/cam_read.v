@@ -19,97 +19,71 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module cam_read #(
-		parameter AW = 15,  // Cantidad de bits  de la direcci�n
-		parameter DW = 12   //tamaño de la data 
-		)
-		(
+		parameter AW = 15 // Cantidad de bits  de la dirección 
+		)(
+		input pclk,
+		input rst,
+		input vsync,
+		input href,
+		input [7:0] px_data,
 
-		CAM_pclk,     //reloj 
-		CAM_vsync,    //Señal Vsync para captura de datos
-		CAM_href,	// Señal Href para la captura de datos
-		rst,		//reset
-		
-		DP_RAM_regW, 	//Control de esctritura
-		DP_RAM_addr_in,	//Dirección de memoria de entrada
-		DP_RAM_data_in,	//Data de entrada a la RAM
-		CAM_px_data
-	    );
+		output reg[AW-1:0] mem_px_addr,
+		output reg[7:0]  mem_px_data,
+		output reg px_wr
+   );
 	
-	    input [7:0]CAM_px_data;
-	    
-		input CAM_pclk;		//Reloj de la camara
-		input CAM_vsync;	//señal vsync de la camara
-		input CAM_href;		//señal href de la camara
-		input rst;		//reset de la camara 
-		
-		output reg DP_RAM_regW; 		//Registro del control de escritura 
-	    output reg [AW-1:0] DP_RAM_addr_in;	// Registro de salida de la dirección de memoria de entrada 
-	    output reg [DW-1:0] DP_RAM_data_in;	// Registro de salida de la data a escribir en memoria
-        
-        
-//Maquina de estados	
 	
-localparam INIT=0,BYTE1=1,BYTE2=2,NOTHING=3,imaSiz=19199;
-reg [1:0]status=0;
-
-always @(posedge CAM_pclk)begin
-    if(rst)begin
-        status<=0;
-        DP_RAM_data_in<=0;
-        DP_RAM_addr_in<=0;
-        DP_RAM_regW<=0;
-    end
-    else begin
-	    
-     case (status)
-         INIT:begin 
-             if(~CAM_vsync&CAM_href)begin // cuando la señal vsync negada y href son, se empieza con la escritura de los datos en memoria.
-                 status<=BYTE2;
-                 DP_RAM_data_in[11:8]<=CAM_px_data[3:0]; //se asignan los 4 bits menos significativos de la información que da la camara a los 4 bits mas significativos del dato a escribir
-             end
-             else begin
-                 DP_RAM_data_in<=0;
-                 DP_RAM_addr_in<=0;
-                 DP_RAM_regW<=0;
-             end 
-         end
-         
-         BYTE1:begin
-             DP_RAM_regW<=0; 					//Desactiva la escritura en memoria 
-             if(CAM_href)begin					//si la señal Href esta arriva, evalua si ya llego a la ultima posicion en memoria
-                     if(DP_RAM_addr_in==imaSiz) DP_RAM_addr_in<=0;			//Si ya llego al final, reinicia la posición en memoria. 
-                     else DP_RAM_addr_in<=DP_RAM_addr_in+1;	//Si aun no ha llegado a la ultima posición sigue recorriendo los espacios en memoria y luego escribe en ellos cuan do pasa al estado Byte2
-                 DP_RAM_data_in[11:8]<=CAM_px_data[3:0];
-                 status<=BYTE2;
-             end
-             else status<=NOTHING;   
-         end
-         
-         BYTE2:begin							//En este estado se habilita la escritura en memoria
-             	DP_RAM_data_in[7:0]<=CAM_px_data;
-             	DP_RAM_regW<=1;    
-             	status<=BYTE1;
-         end
-         
-         NOTHING:begin						// es un estado de trnsición    
-             if(CAM_href)begin					// verifica la señal href y se asigna los 4 bits mas significativos y se mueve una posición en memoria
-                 status<=BYTE2;
-                 DP_RAM_data_in[11:8]<=CAM_px_data[3:0];
-                 DP_RAM_addr_in<=DP_RAM_addr_in+1;
-             end
-             else if (CAM_vsync) status<=INIT;		// Si vsync esta arriba inicializa la maquina de estados    
-         end
-         
-         default: status<=INIT;
-    endcase
- end
-end
-		
 
 /********************************************************************************
 Por favor colocar en este archivo el desarrollo realizado por el grupo para la 
 captura de datos de la camara 
 debe tener en cuenta el nombre de las entradas  y salidad propuestas 
 ********************************************************************************/
+reg [1:0]cs=0;// Actúa como el contador de case (para establecer los casos)
+reg ovsync;// Utilizado para guardar el valor pasado de Vsync
+reg bp=1'b0;
+always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
+	case (cs)//inicio de la máquina de estados
+	0: begin// estado 0 de la máquina de estados cs=00
+		if(ovsync && vsync)begin//rápidamente ovsync ha tomado el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación de tipo AND
+		cs=1;// si ovsync y !vsync =1 entonces procedemos a pasar al case 1
+		mem_px_addr=0;//iniciamos en la posición de memoria 0
+		end
+	end
+	1: begin// primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
+		px_wr=0;// indicamos que aún no escribimos en la memoria
+		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
+/****************************************************************
+ En esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
+ del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
+ 332(RGB)         
+******************************************************************/             
+				mem_px_data[7]=px_data[3];              
+				mem_px_data[6]=px_data[2];         
+				mem_px_data[5]=px_data[1];
+				cs=2;// Después de tomar los datos más significativos pasamos al estado 2 
+		end
+	end
+	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
+				mem_px_data[4]=px_data[7];
+				mem_px_data[3]=px_data[6];
+				mem_px_data[2]=px_data[5];
 
+                mem_px_data[1]=px_data[3];
+				mem_px_data[0]=px_data[2];
+
+			 	px_wr=1;//Procedemos a escribir en memoria
+				mem_px_addr=mem_px_addr+1;//Nos desplazamos a la siguiente dirección de memoria
+				cs=1;//Posteriormente volvemos al estado 1 de la máquina de estados 
+		if(vsync) begin// Con este condicional analizamos si vsync está en un flanco de subida volvemos al estado 0
+		cs=0;//volvemos al estado 0 de nuestra máquina de estados
+		end		
+		if (mem_px_addr==19200) begin//Limitador de memoria
+			mem_px_addr=0;// Si la memoria  llega  a la posición de  19200 píxeles, debe volver a la posición 0 nuevamente
+			cs=0;//Nos devolvemos al estado 0 a evaluar vsync
+		end
+		end
+endcase
+	ovsync<=vsync;// Se usa para que recurrentemente ovsync tome el valor pasado de vsync
+end
 endmodule

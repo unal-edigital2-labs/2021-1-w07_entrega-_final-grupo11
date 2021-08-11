@@ -17,8 +17,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module buffer_ram_dp#( 
-	parameter AW = 15, // Cantidad de bits  de la direcci�n 
-	parameter DW = 12, // cantidad de Bits de los datos 
+	parameter AW = 15, 
+	parameter DW = 8, 
 	parameter   imageFILE= "/image.men")
 	(  
 	input  clk_w, 
@@ -31,19 +31,16 @@ module buffer_ram_dp#(
 	output reg [DW-1: 0] data_out
 	);
 
-// Calcular el n�mero de posiciones totales de memoria 
-localparam NPOS = 2 ** AW; // Memoria
+localparam NPOS = 2 ** AW; 
 localparam imaSiz = 160 * 120;
  reg [DW-1: 0] ram [0: NPOS-1]; 
 
 
-//	 escritura  de la memoria port 1 
 always @(posedge clk_w) begin 
        if (regwrite == 1) 
              ram[addr_in] <= data_in;
 end
 
-//	 Lectura  de la memoria port 2 
 always @(posedge clk_r) begin 
 		data_out <= ram[addr_out]; 
 end
@@ -51,7 +48,7 @@ end
 
 initial begin
 	$readmemh(imageFILE, ram);
-	ram[imaSiz]=12'h0;	
+	ram[imaSiz]=8'h0;	
 end
 
 endmodule

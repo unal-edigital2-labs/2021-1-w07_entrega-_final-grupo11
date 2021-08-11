@@ -11,7 +11,6 @@
 
 #include "delay.h"
 #include "display.h"
-#include "camara.h"
 
 static char *readstr(void)
 {
@@ -225,17 +224,8 @@ static void vga_test(void)
 
 static void camara_test(void)
 {
-	unsigned short temp2 =0xFF;
-	printf("Test del los camara... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-		unsigned short temp = camara_cntrl_mem_px_data_read();
-		if (temp2 != temp){
-			printf("el bus de la camara es : %i\n", temp);
-			printf("el boton de la camara esta en: %i\n",camara_cntrl_done_read());
-			printf("la habilitacion de la interrupción esta en : %i %i %i\n",camara_cntrl_ev_enable_read(), camara_cntrl_ev_status_read(), camara_cntrl_ev_pending_read());
-			camara_isr();
-			temp2 = temp;
-		}
+	while(!(buttons_in_read()&1)){
+		//printf("%i \n", camara_cntrl_data_mem_read());
 	}
 }
 
@@ -792,12 +782,11 @@ static void console_service(void)
 
 int main(void)
 {
-
 	irq_setmask(0);
 	irq_setie(1);
 	uart_init();
 
-	camara_init();
+	//camara_init();
 	wheels_cntrl_state_write(3);
 
 	//Volumen MP3
@@ -812,13 +801,9 @@ int main(void)
 
 	//direction();
 	
-	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software  interrupt "__DATE__" "__TIME__"\n");
+	puts("\nSoC - RiscV project UNAL 2021-1 -- CPU testing software  interrupt "__DATE__" "__TIME__"\n");
 	help();
 	prompt();
-
-
-
-	
 	
 	while(1) {
 		console_service();

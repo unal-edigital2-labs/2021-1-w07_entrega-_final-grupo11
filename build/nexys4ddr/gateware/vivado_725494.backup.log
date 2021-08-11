@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Aug 11 15:12:02 2021
+# Process ID: 725494
+# Current directory: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/divFreq.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/ultraSound.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/PWMUS.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/infraRed.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/wheels.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/test_cam.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/cam_read.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/buffer_ram_dp.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/clk24_25_nexys4.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/clk24_25_nexys4_clk_wiz.v}
+# read_verilog {/home/camilo/Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 725531
+ERROR: [Synth 8-2715] syntax error near * [/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/buffer_ram_dp.v:44]
+INFO: [Synth 8-2350] module buffer_ram_dp ignored due to previous errors [/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/buffer_ram_dp.v:19]
+Failed to read verilog '/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/buffer_ram_dp.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+7 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 11 15:12:24 2021...

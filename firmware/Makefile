@@ -3,7 +3,7 @@ BUILD_DIR=../build/nexys4ddr
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS=isr.o delay.o display.o camara.o main.o
+OBJECTS=isr.o delay.o display.o main.o
 
 all: firmware.bin
 

@@ -90,6 +90,9 @@ _io = [
     ("CAM_xclk", 0, Pins("H1"), IOStandard("LVCMOS33")),
     ("CAM_pclk", 0, Pins("F6"), IOStandard("LVCMOS33")),
  
+    ("CAM_vsync", 0, Pins("J2"), IOStandard("LVCMOS33")),
+    ("CAM_href", 0, Pins("G1"), IOStandard("LVCMOS33")),
+
     ("cam_data_in",  0, Pins("E7"), IOStandard("LVCMOS33")),
     ("cam_data_in",  1, Pins("J3"), IOStandard("LVCMOS33")),
     ("cam_data_in", 2, Pins("E18"), IOStandard("LVCMOS33")),
