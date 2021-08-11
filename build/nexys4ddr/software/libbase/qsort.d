@@ -1,7 +1,8 @@
-qsort.o: /home/camilo/Litex/litex/litex/soc/software/libbase/qsort.c \
- /home/camilo/Litex/litex/litex/soc/software/include/base/stdlib.h \
- /home/camilo/Litex/litex/litex/soc/software/include/base/stddef.h
+qsort.o: \
+ /home/juan/install_litex/litex/litex/soc/software/libbase/qsort.c \
+ /home/juan/install_litex/litex/litex/soc/software/include/base/stdlib.h \
+ /home/juan/install_litex/litex/litex/soc/software/include/base/stddef.h
 
-/home/camilo/Litex/litex/litex/soc/software/include/base/stdlib.h:
+/home/juan/install_litex/litex/litex/soc/software/include/base/stdlib.h:
 
-/home/camilo/Litex/litex/litex/soc/software/include/base/stddef.h:
+/home/juan/install_litex/litex/litex/soc/software/include/base/stddef.h:

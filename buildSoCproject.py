@@ -18,7 +18,7 @@ from litex.soc.cores import gpio
 from module import rgbled
 from module import sevensegment
 from module import vgacontroller
-#from module import camara
+from module import camara
 from module import ultraSound
 from module import PWMUS
 from module import infraRed
@@ -43,11 +43,11 @@ class BaseSoC(SoCCore):
 		platform.add_source("module/verilog/infraRed.v")
 		platform.add_source("module/verilog/wheels.v")
 
-		#platform.add_source("module/verilog/test_cam.v")
-		#platform.add_source("module/verilog/cam_read.v")
-		#platform.add_source("module/verilog/buffer_ram_dp.v")
-		#platform.add_source("module/verilog/clk24_25_nexys4.v")
-		#platform.add_source("module/verilog/image.men")
+		platform.add_source("module/verilog/test_cam.v")
+		platform.add_source("module/verilog/cam_read.v")
+		platform.add_source("module/verilog/buffer_ram_dp.v")
+		platform.add_source("module/verilog/clk24_25_nexys4.v")
+		platform.add_source("module/verilog/image.men")
 
 
 
@@ -99,13 +99,13 @@ class BaseSoC(SoCCore):
 		
 		
 		#camara
-		#SoCCore.add_csr(self,"camara_cntrl")
-		#cam_data_in = Cat(*[platform.request("cam_data_in", i) for i in range(8)])		
-		#self.submodules.camara_cntrl = camara.Camara(platform.request("CAM_xclk"),platform.request("CAM_pclk"),cam_data_in)
+		SoCCore.add_csr(self,"camara_cntrl")
+		cam_data_in = Cat(*[platform.request("cam_data_in", i) for i in range(8)])		
+		self.submodules.camara_cntrl = camara.Camara(platform.request("CAM_xclk"),platform.request("CAM_pclk"),cam_data_in)
 
 		#I2C
-		SoCCore.add_csr(self,"i2c_cntrl")
-		self.submodules.i2c_cntrl = i2c.I2C(platform.request("i2c"))
+		#SoCCore.add_csr(self,"i2c_cntrl")
+		#self.submodules.i2c_cntrl = i2c.I2C(platform.request("i2c"))
 
 
 		#ultraSound

@@ -6,13 +6,18 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/divFreq.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/ultraSound.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/PWMUS.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/infraRed.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/wheels.v}
-read_verilog {/home/camilo/Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
-read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/PWMUS.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/infraRed.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v}
+add_files {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/image.men}
+read_verilog {/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
 

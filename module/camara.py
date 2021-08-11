@@ -14,6 +14,9 @@ class Camara(Module,AutoCSR):
         self.CAM_vsync= Signal()
         self.CAM_href= Signal()
         self.CAM_px_data = cam_data_in
+        
+        self.VGA_posX = CSRStorage(10) 
+        self.VGA_posY = CSRStorage(9)
 
         self.data_mem = CSRStatus(12)
 
@@ -23,6 +26,9 @@ class Camara(Module,AutoCSR):
             o_CAM_xclk = self.CAM_xclk,
             i_CAM_pclk = self.CAM_pclk,
             i_CAM_px_data=self.CAM_px_data,
-            i_data_mem=self.data_mem.status
+            o_data_mem=self.data_mem.status,
+            i_VGA_posX=self.VGA_posX.storage,
+            i_VGA_posY=self.VGA_posY.storage
+            
         )
         

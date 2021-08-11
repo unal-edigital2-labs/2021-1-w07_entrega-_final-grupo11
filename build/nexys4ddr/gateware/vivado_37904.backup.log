@@ -1,0 +1,162 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Aug 10 17:19:03 2021
+# Process ID: 37904
+# Current directory: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/PWMUS.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/infraRed.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v}
+# add_files {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/image.men}
+# read_verilog {/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37919
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 1608 ; free virtual = 5608
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4278]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4298]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4318]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3528]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3553]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3565]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3574]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3583]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3606]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3667]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3735]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3803]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3815]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3824]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3879]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3921]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3963]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4005]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4025]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4055]
+INFO: [Synth 8-6157] synthesizing module 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:21]
+	Parameter CAM_SCREEN_X bound to: 160 - type: integer 
+	Parameter CAM_SCREEN_Y bound to: 120 - type: integer 
+	Parameter AW bound to: 17 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+	Parameter RED_VGA bound to: 12'b000011100000 
+	Parameter GREEN_VGA bound to: 12'b000000011100 
+	Parameter BLUE_VGA bound to: 12'b000000000011 
+INFO: [Synth 8-6157] synthesizing module 'clk24_25_nexys4' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v:69]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (1#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39998]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 12.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 48.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 50 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39998]
+INFO: [Synth 8-6155] done synthesizing module 'clk24_25_nexys4' (3#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v:69]
+WARNING: [Synth 8-7071] port 'LOCKED' of module 'clk24_25_nexys4' is unconnected for instance 'clk25_24' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:110]
+WARNING: [Synth 8-7023] instance 'clk25_24' of module 'clk24_25_nexys4' has 5 connections declared, but only 4 given [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:110]
+INFO: [Synth 8-6157] synthesizing module 'buffer_ram_dp' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:19]
+	Parameter AW bound to: 17 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+	Parameter imageFILE bound to: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Camara/wp02_drivercamara-grupo11/src/image.men - type: string 
+	Parameter NPOS bound to: 131072 - type: integer 
+	Parameter imaSiz bound to: 19200 - type: integer 
+INFO: [Synth 8-3876] $readmem data file '/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Camara/wp02_drivercamara-grupo11/src/image.men' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'buffer_ram_dp' (4#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:19]
+INFO: [Synth 8-6157] synthesizing module 'cam_read' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:21]
+	Parameter AW bound to: 17 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'cam_read' (5#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'test_cam' (6#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:21]
+ERROR: [Synth 8-448] named port connection 'data_mem' does not exist for instance 'test_cam' of module 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4377]
+WARNING: [Synth 8-7071] port 'CAM_pwdn' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_reset' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_vsync' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_href' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7023] instance 'test_cam' of module 'test_cam' has 9 connections declared, but only 5 given [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+INFO: [Synth 8-6157] synthesizing module 'ultraSound' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v:23]
+	Parameter Start bound to: 0 - type: integer 
+	Parameter Pulse bound to: 1 - type: integer 
+	Parameter Echo bound to: 2 - type: integer 
+	Parameter End bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'divFreq' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'divFreq' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'ultraSound' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'nexys4ddr' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 2392 ; free virtual = 6398
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 7 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 10 17:19:31 2021...

@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Tue Aug 10 07:43:10 2021
-| Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
+| Date         : Tue Aug 10 19:45:57 2021
+| Host         : juan-ThinkPad-X260 running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_timing_summary -datasheet -max_paths 10 -file nexys4ddr_timing.rpt
 | Design       : nexys4ddr
 | Device       : 7a100t-csg324
@@ -39,12 +39,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (3402)
+1. checking no_clock (16279)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (12742)
-5. checking no_input_delay (22)
-6. checking no_output_delay (57)
+4. checking unconstrained_internal_endpoints (68778)
+5. checking no_input_delay (21)
+6. checking no_output_delay (55)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -52,9 +52,11 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (3402)
----------------------------
- There are 3373 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+1. checking no_clock (16279)
+----------------------------
+ There are 6144 register/latch pins with no clock driven by root clock pin: CAM_pclk (HIGH)
+
+ There are 10106 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
  There are 29 register/latch pins with no clock driven by root clock pin: ultraSound/freq1/newCLK_reg/Q (HIGH)
 
@@ -69,23 +71,23 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (12742)
+4. checking unconstrained_internal_endpoints (68778)
 ----------------------------------------------------
- There are 12742 pins that are not constrained for maximum delay. (HIGH)
+ There are 68778 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (22)
+5. checking no_input_delay (21)
 -------------------------------
- There are 22 input ports with no input delay specified. (HIGH)
+ There are 21 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (57)
+6. checking no_output_delay (55)
 --------------------------------
- There are 57 ports with no output delay specified. (HIGH)
+ There are 55 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -179,5 +181,15 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 | Data sheet
 | ----------
 ------------------------------------------------------------------------------------------------
+
+Combinational Delays
+
+-----+----------+-----------+---------+-----------+---------+
+From | To       |   Max     | Process |   Min     | Process |
+Port | Port     | Delay(ns) | Corner  | Delay(ns) | Corner  |
+-----+----------+-----------+---------+-----------+---------+
+clk  | CAM_xclk |    10.141 | SLOW    |     2.903 | FAST    |
+-----+----------+-----------+---------+-----------+---------+
+
 
 

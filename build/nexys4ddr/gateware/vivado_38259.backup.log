@@ -1,0 +1,917 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Aug 10 17:24:17 2021
+# Process ID: 38259
+# Current directory: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/PWMUS.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/infraRed.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v}
+# add_files {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/image.men}
+# read_verilog {/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 38272
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 1603 ; free virtual = 5594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4278]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4298]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4318]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3528]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3553]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3565]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3574]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3583]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3606]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3667]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3735]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3803]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3815]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3824]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3879]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3921]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:3963]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4005]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4025]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4055]
+INFO: [Synth 8-6157] synthesizing module 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:21]
+	Parameter CAM_SCREEN_X bound to: 160 - type: integer 
+	Parameter CAM_SCREEN_Y bound to: 120 - type: integer 
+	Parameter AW bound to: 17 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+	Parameter RED_VGA bound to: 12'b000011100000 
+	Parameter GREEN_VGA bound to: 12'b000000011100 
+	Parameter BLUE_VGA bound to: 12'b000000000011 
+INFO: [Synth 8-6157] synthesizing module 'clk24_25_nexys4' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v:69]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (1#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39998]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 12.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 48.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 50 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39998]
+INFO: [Synth 8-6155] done synthesizing module 'clk24_25_nexys4' (3#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v:69]
+WARNING: [Synth 8-7071] port 'LOCKED' of module 'clk24_25_nexys4' is unconnected for instance 'clk25_24' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:110]
+WARNING: [Synth 8-7023] instance 'clk25_24' of module 'clk24_25_nexys4' has 5 connections declared, but only 4 given [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:110]
+INFO: [Synth 8-6157] synthesizing module 'buffer_ram_dp' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:19]
+	Parameter AW bound to: 17 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+	Parameter imageFILE bound to: /home/juan/Documentos/Digital_II/Nexys4/Proyectos/Camara/wp02_drivercamara-grupo11/src/image.men - type: string 
+	Parameter NPOS bound to: 131072 - type: integer 
+	Parameter imaSiz bound to: 19200 - type: integer 
+INFO: [Synth 8-3876] $readmem data file '/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Camara/wp02_drivercamara-grupo11/src/image.men' is read successfully [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'buffer_ram_dp' (4#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/buffer_ram_dp.v:19]
+INFO: [Synth 8-6157] synthesizing module 'cam_read' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:21]
+	Parameter AW bound to: 17 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'cam_read' (5#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/cam_read.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'test_cam' (6#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/test_cam.v:21]
+WARNING: [Synth 8-689] width (12) of port connection 'data_mem' does not match port width (8) of module 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4377]
+WARNING: [Synth 8-7071] port 'CAM_pwdn' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_reset' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_vsync' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7071] port 'CAM_href' of module 'test_cam' is unconnected for instance 'test_cam' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+WARNING: [Synth 8-7023] instance 'test_cam' of module 'test_cam' has 10 connections declared, but only 6 given [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4371]
+INFO: [Synth 8-6157] synthesizing module 'ultraSound' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v:23]
+	Parameter Start bound to: 0 - type: integer 
+	Parameter Pulse bound to: 1 - type: integer 
+	Parameter Echo bound to: 2 - type: integer 
+	Parameter End bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'divFreq' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'divFreq' (7#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/divFreq.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'ultraSound' (8#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/ultraSound.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PWMUS' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/PWMUS.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'PWMUS' (9#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/PWMUS.v:22]
+INFO: [Synth 8-6157] synthesizing module 'infraRed' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/infraRed.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'infraRed' (10#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/infraRed.v:23]
+INFO: [Synth 8-6157] synthesizing module 'wheels' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'wheels' (11#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/wheels.v:23]
+INFO: [Synth 8-6157] synthesizing module 'picorv32' [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:62]
+	Parameter ENABLE_COUNTERS bound to: 1'b1 
+	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
+	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
+	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
+	Parameter LATCHED_MEM_RDATA bound to: 1'b0 
+	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
+	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
+	Parameter TWO_CYCLE_ALU bound to: 1'b0 
+	Parameter COMPRESSED_ISA bound to: 1'b0 
+	Parameter CATCH_MISALIGN bound to: 1'b1 
+	Parameter CATCH_ILLINSN bound to: 1'b1 
+	Parameter ENABLE_PCPI bound to: 1'b0 
+	Parameter ENABLE_MUL bound to: 1'b1 
+	Parameter ENABLE_FAST_MUL bound to: 1'b0 
+	Parameter ENABLE_DIV bound to: 1'b1 
+	Parameter ENABLE_IRQ bound to: 1'b1 
+	Parameter ENABLE_IRQ_QREGS bound to: 1'b1 
+	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
+	Parameter ENABLE_TRACE bound to: 1'b0 
+	Parameter REGS_INIT_ZERO bound to: 1'b0 
+	Parameter MASKED_IRQ bound to: 0 - type: integer 
+	Parameter LATCHED_IRQ bound to: -1 - type: integer 
+	Parameter PROGADDR_RESET bound to: 0 - type: integer 
+	Parameter PROGADDR_IRQ bound to: 16 - type: integer 
+	Parameter STACKADDR bound to: -1 - type: integer 
+	Parameter irq_timer bound to: 0 - type: integer 
+	Parameter irq_ebreak bound to: 1 - type: integer 
+	Parameter irq_buserror bound to: 2 - type: integer 
+	Parameter irqregs_offset bound to: 32 - type: integer 
+	Parameter regfile_size bound to: 36 - type: integer 
+	Parameter regindex_bits bound to: 6 - type: integer 
+	Parameter WITH_PCPI bound to: 1'b1 
+	Parameter TRACE_BRANCH bound to: 36'b000100000000000000000000000000000000 
+	Parameter TRACE_ADDR bound to: 36'b001000000000000000000000000000000000 
+	Parameter TRACE_IRQ bound to: 36'b100000000000000000000000000000000000 
+	Parameter cpu_state_trap bound to: 8'b10000000 
+	Parameter cpu_state_fetch bound to: 8'b01000000 
+	Parameter cpu_state_ld_rs1 bound to: 8'b00100000 
+	Parameter cpu_state_ld_rs2 bound to: 8'b00010000 
+	Parameter cpu_state_exec bound to: 8'b00001000 
+	Parameter cpu_state_shift bound to: 8'b00000100 
+	Parameter cpu_state_stmem bound to: 8'b00000010 
+	Parameter cpu_state_ldmem bound to: 8'b00000001 
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_mul' [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2192]
+	Parameter STEPS_AT_ONCE bound to: 1 - type: integer 
+	Parameter CARRY_CHAIN bound to: 4 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2223]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_mul' (12#1) [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2192]
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_div' [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2415]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2440]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_div' (13#1) [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2415]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:332]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1264]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1310]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1493]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32' (14#1) [/home/juan/install_litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:62]
+WARNING: [Synth 8-7071] port 'trace_valid' of module 'picorv32' is unconnected for instance 'picorv32' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4507]
+WARNING: [Synth 8-7071] port 'trace_data' of module 'picorv32' is unconnected for instance 'picorv32' [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4507]
+WARNING: [Synth 8-7023] instance 'picorv32' of module 'picorv32' has 27 connections declared, but only 25 given [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4507]
+INFO: [Synth 8-6155] done synthesizing module 'nexys4ddr' (15#1) [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 2316 ; free virtual = 6334
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 2322 ; free virtual = 6339
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 2322 ; free virtual = 6339
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2307.656 ; gain = 0.000 ; free physical = 2313 ; free virtual = 6330
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:372]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:372]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == C} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff2 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of_objects [get_cells -hierarchical -filter {ars_ff2 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+Finished Parsing XDC File [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys4ddr_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/nexys4ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2350.512 ; gain = 0.000 ; free physical = 2216 ; free virtual = 6241
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2350.512 ; gain = 0.000 ; free physical = 2216 ; free virtual = 6241
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2350.512 ; gain = 42.855 ; free physical = 2315 ; free virtual = 6324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2350.512 ; gain = 42.855 ; free physical = 2314 ; free virtual = 6324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2350.512 ; gain = 42.855 ; free physical = 2307 ; free virtual = 6325
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'cam_read'
+INFO: [Synth 8-802] inferred FSM for state register 'status_reg' in module 'ultraSound'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                               00
+                 iSTATE1 |                              010 |                               01
+                  iSTATE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'cam_read'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   Start |                               00 |                               00
+                   Pulse |                               01 |                               01
+                    Echo |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'status_reg' using encoding 'sequential' in module 'ultraSound'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2350.512 ; gain = 42.855 ; free physical = 2289 ; free virtual = 6309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   63 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 6     
+	   2 Input   32 Bit       Adders := 15    
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   29 Bit       Adders := 1     
+	   2 Input   21 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   15 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 16    
+	   2 Input    5 Bit       Adders := 8     
+	   2 Input    4 Bit       Adders := 25    
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 4     
+	               63 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               32 Bit    Registers := 59    
+	               21 Bit    Registers := 1     
+	               19 Bit    Registers := 2     
+	               17 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 27    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 7     
+	                4 Bit    Registers := 21    
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 14    
+	                1 Bit    Registers := 184   
++---RAMs : 
+	            3600K Bit	(307200 X 12 bit)          RAMs := 1     
+	            1024K Bit	(131072 X 8 bit)          RAMs := 1     
+	             128K Bit	(4096 X 32 bit)          RAMs := 1     
+	              64K Bit	(2048 X 32 bit)          RAMs := 1     
+	               1K Bit	(36 X 32 bit)          RAMs := 1     
+	              160 Bit	(16 X 10 bit)          RAMs := 6     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 4     
+	   2 Input   63 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 56    
+	   5 Input   32 Bit        Muxes := 5     
+	  12 Input   32 Bit        Muxes := 4     
+	   9 Input   32 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 7     
+	   6 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   19 Bit        Muxes := 1     
+	   4 Input   19 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 1     
+	   3 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   15 Bit        Muxes := 2     
+	   3 Input   15 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 2     
+	   3 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   4 Input    9 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 9     
+	   4 Input    8 Bit        Muxes := 2     
+	  12 Input    8 Bit        Muxes := 1     
+	   9 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 37    
+	   5 Input    8 Bit        Muxes := 3     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 3     
+	   3 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   9 Input    6 Bit        Muxes := 1     
+	  12 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   9 Input    5 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 11    
+	   7 Input    2 Bit        Muxes := 2     
+	   9 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 12    
+	   2 Input    1 Bit        Muxes := 142   
+	   4 Input    1 Bit        Muxes := 20    
+	   7 Input    1 Bit        Muxes := 2     
+	   9 Input    1 Bit        Muxes := 34    
+	   5 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP basesoc_p_r_adr_reg, operation Mode is: C'+A2*(B:0x280).
+DSP Report: register basesoc_v_count_reg is absorbed into DSP basesoc_p_r_adr_reg.
+DSP Report: register basesoc_h_count_reg is absorbed into DSP basesoc_p_r_adr_reg.
+DSP Report: register basesoc_p_r_adr_reg is absorbed into DSP basesoc_p_r_adr_reg.
+DSP Report: operator basesoc_p_r_adr0 is absorbed into DSP basesoc_p_r_adr_reg.
+DSP Report: operator basesoc_p_r_adr1 is absorbed into DSP basesoc_p_r_adr_reg.
+RAM Pipeline Warning: Read Address Register Found For RAM mem_3_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_3_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_3_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 2350.512 ; gain = 42.855 ; free physical = 2255 ; free virtual = 6283
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-7048] Resources of type BRAM have been overutilized even after performing resource management. Used = 272, Available = 270. 
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|nexys4ddr   | memdat_reg | 8192x32       | Block RAM      | 
+|nexys4ddr   | p_0_out    | 8192x32       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object     | PORT A (Depth x Width)  | W | R | PORT B (Depth x Width)  | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+|test_cam    | DP_RAM/ram_reg | 128 K x 8(NO_CHANGE)    | W |   | 128 K x 8(WRITE_FIRST)  |   | R | Port A and B     | 0      | 32     | 
+|nexys4ddr   | mem_3_reg      | 300 K x 12(WRITE_FIRST) |   | R | 300 K x 12(WRITE_FIRST) | W | R | Port A and B     | 0      | 120    | 
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+---------------+-----------+----------------------+---------------------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
++------------+---------------+-----------+----------------------+---------------------------+
+|picorv32    | cpuregs_reg   | Implied   | 64 x 32              | RAM64X1D x 4	RAM64M x 20	 | 
+|nexys4ddr   | storage_reg   | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_2_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_4_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_1_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_3_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_5_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | mem_1_reg     | Implied   | 2 K x 32             | RAM128X1D x 512	          | 
+|nexys4ddr   | mem_2_reg     | Implied   | 4 K x 32             | RAM128X1D x 1024	         | 
++------------+---------------+-----------+----------------------+---------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|nexys4ddr   | C'+A2*(B:0x280) | 10     | 10     | 10     | -      | 19     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:59 ; elapsed = 00:02:04 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1928 ; free virtual = 5957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:06 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1941 ; free virtual = 5945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object     | PORT A (Depth x Width)  | W | R | PORT B (Depth x Width)  | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+|test_cam    | DP_RAM/ram_reg | 128 K x 8(NO_CHANGE)    | W |   | 128 K x 8(WRITE_FIRST)  |   | R | Port A and B     | 0      | 32     | 
+|nexys4ddr   | mem_3_reg      | 300 K x 12(WRITE_FIRST) |   | R | 300 K x 12(WRITE_FIRST) | W | R | Port A and B     | 0      | 120    | 
++------------+----------------+-------------------------+---+---+-------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping	Report
++------------+---------------+-----------+----------------------+---------------------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
++------------+---------------+-----------+----------------------+---------------------------+
+|picorv32    | cpuregs_reg   | Implied   | 64 x 32              | RAM64X1D x 4	RAM64M x 20	 | 
+|nexys4ddr   | storage_reg   | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_2_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_4_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_1_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_3_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | storage_5_reg | Implied   | 16 x 8               | RAM32M x 2	               | 
+|nexys4ddr   | mem_1_reg     | Implied   | 2 K x 32             | RAM128X1D x 512	          | 
+|nexys4ddr   | mem_2_reg     | Implied   | 4 K x 32             | RAM128X1D x 1024	         | 
++------------+---------------+-----------+----------------------+---------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance test_cam/DP_RAM/ram_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_1_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_3_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_5_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mem_3_reg_7_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Common 17-14] Message 'Synth 8-7052' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:08 ; elapsed = 00:02:13 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1905 ; free virtual = 5941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5410] Found another clock driver \test_cam/clk25_24/clkin1_buf :O [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/module/verilog/clk24_25_nexys4.v:82]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:13 ; elapsed = 00:02:18 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1910 ; free virtual = 5938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:13 ; elapsed = 00:02:18 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:14 ; elapsed = 00:02:19 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:14 ; elapsed = 00:02:19 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5937
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     6|
+|2     |CARRY4     |   396|
+|3     |DSP48E1    |     1|
+|4     |LUT1       |   525|
+|5     |LUT2       |   443|
+|6     |LUT3       |   424|
+|7     |LUT4       |  1034|
+|8     |LUT5       |   645|
+|9     |LUT6       |  4601|
+|10    |MMCME2_ADV |     1|
+|11    |MUXF7      |  1586|
+|12    |MUXF8      |   712|
+|13    |RAM128X1D  |  1536|
+|14    |RAM32M     |    12|
+|15    |RAM64M     |    20|
+|16    |RAM64X1D   |     4|
+|17    |RAMB36E1   |   136|
+|24    |FDRE       |  3150|
+|25    |FDSE       |   139|
+|26    |IBUF       |    23|
+|27    |OBUF       |    56|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 2827.512 ; gain = 519.855 ; free physical = 1904 ; free virtual = 5936
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:11 ; elapsed = 00:02:16 . Memory (MB): peak = 2827.512 ; gain = 477.000 ; free physical = 1967 ; free virtual = 5999
+Synthesis Optimization Complete : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 2827.520 ; gain = 519.855 ; free physical = 1967 ; free virtual = 5999
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2827.520 ; gain = 0.000 ; free physical = 2058 ; free virtual = 6083
+INFO: [Netlist 29-17] Analyzing 4404 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:372]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:372]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == C} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff2 == TRUE}'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of_objects [get_cells -hierarchical -filter {ars_ff2 == TRUE}]'. [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc:374]
+Finished Parsing XDC File [/home/juan/Documentos/Digital_II/Nexys4/Proyectos/Proyecto_Final/w07_entrega-_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2827.520 ; gain = 0.000 ; free physical = 1976 ; free virtual = 6009
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1572 instances were transformed.
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 1536 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 20 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+181 Infos, 25 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:37 ; elapsed = 00:02:36 . Memory (MB): peak = 2827.520 ; gain = 527.867 ; free physical = 2287 ; free virtual = 6320
+# report_timing_summary -file nexys4ddr_timing_synth.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+report_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 2862.539 ; gain = 35.020 ; free physical = 1975 ; free virtual = 6003
+# report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_synth.rpt
+# report_utilization -file nexys4ddr_utilization_synth.rpt
+# opt_design -directive default
+Command: opt_design -directive default
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: default
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2894.555 ; gain = 32.016 ; free physical = 1964 ; free virtual = 5996
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 811448e6
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1964 ; free virtual = 5996
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 79 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 3bdf8bc5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1874 ; free virtual = 5903
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 13 cells
+INFO: [Opt 31-1021] In phase Retarget, 14 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 2a181092
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1870 ; free virtual = 5903
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 9f32c7d5
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1865 ; free virtual = 5905
+INFO: [Opt 31-389] Phase Sweep created 10 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Sweep, 56 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 9f32c7d5
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1866 ; free virtual = 5902
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 9f32c7d5
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1866 ; free virtual = 5901
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 9f32c7d5
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1862 ; free virtual = 5902
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              13  |                                             14  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |              10  |               0  |                                             56  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1863 ; free virtual = 5903
+Ending Logic Optimization Task | Checksum: 155989146
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2894.555 ; gain = 0.000 ; free physical = 1863 ; free virtual = 5903
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 136 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
+Number of BRAM Ports augmented: 120 newly gated: 16 Total Ports: 272
+Number of Flops added for Enable Generation: 10
+
+Ending PowerOpt Patch Enables Task | Checksum: 10e1a996a
+
+Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1955 ; free virtual = 5984
+Ending Power Optimization Task | Checksum: 10e1a996a
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:26 . Memory (MB): peak = 3070.578 ; gain = 176.023 ; free physical = 1983 ; free virtual = 6012
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 1ad42b77f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1858 ; free virtual = 5883
+Ending Final Cleanup Task | Checksum: 1ad42b77f
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1986 ; free virtual = 6015
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1986 ; free virtual = 6015
+Ending Netlist Obfuscation Task | Checksum: 1ad42b77f
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1986 ; free virtual = 6015
+INFO: [Common 17-83] Releasing license: Implementation
+25 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:41 . Memory (MB): peak = 3070.578 ; gain = 208.039 ; free physical = 1987 ; free virtual = 6015
+# place_design -directive default
+Command: place_design -directive default
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+ERROR: [DRC UTLZ-1] Resource utilization: RAMB18 and RAMB36/FIFO over-utilized in Top Level Design (This design requires more RAMB18 and RAMB36/FIFO cells than are available in the target device. This design requires 272 of such cell types but only 270 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)
+ERROR: [DRC UTLZ-1] Resource utilization: RAMB36/FIFO over-utilized in Top Level Design (This design requires more RAMB36/FIFO cells than are available in the target device. This design requires 136 of such cell types but only 135 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)
+ERROR: [DRC UTLZ-1] Resource utilization: RAMB36E1 over-utilized in Top Level Design (This design requires more RAMB36E1 cells than are available in the target device. This design requires 136 of such cell types but only 135 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)
+INFO: [Vivado_Tcl 4-198] DRC finished with 3 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.
+INFO: [Common 17-83] Releasing license: Implementation
+9 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+place_design failed
+place_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 3070.578 ; gain = 0.000 ; free physical = 1913 ; free virtual = 5946
+ERROR: [Common 17-39] 'place_design' failed due to earlier errors.
+
+    while executing
+"place_design -directive default"
+    (file "nexys4ddr.tcl" line 55)
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 10 17:28:06 2021...

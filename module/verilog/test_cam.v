@@ -21,19 +21,22 @@
 module test_cam(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
-
+/*
 	// VGA input/output  
-    /*output wire VGA_Hsync_n,  // horizontal sync output
+    output wire VGA_Hsync_n,  // horizontal sync output
     output wire VGA_Vsync_n,  // vertical sync output
     output wire [3:0] VGA_R,	// 4-bit VGA red output
     output wire [3:0] VGA_G,  // 4-bit VGA green output
-    output wire [3:0] VGA_B,  // 4-bit VGA blue output*/
-	
+    output wire [3:0] VGA_B,  // 4-bit VGA blue output
+*/	
 	//CAMARA input/output
 	
+	input [9:0]VGA_posX, 
+	input [8:0]VGA_posY,
+	
 	output wire CAM_xclk,		// System  clock imput
-	//output wire CAM_pwdn,		// power down mode 
-	//output wire CAM_reset,		// clear all registers of cam
+	output wire CAM_pwdn,		// power down mode 
+	output wire CAM_reset,		// clear all registers of cam
 	
 	// colocar aqui las entras  y salidas de la camara  que hace falta
 
@@ -41,7 +44,7 @@ module test_cam(
 	input wire CAM_vsync,
 	input wire CAM_href,
 	input wire [7:0] CAM_px_data,
-	output [11:0]data_mem
+	output [7:0] data_mem
 		
 );
 
@@ -49,13 +52,13 @@ module test_cam(
 parameter CAM_SCREEN_X = 160;
 parameter CAM_SCREEN_Y = 120;
 
-localparam AW = 17; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
-localparam DW = 12;
+localparam AW = 15; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam DW = 8;
 
 // El color es RGB 332
-localparam RED_VGA =   12'b111100000000;
-localparam GREEN_VGA = 12'b000011110000;
-localparam BLUE_VGA =  12'b000000001111;
+localparam RED_VGA =   12'b11100000;
+localparam GREEN_VGA = 12'b00011100;
+localparam BLUE_VGA =  12'b00000011;
 
 
 // Clk 
@@ -82,9 +85,9 @@ wire [8:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
 por lo tanto, los bits menos significactivos deben ser cero
 **************************************************************************** */
-assign VGA_R = data_RGB332[11:8];
-assign VGA_G = data_RGB332[7:4];
-assign VGA_B = data_RGB332[3:0];
+assign VGA_R = data_RGB332[7:5];
+assign VGA_G = data_RGB332[4:2];
+assign VGA_B = data_RGB332[1:0];
 
 
 
@@ -106,7 +109,8 @@ assign CAM_xclk=  clk24M;
   utilizado para la camara , a partir de una frecuencia de 32 Mhz
 **************************************************************************** */
 //assign clk32M =clk;
-clk24_25_nexys4  clk25_24(
+clk24_25_nexys4
+  clk25_24(
   .CLK_IN1(clk),
   .CLK_OUT1(clk25M),
   .CLK_OUT2(clk24M),
@@ -135,8 +139,8 @@ buffer_ram_dp #( AW,DW)
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
-
-/*VGA_Driver640x480 VGA640x480
+/*
+VGA_Driver640x480 VGA640x480
 (
 	.rst(rst),
 	.clk(clk25M), 				// 25MHz  para 60 hz de 640x480
@@ -147,27 +151,28 @@ VGA_Driver640x480
 	.posX(VGA_posX), 			// posición en horizontal del pixel siguiente
 	.posY(VGA_posY) 			// posición en vertical  del pixel siguiente
 
-);*/
+);
 
-
+*/
 /* ****************************************************************************
 LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de 
 VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
 adicionales seran iguales al color del último pixel de memoria 
 **************************************************************************** */
-/*always @ (VGA_posX, VGA_posY) begin
+
+always @ (VGA_posX, VGA_posY) begin
 		if ((VGA_posX>CAM_SCREEN_X-1) || (VGA_posY>CAM_SCREEN_Y-1))
 			DP_RAM_addr_out=15'b111111111111111;
 		else
 	                DP_RAM_addr_out = VGA_posX + VGA_posY * CAM_SCREEN_X;
-end*/
+end
 
 
 /*****************************************************************************
 
 
 **************************************************************************** */
- cam_read #(AW,DW)cam_read(
+ cam_read #(AW)cam_read(
 		.CAM_pclk(CAM_pclk),
 		.rst(rst),
 		.CAM_vsync(CAM_vsync),

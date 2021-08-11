@@ -2,7 +2,7 @@
 #include <irq.h>
 #include <uart.h>
 
-#include "camara.h"
+
 
 extern void periodic_isr(void);
 
@@ -17,6 +17,5 @@ void isr(void)
 		uart_isr();
 
 
-	if(irqs & (1 << CAMARA_CNTRL_INTERRUPT))
-		camara_isr();
+	
 }

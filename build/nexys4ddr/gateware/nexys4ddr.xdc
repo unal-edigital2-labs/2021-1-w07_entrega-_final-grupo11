@@ -18,175 +18,175 @@ set_property LOC C12 [get_ports {cpu_reset}]
 set_property IOSTANDARD LVCMOS33 [get_ports {cpu_reset}]
 
 # led:0
-set_property LOC H17 [get_ports {led0}]
+set_property LOC T8 [get_ports {led0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led0}]
 
 # led:1
-set_property LOC K15 [get_ports {led1}]
+set_property LOC V9 [get_ports {led1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led1}]
 
 # led:2
-set_property LOC J13 [get_ports {led2}]
+set_property LOC R8 [get_ports {led2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led2}]
 
 # led:3
-set_property LOC N14 [get_ports {led3}]
+set_property LOC T6 [get_ports {led3}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led3}]
 
 # led:4
-set_property LOC R18 [get_ports {led4}]
+set_property LOC T5 [get_ports {led4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led4}]
 
 # led:5
-set_property LOC V17 [get_ports {led5}]
+set_property LOC T4 [get_ports {led5}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led5}]
 
 # led:6
-set_property LOC U17 [get_ports {led6}]
+set_property LOC U7 [get_ports {led6}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led6}]
 
 # led:7
-set_property LOC U16 [get_ports {led7}]
+set_property LOC U6 [get_ports {led7}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led7}]
 
 # led:8
-set_property LOC V16 [get_ports {led8}]
+set_property LOC V4 [get_ports {led8}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led8}]
 
 # led:9
-set_property LOC T15 [get_ports {led9}]
+set_property LOC U3 [get_ports {led9}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led9}]
 
 # sw:0
-set_property LOC J15 [get_ports {sw0}]
+set_property LOC U9 [get_ports {sw0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw0}]
 
 # sw:1
-set_property LOC L16 [get_ports {sw1}]
+set_property LOC U8 [get_ports {sw1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw1}]
 
 # sw:2
-set_property LOC M13 [get_ports {sw2}]
+set_property LOC R7 [get_ports {sw2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw2}]
 
 # sw:3
-set_property LOC R15 [get_ports {sw3}]
+set_property LOC R6 [get_ports {sw3}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw3}]
 
 # sw:4
-set_property LOC R17 [get_ports {sw4}]
+set_property LOC R5 [get_ports {sw4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw4}]
 
 # sw:5
-set_property LOC T18 [get_ports {sw5}]
+set_property LOC V7 [get_ports {sw5}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw5}]
 
 # sw:6
-set_property LOC U18 [get_ports {sw6}]
+set_property LOC V6 [get_ports {sw6}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw6}]
 
 # sw:7
-set_property LOC R13 [get_ports {sw7}]
+set_property LOC V5 [get_ports {sw7}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sw7}]
 
 # btnc:0
-set_property LOC N17 [get_ports {btnc}]
+set_property LOC E16 [get_ports {btnc}]
 set_property IOSTANDARD LVCMOS33 [get_ports {btnc}]
 
-# btnr:0
-set_property LOC M17 [get_ports {btnr}]
+# btnr:3
+set_property LOC R10 [get_ports {btnr}]
 set_property IOSTANDARD LVCMOS33 [get_ports {btnr}]
 
-# btnl:0
-set_property LOC P17 [get_ports {btnl}]
+# btnl:4
+set_property LOC T16 [get_ports {btnl}]
 set_property IOSTANDARD LVCMOS33 [get_ports {btnl}]
 
 # display_segment:0
-set_property LOC T10 [get_ports {display_segment0}]
+set_property LOC L3 [get_ports {display_segment0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment0}]
 
 # display_segment:1
-set_property LOC R10 [get_ports {display_segment1}]
+set_property LOC N1 [get_ports {display_segment1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment1}]
 
 # display_segment:2
-set_property LOC K16 [get_ports {display_segment2}]
+set_property LOC L5 [get_ports {display_segment2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment2}]
 
 # display_segment:3
-set_property LOC K13 [get_ports {display_segment3}]
+set_property LOC L4 [get_ports {display_segment3}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment3}]
 
 # display_segment:4
-set_property LOC P15 [get_ports {display_segment4}]
+set_property LOC K3 [get_ports {display_segment4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment4}]
 
 # display_segment:5
-set_property LOC T11 [get_ports {display_segment5}]
+set_property LOC M2 [get_ports {display_segment5}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment5}]
 
 # display_segment:6
-set_property LOC L18 [get_ports {display_segment6}]
+set_property LOC L6 [get_ports {display_segment6}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment6}]
 
 # display_segment:7
-set_property LOC H15 [get_ports {display_segment7}]
+set_property LOC M4 [get_ports {display_segment7}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_segment7}]
 
 # display_digit:0
-set_property LOC J17 [get_ports {display_digit0}]
+set_property LOC N6 [get_ports {display_digit0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit0}]
 
 # display_digit:1
-set_property LOC J18 [get_ports {display_digit1}]
+set_property LOC M6 [get_ports {display_digit1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit1}]
 
 # display_digit:2
-set_property LOC T9 [get_ports {display_digit2}]
+set_property LOC M3 [get_ports {display_digit2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit2}]
 
 # display_digit:3
-set_property LOC J14 [get_ports {display_digit3}]
+set_property LOC N5 [get_ports {display_digit3}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit3}]
 
 # display_digit:4
-set_property LOC P14 [get_ports {display_digit4}]
+set_property LOC N2 [get_ports {display_digit4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit4}]
 
 # display_digit:5
-set_property LOC T14 [get_ports {display_digit5}]
+set_property LOC N4 [get_ports {display_digit5}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit5}]
 
 # display_digit:6
-set_property LOC K2 [get_ports {display_digit6}]
+set_property LOC L1 [get_ports {display_digit6}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit6}]
 
 # display_digit:7
-set_property LOC U13 [get_ports {display_digit7}]
+set_property LOC M1 [get_ports {display_digit7}]
 set_property IOSTANDARD LVCMOS33 [get_ports {display_digit7}]
 
 # ledRGB:1.r
-set_property LOC N15 [get_ports {ledRGB1_r}]
+set_property LOC K5 [get_ports {ledRGB1_r}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB1_r}]
 
 # ledRGB:1.g
-set_property LOC M16 [get_ports {ledRGB1_g}]
+set_property LOC F13 [get_ports {ledRGB1_g}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB1_g}]
 
 # ledRGB:1.b
-set_property LOC R12 [get_ports {ledRGB1_b}]
+set_property LOC F6 [get_ports {ledRGB1_b}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB1_b}]
 
 # ledRGB:2.r
-set_property LOC N16 [get_ports {ledRGB2_r}]
+set_property LOC K6 [get_ports {ledRGB2_r}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB2_r}]
 
 # ledRGB:2.g
-set_property LOC R11 [get_ports {ledRGB2_g}]
+set_property LOC H6 [get_ports {ledRGB2_g}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB2_g}]
 
 # ledRGB:2.b
-set_property LOC G14 [get_ports {ledRGB2_b}]
+set_property LOC L16 [get_ports {ledRGB2_b}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ledRGB2_b}]
 
 # vga_red:0
@@ -245,76 +245,108 @@ set_property IOSTANDARD LVCMOS33 [get_ports {hsync}]
 set_property LOC B12 [get_ports {vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vsync}]
 
-# i2c:0.sda
-set_property LOC G6 [get_ports {i2c_sda}]
-set_property IOSTANDARD LVCMOS33 [get_ports {i2c_sda}]
+# cam_data_in:0
+set_property LOC B13 [get_ports {cam_data_in0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in0}]
 
-# i2c:0.scl
-set_property LOC G3 [get_ports {i2c_scl}]
-set_property IOSTANDARD LVCMOS33 [get_ports {i2c_scl}]
+# cam_data_in:1
+set_property LOC G13 [get_ports {cam_data_in1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in1}]
+
+# cam_data_in:2
+set_property LOC F14 [get_ports {cam_data_in2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in2}]
+
+# cam_data_in:3
+set_property LOC C17 [get_ports {cam_data_in3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in3}]
+
+# cam_data_in:4
+set_property LOC D17 [get_ports {cam_data_in4}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in4}]
+
+# cam_data_in:5
+set_property LOC D18 [get_ports {cam_data_in5}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in5}]
+
+# cam_data_in:6
+set_property LOC E17 [get_ports {cam_data_in6}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in6}]
+
+# cam_data_in:7
+set_property LOC E18 [get_ports {cam_data_in7}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cam_data_in7}]
+
+# CAM_xclk:0
+set_property LOC G14 [get_ports {CAM_xclk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {CAM_xclk}]
+
+# CAM_pclk:0
+set_property LOC K16 [get_ports {CAM_pclk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {CAM_pclk}]
 
 # echo:0
-set_property LOC G2 [get_ports {echo}]
+set_property LOC T9 [get_ports {echo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
 
 # trig:0
-set_property LOC G4 [get_ports {trig}]
+set_property LOC U11 [get_ports {trig}]
 set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 
 # servo:0
-set_property LOC F3 [get_ports {servo}]
+set_property LOC K2 [get_ports {servo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
 
 # iR:0
-set_property LOC G18 [get_ports {iR}]
+set_property LOC E6 [get_ports {iR}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iR}]
 
 # iRC:0
-set_property LOC F18 [get_ports {iRC}]
+set_property LOC K1 [get_ports {iRC}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iRC}]
 
 # iC:0
-set_property LOC G17 [get_ports {iC}]
+set_property LOC J4 [get_ports {iC}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iC}]
 
 # iLC:0
-set_property LOC E17 [get_ports {iLC}]
+set_property LOC J3 [get_ports {iLC}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iLC}]
 
 # iL:0
-set_property LOC D17 [get_ports {iL}]
+set_property LOC E7 [get_ports {iL}]
 set_property IOSTANDARD LVCMOS33 [get_ports {iL}]
 
 # right:0
-set_property LOC F16 [get_ports {right0}]
+set_property LOC G1 [get_ports {right0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {right0}]
 
 # right:1
-set_property LOC D14 [get_ports {right1}]
+set_property LOC G3 [get_ports {right1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {right1}]
 
 # left:0
-set_property LOC H14 [get_ports {left0}]
+set_property LOC H4 [get_ports {left0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {left0}]
 
 # left:1
-set_property LOC G16 [get_ports {left1}]
+set_property LOC H1 [get_ports {left1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {left1}]
 
 # uart1:0.tx
-set_property LOC G13 [get_ports {uart1_tx}]
+set_property LOC J2 [get_ports {uart1_tx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
 
 # uart1:0.rx
-set_property LOC H16 [get_ports {uart1_rx}]
+set_property LOC G6 [get_ports {uart1_rx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
 
 # uart2:0.tx
-set_property LOC C17 [get_ports {uart2_tx}]
+set_property LOC H2 [get_ports {uart2_tx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart2_tx}]
 
 # uart2:0.rx
-set_property LOC D18 [get_ports {uart2_rx}]
+set_property LOC G4 [get_ports {uart2_rx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {uart2_rx}]
 
 ################################################################################
