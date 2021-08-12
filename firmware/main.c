@@ -231,6 +231,7 @@ static void camara_test(void)
 static int ultraSound_test(void)
 {
 	ultraSound_cntrl_init_write(1);
+	// Se esperan 2 ms para dar tiempo a que el registro done se actualice
 	delay_ms(2);
 	while(true){
 		if(ultraSound_cntrl_done_read() == 1){
@@ -302,12 +303,16 @@ static int * US(void){
 	while(true){
 		switch(state){
 			case 0: 
+				// Se mueve el servomotor a 0° (mirando a la derecha)
 				PWMUS_cntrl_pos_write(0);
+				//Se da tiempo a que el servotor se posicione
 				delay_ms(1000);
+				//Se llama a la función ultraSound_test() y se guarda en la primera posición del array
 				d[0] = ultraSound_test();
 				state = 1;
 				break;
 			case 1: 
+				// Se repite el proceso pero a 90°
 				PWMUS_cntrl_pos_write(1);
 				delay_ms(1000);
 				d[1] = ultraSound_test();
@@ -320,8 +325,10 @@ static int * US(void){
 				state = 3;
 				break;
 			case 3: 
+				// Se repite el proceso a 180°
 				PWMUS_cntrl_pos_write(0);
 				delay_ms(1000);
+				// Se imprimen las distancias por el serial y por el bluetooth
 				char distances[3];
 				printf("----------\n");
 				bluetooth_write("----------\n");
@@ -336,6 +343,7 @@ static int * US(void){
 				}
 				bluetooth_write("\n");
 				printf("\n");
+				// Se retorna el arreglo con las 3 mediciones
 				return d;
 				break; 
 		}

@@ -18,6 +18,89 @@ Este repositorio contiene la entrega final del proyecto de la materia Electróni
 
 Cada módulo se encuentra explicado en la documentación dentro de la carpeta module, mientras que en este documento se explicará la integración y el funcionamiento conjunto de los periféricos.
 
+## Ultrasonido
+
+Para la implementación del ultrasonido en C, se realizan 2 funciones, una para realizar una medición individual del ultrasonido y otra que implementa al servomotor y realiza tres mediciones, una en cada dirección. Para la primera:
+
+
+``` c
+static int ultraSound_test(void)
+{
+	ultraSound_cntrl_init_write(1);
+	// Se esperan 2 ms para dar tiempo a que el registro done se actualice
+	delay_ms(2);
+	while(true){
+		if(ultraSound_cntrl_done_read() == 1){
+			// Si done es 1, se lee y se retorna la distancia
+			int d = ultraSound_cntrl_distance_read();
+			ultraSound_cntrl_init_write(0);
+			return d;
+		} 
+	}	
+}
+
+```
+
+Para la implementación con el servomotor:
+
+``` c
+static int * US(void){
+	int state = 0;
+	static int d[3];
+	while(true){
+		switch(state){
+			case 0: 
+				// Se mueve el servomotor a 0° (mirando a la derecha)
+				PWMUS_cntrl_pos_write(0);
+				//Se da tiempo a que el servotor se posicione
+				delay_ms(1000);
+				//Se llama a la función ultraSound_test() y se guarda en la primera posición del array
+				d[0] = ultraSound_test();
+				state = 1;
+				break;
+			case 1: 
+				// Se repite el proceso pero a 90°
+				PWMUS_cntrl_pos_write(1);
+				delay_ms(1000);
+				d[1] = ultraSound_test();
+				state = 2;
+				break;
+			case 2: 
+				PWMUS_cntrl_pos_write(2);
+				delay_ms(1000);
+				d[2] = ultraSound_test();
+				state = 3;
+				break;
+			case 3: 
+				// Se repite el proceso a 180°
+				PWMUS_cntrl_pos_write(0);
+				delay_ms(1000);
+				// Se imprimen las distancias por el serial y por el bluetooth
+				char distances[3];
+				printf("----------\n");
+				bluetooth_write("----------\n");
+				for(int i = 2; i>=0; i--){
+					printf("%d", d[i]);
+					sprintf(distances, "%d", d[i]);
+					bluetooth_write(distances);
+					if(i>0){
+						printf(" - ");
+						bluetooth_write(" - ");
+					}
+				}
+				bluetooth_write("\n");
+				printf("\n");
+				// Se retorna el arreglo con las 3 mediciones
+				return d;
+				break; 
+		}
+	}
+}
+```
+### Prueba funcional
+
+
+
 ## Movimiento
 
 El movimiento en el robot incluye las ruedas, los infrarrojos, el ultrasonido y el mp3. La sección de dirección en el main.c describe el funcionamiento en conjunto de estos periféricos. 
