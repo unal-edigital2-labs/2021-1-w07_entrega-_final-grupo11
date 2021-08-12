@@ -7,7 +7,6 @@ from litex.soc.interconnect.csr_eventmanager import *
 class Camara(Module,AutoCSR):
     def __init__(self, CAM_xclk,CAM_pclk,cam_data_in, CAM_vsync, CAM_href):
         self.clk = ClockSignal()   
-        #self.rst = ResetSignal()  
         self.CAM_xclk = CAM_xclk
         
         self.CAM_pclk = CAM_pclk

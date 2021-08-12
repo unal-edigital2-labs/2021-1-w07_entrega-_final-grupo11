@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Aug 11 15:25:25 2021
+| Date         : Wed Aug 11 23:26:51 2021
 | Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_timing_summary -file nexys4ddr_timing_synth.rpt
 | Design       : nexys4ddr
@@ -39,10 +39,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (10122)
+1. checking no_clock (9890)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (69077)
+4. checking unconstrained_internal_endpoints (68499)
 5. checking no_input_delay (22)
 6. checking no_output_delay (57)
 7. checking multiple_clock (0)
@@ -52,11 +52,9 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (10122)
-----------------------------
- There are 12 register/latch pins with no clock driven by root clock pin: CAM_pclk (HIGH)
-
- There are 10081 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+1. checking no_clock (9890)
+---------------------------
+ There are 9861 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
  There are 29 register/latch pins with no clock driven by root clock pin: ultraSound/freq1/newCLK_reg/Q (HIGH)
 
@@ -71,9 +69,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (69077)
+4. checking unconstrained_internal_endpoints (68499)
 ----------------------------------------------------
- There are 69077 pins that are not constrained for maximum delay. (HIGH)
+ There are 68499 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

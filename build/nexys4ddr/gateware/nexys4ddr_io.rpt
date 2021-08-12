@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date                      : Wed Aug 11 15:26:17 2021
+| Date                      : Wed Aug 11 23:27:52 2021
 | Host                      : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command                   : report_io -file nexys4ddr_io.rpt
 | Design                    : nexys4ddr
