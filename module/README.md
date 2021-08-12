@@ -6,7 +6,7 @@
 <a name="us"></a>
 # Ultrasonido
 
-Para este periferico se utilizo el ultrasonido HC-sr04, a partir del <a scr="../datasheets/HCSR04.pdf">documento<a> proporcionado por el fabricante, el ultrasonido debe recibir una señal de 10 us por el pin trig, de esta manera, se emiten 8 rafagas de sonido a 40 kHz, posteriormente, se cuenta el tiempo que transcurre hasta que el sonido vuelva. A partir de esto, se establece que la distancia es igual al tiempo en microsegundos dividido entre 58. Con estas indicaciones se implementa la siguiente maquina de estados:
+Para este periferico se utilizo el ultrasonido HC-sr04, a partir del [documento](../datasheets/HCSR04.pdf) proporcionado por el fabricante, el ultrasonido debe recibir una señal de 10 us por el pin trig, de esta manera, se emiten 8 rafagas de sonido a 40 kHz, posteriormente, se cuenta el tiempo que transcurre hasta que el sonido vuelva. A partir de esto, se establece que la distancia es igual al tiempo en microsegundos dividido entre 58. Con estas indicaciones se implementa la siguiente maquina de estados:
 
 
 En esta sección se establece que cuando la señal init esta en 1, los registros done, counter, y distance se colocan en 0 y se pasa al siguiente estado.
@@ -87,7 +87,7 @@ En el archivo buildSoCproject se crea el submodulo y se importan los pines de en
 <a name="pwmus"></a>
 # Servomotor del ultra sonido
 
-Para este modulo se utiliza el servomotor sg90. Segun el <a scr="../datasheets/sg90_datasheet.pdf">datasheet<a> la señal pwm debe ser de 50 Hz, a partir de esto, la posicion a 0° debe tener un ancho de pulso de 1 ms, mientras que para 180° el ancho debe ser de 2 ms. Con esto en mente, se implementa el siguiente codigo en verilog:
+Para este modulo se utiliza el servomotor sg90. Segun el [datasheet](../datasheets/sg90_datasheet.pdf) la señal pwm debe ser de 50 Hz, a partir de esto, la posicion a 0° debe tener un ancho de pulso de 1 ms, mientras que para 180° el ancho debe ser de 2 ms. Con esto en mente, se implementa el siguiente codigo en verilog:
 
 
 En el caso de el servomotor que se utilizo, los anchos de pulso varian, por lo que los tiempos utilizados a 0° y 180° varian por 5 ms. Debido a esto, se establece un contador hasta un millon, cuando se llega a 50.000 se coloca el servo en 0°, cuando el contador llega a 150.000 se coloca en 90°, y cuando se llega a 250.000 se coloca en 180°.
