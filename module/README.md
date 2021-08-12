@@ -1,3 +1,9 @@
+1. [ Ruedas. ](#ruedas)
+
+
+
+
+<a name="ruedas"></a>
 # Ruedas
 
 Para las ruedas se utilizó un puente H (modelo L298N) conectado a los motores en vez de un PWM. 
