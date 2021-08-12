@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Aug 11 23:36:50 2021
+| Date         : Thu Aug 12 02:41:25 2021
 | Host         : CAMSP running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,15 +21,15 @@ Table of Contents
 +------------------+-------------------------+------------+------------+---------+------+------+--------+--------+------------+
 |     Instance     |          Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
 +------------------+-------------------------+------------+------------+---------+------+------+--------+--------+------------+
-| nexys4ddr        |                   (top) |      13395 |       7115 |    6280 |    0 | 3330 |    132 |      0 |          1 |
-|   (nexys4ddr)    |                   (top) |       7180 |        988 |    6192 |    0 | 2104 |    120 |      0 |          1 |
-|   PWMUS          |                   PWMUS |         27 |         27 |       0 |    0 |   22 |      0 |      0 |          0 |
-|   picorv32       |                picorv32 |       6041 |       5953 |      88 |    0 | 1141 |      0 |      0 |          0 |
-|     (picorv32)   |                picorv32 |       5355 |       5267 |      88 |    0 |  686 |      0 |      0 |          0 |
-|     pcpi_div     |       picorv32_pcpi_div |        439 |        439 |       0 |    0 |  200 |      0 |      0 |          0 |
+| nexys4ddr        |                   (top) |      15044 |       4656 |   10388 |    0 | 3189 |    128 |      0 |          1 |
+|   (nexys4ddr)    |                   (top) |      11273 |        985 |   10288 |    0 | 1894 |    128 |      0 |          1 |
+|   PWMUS          |                   PWMUS |         26 |         26 |       0 |    0 |   22 |      0 |      0 |          0 |
+|   picorv32       |                picorv32 |       3587 |       3499 |      88 |    0 | 1202 |      0 |      0 |          0 |
+|     (picorv32)   |                picorv32 |       2898 |       2810 |      88 |    0 |  747 |      0 |      0 |          0 |
+|     pcpi_div     |       picorv32_pcpi_div |        442 |        442 |       0 |    0 |  200 |      0 |      0 |          0 |
 |     pcpi_mul     |       picorv32_pcpi_mul |        247 |        247 |       0 |    0 |  255 |      0 |      0 |          0 |
-|   test_cam       |                test_cam |          0 |          0 |       0 |    0 |    0 |     12 |      0 |          0 |
-|     DP_RAM       |           buffer_ram_dp |          0 |          0 |       0 |    0 |    0 |     12 |      0 |          0 |
+|   test_cam       |                test_cam |         12 |          0 |      12 |    0 |    8 |      0 |      0 |          0 |
+|     DP_RAM       |           buffer_ram_dp |         12 |          0 |      12 |    0 |    8 |      0 |      0 |          0 |
 |     clk25_24     |         clk24_25_nexys4 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
 |       inst       | clk24_25_nexys4_clk_wiz |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
 |   ultraSound     |              ultraSound |        144 |        144 |       0 |    0 |   59 |      0 |      0 |          0 |

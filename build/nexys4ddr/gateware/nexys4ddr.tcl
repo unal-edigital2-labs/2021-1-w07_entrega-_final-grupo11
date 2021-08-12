@@ -16,6 +16,7 @@ read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module
 read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/buffer_ram_dp.v}
 read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/clk24_25_nexys4.v}
 read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/clk24_25_nexys4_clk_wiz.v}
+add_files {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/module/verilog/image.men}
 read_verilog {/home/camilo/Litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
 read_verilog {/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.v}
 

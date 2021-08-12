@@ -25,9 +25,9 @@
 // DW bits por cada pixel.
 
 module buffer_ram_dp#(
-	parameter AW = 15,		 // Cantidad de bits  de la direccion.
-	parameter DW = 12,		 // Cantidad de Bits de los datos.
-	parameter   imageFILE= "/image.men")
+	parameter AW = 15,		 // Cantidad de bits de la direccion.
+	parameter DW = 8,		 // Cantidad de Bits de los datos.
+	parameter imageFILE= "/image.men")
 	
 	(
 	input clk_w,     		 // Frecuencia de toma de datos de cada pixel.
@@ -72,22 +72,7 @@ initial begin
 // Lee en hexadecimal (readmemb lee en binario) dentro de ram [1, pÃ¡g 217].
 	$readmemh(imageFILE, ram);
 	// En la posición n+1 (160*120) se guarda el color negro
-	ram[imaSiz] = 12'h0;
-	ram[15'hffff] = 12'h0; // Necesario par el procesamiento
+	ram[imaSiz] = 8'h0;
 end
 endmodule
 
-/*
-always @(posedge clk_w) begin
-	if (reset) begin
-		$readmemh(imageFILE, ram);
-	end
-end
-*/
-
-
-
-
-// Refencias
-// [1] S. Harris and D. Harry, Digital Design and Computer Architecture.p 211-212,217, 258.
-// [2] recuperado de: https://file.org/extension/man#:~:text=Files%20that%20contain%20the%20.,in%20a%20plain%20text%20format.

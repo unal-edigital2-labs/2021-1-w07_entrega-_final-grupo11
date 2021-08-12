@@ -5,16 +5,16 @@ from litex.soc.interconnect.csr_eventmanager import *
 
 # Modulo Principal
 class Camara(Module,AutoCSR):
-    def __init__(self, CAM_xclk,CAM_pclk,cam_data_in, CAM_vsync, CAM_href):
+    def __init__(self, CAM_xclk,CAM_pclk,CAM_px_data, CAM_vsync, CAM_href):
         self.clk = ClockSignal()   
         self.CAM_xclk = CAM_xclk
         
         self.CAM_pclk = CAM_pclk
         self.CAM_vsync= CAM_vsync
         self.CAM_href= CAM_href
-        self.CAM_px_data = cam_data_in
+        self.CAM_px_data = CAM_px_data
 
-        self.data_mem = CSRStatus(12)
+        self.data_mem = CSRStatus(8)
 
         self.specials +=Instance("test_cam",
             i_clk = self.clk,
@@ -26,3 +26,6 @@ class Camara(Module,AutoCSR):
             o_CAM_vsync= self.CAM_vsync,
             o_CAM_href= self.CAM_href)
         
+        self.submodules.ev = EventManager()
+        self.ev.ok = EventSourceProcess()
+        self.ev.finalize()
