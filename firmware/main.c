@@ -71,7 +71,6 @@ static void prompt(void)
 }
 
 static void bluetooth_write(char *str){
-
 	for(int i = 0;i<strlen(str);i++){
 		uart1_rxtx_write(str[i]);
 		delay_ms(1);
@@ -354,10 +353,10 @@ static void PWMUS_test(void)
 	PWMUS_cntrl_pos_write(3);
 }
 
-static void showD(int d[8]){
+static void showD(int d[8]){ 
 	char distances[8];
-	distances[0] = d[0]/10;
-	distances[1] = d[0]%10;
+	distances[0] = d[0]/10; 
+	distances[1] = d[0]%10; 
 
 	distances[2] = DISPLAY_C;
 
@@ -411,7 +410,7 @@ static void mp3(int track){
 	uart2_rxtx_write(track);
 	uart2_rxtx_write(0xEF);
 }
-
+ 
 
 static void mp_test(void){
 
