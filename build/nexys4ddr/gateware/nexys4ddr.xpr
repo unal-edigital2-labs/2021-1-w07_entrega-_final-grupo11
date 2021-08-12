@@ -6,7 +6,7 @@
 <Project Version="7" Minor="54" Path="/home/camilo/Escritorio/Digital_2/w07_entrega_final-grupo11/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="53956b1945f741fbb7e31e3059344bc9"/>
+    <Option Name="Id" Val="bdfff114d2244368ae46872e010bf6c7"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
