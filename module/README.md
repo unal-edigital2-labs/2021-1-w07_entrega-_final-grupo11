@@ -4,7 +4,7 @@
 
 
 <a name="us"></a>
-#Ultrasonido
+# Ultrasonido
 
 Para este periferico se utilizo el ultrasonido HC-sr04, a partir del <a scr="../datasheets/HCSR04.pdf">documento<a> proporcionado por el fabricante, el ultrasonido debe recibir una señal de 10 us por el pin trig, de esta manera, se emiten 8 rafagas de sonido a 40 kHz, posteriormente, se cuenta el tiempo que transcurre hasta que el sonido vuelva. A partir de esto, se establece que la distancia es igual al tiempo en microsegundos dividido entre 58. Con estas indicaciones se implementa la siguiente maquina de estados:
 
