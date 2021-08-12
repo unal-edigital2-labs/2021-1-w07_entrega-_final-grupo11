@@ -1,5 +1,135 @@
-1. [ Ruedas. ](#ruedas)
+1. [ Ultra Sonido. ](#us)
+2. [ Servomotor del ultra sonido. ](#pwmus)
+3. [ Ruedas. ](#ruedas)
 
+
+<a name="us"></a>
+#Ultrasonido
+
+Para este periferico se utilizo el ultrasonido HC-sr04, a partir del <a scr="../datasheets/HCSR04.pdf">documento<a> proporcionado por el fabricante, el ultrasonido debe recibir una señal de 10 us por el pin trig, de esta manera, se emiten 8 rafagas de sonido a 40 kHz, posteriormente, se cuenta el tiempo que transcurre hasta que el sonido vuelva. A partir de esto, se establece que la distancia es igual al tiempo en microsegundos dividido entre 58. Con estas indicaciones se implementa la siguiente maquina de estados:
+
+
+En esta sección se establece que cuando la señal init esta en 1, los registros done, counter, y distance se colocan en 0 y se pasa al siguiente estado.
+
+``` verilog
+parameter Start = 0, Pulse = 'd1, Echo = 'd2;
+always @ (posedge newCLK)begin
+
+    case(status)
+        Start:  begin
+                    if(init) begin
+                        done = 0;
+                        counter = 0;
+                        distance = 0;
+                        status = Pulse;
+                    end
+                end
+
+```
+
+Para el segundo estado, se envía un 1 en trig durante 11 us, en este caso, se aumenta la duración recomendada por el fabricante ya que al usar 10 us se observaban fallos en la medición.
+
+``` verilog 
+Pulse:  begin
+                    trig = 1'b1;
+                    counter = counter + 1'b1;
+                        if(counter == 'd11)begin
+                            trig = 0;
+                            counter = 0;
+                            status = Echo;
+                        end
+                end
+
+```
+
+En el ultimo estado, se espera a que echo sea 1, se cuenta cuanto tiempo transcurre hasta que sea 0, y se divide el contador entre 58 para obtener la distancia en centimetros. En caso de que el ultrasonido falle y el contador sea 0, se devuelve al estado anterior hasta obtener un valor de distancia.
+
+``` verilog
+Echo:   begin
+                      if(echo)begin
+                        echoStart = 1;
+                        counter = counter + 1'b1;
+                      end
+                      if(echo == 0 && echoStart == 1)begin
+                        
+                        if(counter == 0) status = Pulse;
+                        else begin
+                            distance = counter/'d58;
+                            status = Start;
+                            done = 1;
+                        end
+                      end
+                end
+```
+
+
+Para la implementación en python, se establece que init es un registro tipo Storage con el fin de poderlo editar por software, la distancia y donde se colocan como status, y las señales echo y trig se establecen como salidas de la FPGA.
+``` python
+class US(Module, AutoCSR):
+    def __init__(self, echo, trig):
+        self.clk = ClockSignal()
+        self.init = CSRStorage(1)
+        self.echo = echo
+        self.trig = trig
+        self.distance = CSRStatus(9)
+        self.done = CSRStatus(1)
+```
+
+
+En el archivo buildSoCproject se crea el submodulo y se importan los pines de entrada y salida del modulo:
+
+``` python
+		#ultraSound
+		SoCCore.add_csr(self,"ultraSound_cntrl")
+		self.submodules.ultraSound_cntrl = ultraSound.US(platform.request("echo"), 	platform.request("trig"))
+```
+
+<a name="pwmus"></a>
+# Servomotor del ultra sonido
+
+Para este modulo se utiliza el servomotor sg90. Segun el <a scr="../datasheets/sg90_datasheet.pdf">datasheet<a> la señal pwm debe ser de 50 Hz, a partir de esto, la posicion a 0° debe tener un ancho de pulso de 1 ms, mientras que para 180° el ancho debe ser de 2 ms. Con esto en mente, se implementa el siguiente codigo en verilog:
+
+
+En el caso de el servomotor que se utilizo, los anchos de pulso varian, por lo que los tiempos utilizados a 0° y 180° varian por 5 ms. Debido a esto, se establece un contador hasta un millon, cuando se llega a 50.000 se coloca el servo en 0°, cuando el contador llega a 150.000 se coloca en 90°, y cuando se llega a 250.000 se coloca en 180°.
+
+``` verilog
+always@(posedge clk)begin
+	contador = contador + 1;
+	if(contador =='d1_000_000) begin
+	   contador = 0;
+	end
+	
+	case(pos)
+        2'b00:  servo = (contador < 'd50_000) ? 1:0;
+        
+        2'b01:  servo = (contador < 'd150_000) ? 1:0;
+        
+        2'b10:  servo = (contador < 'd250_000) ? 1:0;
+        
+        default:servo = (contador < 'd50_000) ? 1:0;
+    endcase
+
+end
+```
+
+En python se importa el modulo donde se maneja el registro pos como Storage para que se pueda editar desde C, y la señal servo como una conexion externa en la FPGA.
+
+``` python
+class servoUS(Module, AutoCSR):
+    def __init__(self, servo):
+            self.clk = ClockSignal()
+            self.pos = CSRStorage(2)
+            self.servo = servo
+
+```
+
+Luego se añade el submodulo y se importan los pines.
+
+``` python
+#PWMUS
+		SoCCore.add_csr(self,"PWMUS_cntrl")
+		self.submodules.PWMUS_cntrl = PWMUS.servoUS(platform.request("servo"))
+```
 
 
 
