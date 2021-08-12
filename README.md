@@ -18,6 +18,22 @@ Este repositorio contiene la entrega final del proyecto de la materia Electróni
 
 Cada módulo se encuentra explicado en la documentación dentro de la carpeta module, mientras que en este documento se explicará la integración y el funcionamiento conjunto de los periféricos.
 
+## Bluetooth
+
+El Bluetooth se incluye con la intención de poder observar las distancias captadas por el ultrasonido de manera inalámbrica.
+
+A través del siguiente código lo que hace el bluetooth es recibir una cadena de caracteres que descompone y luego los escribe, añadiendo un delay para no perder información, ya que el módulo funciona a 9600 baudios y el reloj es más rápido.
+
+``` c
+static void bluetooth_write(char *str){
+	for(int i = 0;i<strlen(str);i++){
+		uart1_rxtx_write(str[i]);
+		delay_ms(1);
+	}
+}
+
+```
+
 ## mp3
 
 Para el mp3, lo que se planteó fue la ejecución de ciertos sonidos dependiendo de la dirección que tome nuestro robot cartógrafo. Para hacerlo, se realiza una función la cual debe incluir una cadena de datos específica, tomándola directamente del [documento](../datasheets/DFR0299-DFPlayer-Mini-Manual.pdf) del fabricante.
