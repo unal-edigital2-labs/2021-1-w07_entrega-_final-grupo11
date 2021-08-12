@@ -209,3 +209,31 @@ self.submodules.wheels_cntrl = wheels.wheels(right, left)
 Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno tiene 2 pines, esto evita que se haga manualmente. En wheels_cntrl se definen los pines a usar, en este caso los elegidos anteriormente: right y left
 
 En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
+
+<a name="us"></a>
+#Bluetooth
+
+El SoC usado incluía el modulo UART por lo que solo debía integrarse el modulo al buildSoCproject con sus pines, de esta manera:
+
+``` python
+from litex.soc.cores import uart
+		self.submodules.uart1_phy = uart.UARTPHY(
+			pads     = platform.request("uart1"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart1_phy", use_loc_if_exists=True)
+		self.csr.add("uart1", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart1", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+```
+
+El modulo bluetooth utilizado fue el HC-06:
+
+![Screenshot](/images/blue.jpg)
+
