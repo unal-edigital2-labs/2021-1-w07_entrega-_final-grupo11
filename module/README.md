@@ -1,7 +1,8 @@
 1. [ Ultra Sonido. ](#us)
 2. [ Servomotor del ultra sonido. ](#pwmus)
 3. [ Ruedas. ](#ruedas)
-
+4. [ Bluetooth. ](#blue)
+5. [ mp3. ](#mp3)
 
 <a name="us"></a>
 # Ultrasonido
