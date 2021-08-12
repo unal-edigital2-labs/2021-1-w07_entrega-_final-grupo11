@@ -211,7 +211,7 @@ Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno ti
 En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
 
 <a name="blue"></a>
-#Bluetooth
+# Bluetooth
 
 El SoC usado incluía el modulo UART por lo que solo debía integrarse el modulo al buildSoCproject con sus pines, de esta manera:
 
@@ -238,7 +238,7 @@ El modulo bluetooth utilizado fue el HC-06:
 ![Screenshot](/images/blue.jpg)
 
 <a name="mp3"></a>
-#mp3
+# mp3
 
 De igual forma que el Bluetooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
 
