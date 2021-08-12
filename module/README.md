@@ -210,7 +210,7 @@ Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno ti
 
 En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
 
-<a name="us"></a>
+<a name="blue"></a>
 #Bluetooth
 
 El SoC usado incluía el modulo UART por lo que solo debía integrarse el modulo al buildSoCproject con sus pines, de esta manera:
@@ -237,3 +237,28 @@ El modulo bluetooth utilizado fue el HC-06:
 
 ![Screenshot](/images/blue.jpg)
 
+<a name="mp3"></a>
+#mp3
+
+De igual forma que el Bluetooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
+
+``` python
+self.submodules.uart2_phy = uart.UARTPHY(
+			pads     = platform.request("uart2"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart2 = ResetInserter()(uart.UART(self.uart2_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart2_phy", use_loc_if_exists=True)
+		self.csr.add("uart2", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart2", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+```
+
+El módulo mp3 utilizado fue el DFPlayer mini:
+
+![Screenshot](/images/mp3.jpg)
