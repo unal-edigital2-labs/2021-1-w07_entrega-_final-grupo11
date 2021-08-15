@@ -274,3 +274,5 @@ Este dispositivo se basa en un fotodiodo emisor de luz y un fototransistor. Su f
 Desde el hardwarelos infrarojos consta de cinco registros, en donde se encuentran dos infrarojos en los laterales del robot (iR y iL) y tres infrarojos en el centro que representan los bordes del centro para indicar que tan centrado se está desplazando el robot (iRC y ILC), y el infrarojo central que nos asegura un movimiento recto (iC).
 Estos se encargan de actualizar estos registros y enviarlos al software siempre que reciban una señal proveniente de los infrarojos.
 
+![Screenshot](/images/IR_V.JPG)
+
