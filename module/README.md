@@ -267,3 +267,5 @@ El módulo mp3 utilizado fue el DFPlayer mini:
 
 <a name="InfraRojo"></a>
 # InfraRojo
+
+![Screenshot](/images/facil.jpg)
