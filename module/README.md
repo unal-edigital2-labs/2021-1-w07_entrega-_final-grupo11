@@ -278,5 +278,5 @@ Estos se encargan de actualizar estos registros y enviarlos al software siempre 
 
 Para su implementación desde python se llamo a cada uno de estos registros para leer cada uno de estos a través del status y conocer la posicion en la que se encontraba el robot
 
-![Screenshot](/images/ImplementacioIR.jpg)
+![Screenshot](/images/ImplementacionIR.JPG)
 
