@@ -268,4 +268,5 @@ El módulo mp3 utilizado fue el DFPlayer mini:
 <a name="InfraRojo"></a>
 # InfraRojo
 Este dispositivo se basa en un fotodiodo emisor de luz y un fototransistor. Su funcionamiento consiste en la emision de luz por el fotodiodo por el cual al recibir esta energia en el fototransistor a traves de la base para permitir un flujo de corriente a traves del colector y el emisor. La luz no se puede reflejar a traves de una superficie negra, por lo que al incidir sobre esta no es posiblle generar la corriente en el colector, de modo que para obtener una señal activa es necesario invertir el funcionamiento de los infrarojos para que estos operenc bajo una superficie negra. 
+
 ![Screenshot](/images/facil.jpg)
