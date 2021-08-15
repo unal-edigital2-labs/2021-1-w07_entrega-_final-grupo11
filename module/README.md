@@ -3,7 +3,7 @@
 3. [ Ruedas. ](#ruedas)
 4. [ Bluetooth. ](#blue)
 5. [ mp3. ](#mp3)
-6. [ InfraRojo ](#mp3)
+6. [ InfraRojo ](#InfraRojo)
 
 <a name="us"></a>
 # Ultrasonido
@@ -263,3 +263,7 @@ self.submodules.uart2_phy = uart.UARTPHY(
 El módulo mp3 utilizado fue el DFPlayer mini:
 
 ![Screenshot](/images/mp3.jpg)
+
+
+<a name="InfraRojo"></a>
+# InfraRojo
