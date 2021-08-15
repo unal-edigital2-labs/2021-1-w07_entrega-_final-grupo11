@@ -3,6 +3,7 @@
 3. [ Ruedas. ](#ruedas)
 4. [ Bluetooth. ](#blue)
 5. [ mp3. ](#mp3)
+6. [ InfraRojo ](#mp3)
 
 <a name="us"></a>
 # Ultrasonido
