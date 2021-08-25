@@ -261,4 +261,4 @@ Finalmente se actualizan los datos de la matriz para ser enviada por bluetooth. 
 Cuando se reciben los datos, se pueden mostrar de forma visual por medio de algún programa que interprete los strings que se obtienen por bluetooth, en este caso, se uso el lenguaje de programación Processing, de forma que el laberinto se ve de la siguiente manera:
 
 
-![Alt text](/images/labP.png |width=250)
+![Alt text](/images/labP.png)
