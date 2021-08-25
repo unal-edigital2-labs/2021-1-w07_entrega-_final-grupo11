@@ -418,6 +418,9 @@ static void direction(void){
 				delay_ms(200);
 				wheels_cntrl_state_write(4);
 				delay_ms(500);
+				while(LC!=1 && C!=1 && RC!=1){
+					wheels_cntrl_state_write(4);
+				}
 				orientation = orientation + 2;
 			}
 			

@@ -43,11 +43,11 @@ class BaseSoC(SoCCore):
 		platform.add_source("module/verilog/infraRed.v")
 		platform.add_source("module/verilog/wheels.v")
 
-		platform.add_source("module/verilog/test_cam.v")
-		platform.add_source("module/verilog/cam_read.v")
-		platform.add_source("module/verilog/buffer_ram_dp.v")
-		platform.add_source("module/verilog/clk24_25_nexys4.v")
-		platform.add_source("module/verilog/clk24_25_nexys4_clk_wiz.v")
+		# platform.add_source("module/verilog/test_cam.v")
+		# platform.add_source("module/verilog/cam_read.v")
+		# platform.add_source("module/verilog/buffer_ram_dp.v")
+		# platform.add_source("module/verilog/clk24_25_nexys4.v")
+		# platform.add_source("module/verilog/clk24_25_nexys4_clk_wiz.v")
 		
 
 
@@ -100,9 +100,9 @@ class BaseSoC(SoCCore):
 		
 		
 		#camara
-		SoCCore.add_csr(self,"camara_cntrl")
-		CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
-		self.submodules.camara_cntrl = camara.Camara(platform.request("CAM_xclk"),platform.request("CAM_pclk"),CAM_px_data, platform.request("CAM_vsync"), platform.request("CAM_href"))
+		# SoCCore.add_csr(self,"camara_cntrl")
+		# CAM_px_data = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])		
+		# self.submodules.camara_cntrl = camara.Camara(platform.request("CAM_xclk"),platform.request("CAM_pclk"),CAM_px_data, platform.request("CAM_vsync"), platform.request("CAM_href"))
 
 		#I2C
 		SoCCore.add_csr(self,"i2c_cntrl")

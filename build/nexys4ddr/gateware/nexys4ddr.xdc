@@ -245,54 +245,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports {hsync}]
 set_property LOC B12 [get_ports {vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vsync}]
 
-# CAM_px_data:0
-set_property LOC E7 [get_ports {CAM_px_data0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data0}]
-
-# CAM_px_data:1
-set_property LOC J3 [get_ports {CAM_px_data1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data1}]
-
-# CAM_px_data:2
-set_property LOC E18 [get_ports {CAM_px_data2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data2}]
-
-# CAM_px_data:3
-set_property LOC J4 [get_ports {CAM_px_data3}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data3}]
-
-# CAM_px_data:4
-set_property LOC H2 [get_ports {CAM_px_data4}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data4}]
-
-# CAM_px_data:5
-set_property LOC E6 [get_ports {CAM_px_data5}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data5}]
-
-# CAM_px_data:6
-set_property LOC H4 [get_ports {CAM_px_data6}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data6}]
-
-# CAM_px_data:7
-set_property LOC K1 [get_ports {CAM_px_data7}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_px_data7}]
-
-# CAM_xclk:0
-set_property LOC H1 [get_ports {CAM_xclk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_xclk}]
-
-# CAM_pclk:0
-set_property LOC F6 [get_ports {CAM_pclk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_pclk}]
-
-# CAM_vsync:0
-set_property LOC J2 [get_ports {CAM_vsync}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_vsync}]
-
-# CAM_href:0
-set_property LOC G1 [get_ports {CAM_href}]
-set_property IOSTANDARD LVCMOS33 [get_ports {CAM_href}]
-
 # i2c:0.sda
 set_property LOC G6 [get_ports {i2c_sda}]
 set_property IOSTANDARD LVCMOS33 [get_ports {i2c_sda}]
