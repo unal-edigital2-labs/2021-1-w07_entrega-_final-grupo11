@@ -94,7 +94,6 @@ static void help(void)
 	puts("IR				- IR test");
 	puts("w				- wheels test");
 	puts("dir				- dir test");
-	puts("b				- bluetooth config test");
 	puts("mp				- mp3 test");
 }
 
@@ -103,129 +102,21 @@ static void reboot(void)
 	ctrl_reset_write(1);
 }
 
-static void display_test(void)
-{
-	int i;
-	signed char defill = 0;	//1->left, -1->right, 0->.
-	
-	char txtToDisplay[40] = {0, DISPLAY_0, DISPLAY_1,DISPLAY_2,DISPLAY_3,DISPLAY_4,DISPLAY_5,DISPLAY_6,DISPLAY_7,DISPLAY_8,DISPLAY_9,DISPLAY_A,DISPLAY_B,DISPLAY_C,DISPLAY_D,DISPLAY_E,DISPLAY_F,DISPLAY_G,DISPLAY_H,DISPLAY_I,DISPLAY_J,DISPLAY_K,DISPLAY_L,DISPLAY_M,DISPLAY_N,DISPLAY_O,DISPLAY_P,DISPLAY_Q,DISPLAY_R,DISPLAY_S,DISPLAY_T,DISPLAY_U,DISPLAY_V,DISPLAY_W,DISPLAY_X,DISPLAY_Y,DISPLAY_Z,DISPLAY_DP,DISPLAY_TR,DISPLAY_UR};
-	
-	printf("Test del los display de 7 segmentos... se interrumpe con el botton 1\n");
-
-	while(!(buttons_in_read()&1)) {
-		display(txtToDisplay);
-		if(buttons_in_read()&(1<<1)) defill = ((defill<=-1) ? -1 : defill-1);
-		if(buttons_in_read()&(1<<2)) defill = ((defill>=1) ? 1 : defill+1);
-		if (defill > 0) {
-			char tmp = txtToDisplay[0];
-			for(i=0; i<sizeof(txtToDisplay)/sizeof(txtToDisplay[i]); i++) {
-				txtToDisplay[i] = ((i==sizeof(txtToDisplay)/sizeof(txtToDisplay[i])-1) ? tmp : txtToDisplay[i+1]);
-			}
-		}
-		else if(defill < 0) {
-			char tmp = txtToDisplay[sizeof(txtToDisplay)/sizeof(txtToDisplay[0])-1];
-			for(i=sizeof(txtToDisplay)/sizeof(txtToDisplay[i])-1; i>=0; i--) {
-				txtToDisplay[i] = ((i==0) ? tmp : txtToDisplay[i-1]);
-			}
-		}
-		delay_ms(500);
-	}
-
-}
-
-static void led_test(void)
-{
-	unsigned int i;
-	printf("Test del los leds... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-
-	for(i=1; i<65536; i=i*2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	for(i=32768;i>1; i=i/2) {
-		leds_out_write(i);
-		delay_ms(50);
-	}
-	}
-	
-}
-
-
-static void switch_test(void)
-{
-	unsigned short temp2 =0;
-	printf("Test del los interruptores... se interrumpe con el botton 1\n");
-	while(!(buttons_in_read()&1)) {
-		unsigned short temp = switchs_in_read();
-		if (temp2 != temp){
-			printf("switch bus : %i\n", temp);
-			leds_out_write(temp);
-			temp2 = temp;
-		}
-	}
-}
-
-static void rgbled_test(void)
-{
-	unsigned int T = 128;
-	
-	ledRGB_1_r_period_write(T);
-	ledRGB_1_g_period_write(T);
-	ledRGB_1_b_period_write(T);
-
-	ledRGB_1_r_enable_write(1);
-	ledRGB_1_g_enable_write(1);
-	ledRGB_1_b_enable_write(1);
-
-	
-	ledRGB_2_r_period_write(T);
-	ledRGB_2_g_period_write(T);
-	ledRGB_2_b_period_write(T);
-	
-	
-	ledRGB_2_r_enable_write(1);
-	ledRGB_2_g_enable_write(1);
-	ledRGB_2_b_enable_write(1);
-
-	for (unsigned int j=0; j<100; j++){
-		ledRGB_1_g_width_write(j);
-		for (unsigned int i=0; i<100; i++){
-			ledRGB_1_r_width_write(100-i);
-			ledRGB_1_b_width_write(i);	
-			delay_ms(20);
-		}	
-	}
-	
-
-
-}
-
-
-static void vga_test(void)
-{
-	int x,y;
-	
-	for(y=0; y<480; y++) {
-		for(x=0; x<640; x++) {
-			vga_cntrl_mem_we_write(0);
-			vga_cntrl_mem_adr_write(y*640+x);
-			if(x<640/3)	
-				vga_cntrl_mem_data_w_write(((int)(x/10)%2^(int)(y/10)%2)*15);
-			else if(x<2*640/3) 
-				vga_cntrl_mem_data_w_write((((int)(x/10)%2^(int)(y/10)%2)*15)<<4);
-			else 
-				vga_cntrl_mem_data_w_write((((int)(x/10)%2^(int)(y/10)%2)*15)<<8);
-			vga_cntrl_mem_we_write(1);
-		}
-	}
-}
 
 static void camara_test(void)
 {
-	while(!(buttons_in_read()&1)){
-		//printf("%i \n", camara_cntrl_data_mem_read());
-	}
+	// for(int y=0;y<480;y++){
+	// 	for(int x=0;x<640;x++){
+	// 		vga_cntrl_mem_we_write(0);
+	// 		vga_cntrl_mem_adr_write(y*640+x);
+	// 		if(x<160 && y<120){
+	// 			camara_cntrl_DP_RAM_addr_out_write(120*y+x);
+	// 			vga_cntrl_mem_data_w_write(camara_cntrl_data_mem_read());
+	// 		}else
+	// 			vga_cntrl_mem_data_w_write(0);
+	// 		vga_cntrl_mem_we_write(1);
+	// 	}	
+	// }
 }
 
 static int ultraSound_test(void)
@@ -238,8 +129,8 @@ static int ultraSound_test(void)
 			int d = ultraSound_cntrl_distance_read();
 			ultraSound_cntrl_init_write(0);
 			return d;
-		} 
-	}	
+		}
+	}
 }
 
 static void IR_test(void)
@@ -258,7 +149,7 @@ static void IR_test(void)
 			printf("%i, ", IR[i]);
 		}
 		printf("\n");
-	}	
+	}
 }
 
 
@@ -432,85 +323,34 @@ static void mp_test(void){
 	uart2_rxtx_write(0x30);
 	uart2_rxtx_write(0xEF);
 
-	//DERECHA
-	//start
-	uart2_rxtx_write(0x7E);
-	uart2_rxtx_write(0xFF);
-	//length
-	uart2_rxtx_write(0x06);
-	//cmd
-	uart2_rxtx_write(0x03);
-	//feedback
-	uart2_rxtx_write(0x00);
-	//track
-	uart2_rxtx_write(0x00);
-	uart2_rxtx_write(1);
-	//end
-	uart2_rxtx_write(0xEF);
-	delay_ms(2000);
-
-	//IZQUIERDA
-	//start
-	uart2_rxtx_write(0x7E);
-	uart2_rxtx_write(0xFF);
-	//length
-	uart2_rxtx_write(0x06);
-	//cmd
-	uart2_rxtx_write(0x03);
-	//feedback
-	uart2_rxtx_write(0x00);
-	//track
-	uart2_rxtx_write(0x00);
-	uart2_rxtx_write(2);
-	//end
-	uart2_rxtx_write(0xEF);
-	delay_ms(2000);
-
-	//RECTO
-	//start
-	uart2_rxtx_write(0x7E);
-	uart2_rxtx_write(0xFF);
-	//length
-	uart2_rxtx_write(0x06);
-	//cmd
-	uart2_rxtx_write(0x03);
-	//feedback
-	uart2_rxtx_write(0x00);
-	//track
-	uart2_rxtx_write(0x00);
-	uart2_rxtx_write(3);
-	//end
-	uart2_rxtx_write(0xEF);
-	delay_ms(2000);
-
-	//Vuelta
-	//start
-	uart2_rxtx_write(0x7E);
-	uart2_rxtx_write(0xFF);
-	//length
-	uart2_rxtx_write(0x06);
-	//cmd
-	uart2_rxtx_write(0x03);
-	//feedback
-	uart2_rxtx_write(0x00);
-	//track
-	uart2_rxtx_write(0x00);
-	uart2_rxtx_write(4);
-	//end
-	uart2_rxtx_write(0xEF);
-	delay_ms(2000);
-	
+	for(int i=1;i<=4;i++){
+		//start
+		uart2_rxtx_write(0x7E);
+		uart2_rxtx_write(0xFF);
+		//length
+		uart2_rxtx_write(0x06);
+		//cmd
+		uart2_rxtx_write(0x03);
+		//feedback
+		uart2_rxtx_write(0x00);
+		//track
+		uart2_rxtx_write(0x00);
+		uart2_rxtx_write(i);
+		//end
+		uart2_rxtx_write(0xEF);
+		delay_ms(2000);
+	}	
 }
 
 
 static void direction(void){
 	wheels_cntrl_state_write(0);
-	int rotate = 0;
 	int orientation = 0;
-	int posV = 1;
+	int posV = 0;
     int posH = 0;
 	int map[10][10];
 
+	//Inicialización de la matriz del laberinto
 	for(int i=0;i<10;i++){
         for(int k=0;k<10;k++){  
             map[i][k] = 0;
@@ -518,7 +358,7 @@ static void direction(void){
     }
 
 	char *tempMap = "A";
-	while(!(buttons_in_read()&1)){
+	while(true){
 		bool L = IR_cntrl_L_read();
 		bool LC = IR_cntrl_LC_read();
 		bool C = IR_cntrl_C_read();
@@ -526,217 +366,120 @@ static void direction(void){
 		bool R = IR_cntrl_R_read();
 
 		if(buttons_in_read()&2){
-			rotate = 0;
 			orientation = 0;
 			posV = 1;
 			posH = 0;
 			for(int i=0;i<10;i++){
-				for(int k=0;k<10;k++){  
+				for(int k=0;k<10;k++){
 					map[i][k] = 0;
-				}    
+					printf("%i",  map[i][k]);
+					sprintf(tempMap, "%d", map[i][k]);
+					bluetooth_write(tempMap);
+				}
+				printf("\n");
+				bluetooth_write("\n");
 			}
 			wheels_cntrl_state_write(0);
-		}
-
-		
-
-		if(rotate == 2){
-			wheels_cntrl_state_write(4);
-			//01110
-			if(L==0 && LC==1 && C==1 && RC==1 && R==0){
-				rotate = 0;
-				//01100
-			}else if(L==0 && LC==1 && C==1 && RC==0 && R==0){
-				rotate = 0;
-				
-				//00110
-			}else if(L==0 && LC==0 && C==1 && RC==1 && R==0){
-				rotate = 0;
-				
-				//01000
-			}
-		}else{
-				//00100
-			if(L==0 && LC==0 && C==1 && RC==0 && R==0){
-				wheels_cntrl_state_write(0);
-				rotate = 0;
-				
-				//01110
-			}else if(L==0 && LC==1 && C==1 && RC==1 && R==0){
-				wheels_cntrl_state_write(0);
-				rotate = 0;
-				
-				//01100
-			}else if(L==0 && LC==1 && C==1 && RC==0 && R==0){
-				wheels_cntrl_state_write(0);
-				rotate = 0;
-				
-				//00110
-			}else if(L==0 && LC==0 && C==1 && RC==1 && R==0){
-				wheels_cntrl_state_write(0);
-				rotate = 0;
-				
-				//01000
-			}else if(L==0 && LC==1 && C==0 && RC==0 && R==0){
-				wheels_cntrl_state_write(1);
-				rotate = 0;
-				
-				//00010
-			}else if(L==0 && LC==0 && C==0 && RC==1 && R==0){
-				wheels_cntrl_state_write(2);
-				rotate = 0;
-				
-				//10000
-			}else if(L==1 && LC==0 && C==0 && RC==0 && R==0){
-				wheels_cntrl_state_write(1);
-
-				//00001
-			}else if(L==0 && LC==0 && C==0 && RC==0 && R==1){
-				wheels_cntrl_state_write(2);
-
-			}else if(L==1 && LC==1 && C==1 && RC==1 && R==1 && rotate==0){
-				wheels_cntrl_state_write(3);
-				rotate = 1;
-				int *d = US();
-				showD(d);
-
-			//d[0] derecha - d[1] centro - d[2] izquierda 
-				if(d[0] >= 35 && d[1] >= 35 && d[2] >= 35){
-					mp3(1);
-					wheels_cntrl_state_write(2);
-					delay_ms(400);
-					orientation = orientation + 1;
-				}else if(d[0] >= 35 && d[1] >= 35 && d[2] < 35){
-					mp3(1);
-					wheels_cntrl_state_write(2);
-					delay_ms(400);
-					orientation = orientation + 1;
-				}else if(d[0] >= 35 && d[1] < 35 && d[2] < 35){
-					mp3(1);
-					wheels_cntrl_state_write(2);
-					delay_ms(400);
-					orientation = orientation + 1;
-				}else if(d[0] < 35 && d[1] >= 35 && d[2] >= 35){
-					
-					wheels_cntrl_state_write(0);
-					delay_ms(200);
-					mp3(3);
-				}else if(d[0] < 35 && d[1] < 35 && d[2] >= 35){
-					mp3(2);
-					wheels_cntrl_state_write(1);
-					delay_ms(200);
-					orientation = orientation - 1;
-				}else if(d[0] < 35 && d[1] >= 35 && d[2] < 35){			
-					wheels_cntrl_state_write(0);
-					delay_ms(200);
-					mp3(3);
-				}else if(d[0] < 35 && d[1] < 35 && d[2] < 35){			
-					mp3(4);
-					wheels_cntrl_state_write(5);
-					delay_ms(200);
-					wheels_cntrl_state_write(4);
-					delay_ms(500);
-					rotate = 2;
-					orientation = orientation + 2;
-				}
-				
-				if(orientation >= 4)
-					orientation = orientation - 4; 
-				else if(orientation < 0) 
-					orientation = orientation + 4;
-
-				//Arreglar
-				if(orientation == 0){
-					posH++;
-				}else if(orientation == 1){
-					posV++;
-				}else if(orientation == 2){
-					posH--;
-				}else if(orientation == 3){
-					posV--;
-				}
-
-				//Desplazamiento de la matriz
-				if(posV < 0){
-					for(int i=10;i>=0;i--){
-						for(int k=0;k<10;k++){  
-							if(i == 0){
-								map[i][k] = 0;
-							}else{
-								map[i][k] = map[i-1][k];
-							}   
-						} 
-					}
-					posV++;
-				}
-
-				if(posH < 0){
-					for(int i=0;i<10;i++){
-						for(int k=10;k>=0;k--){  
-							if(k == 0){
-								map[i][k] = 0;
-							}else{
-								map[i][k] = map[i][k-1];
-							}   
-						} 
-					}
-					posH++;
-				}
-
-				for(int i=0;i<10;i++){
-					for(int k=0;k<10;k++){
-						map[posV][posH] = 1;
-						if(posV!=0 && posH != 0){
-							if(map[posV][posH-1]==0)
-								map[posV][posH-1]=2;
-							if(map[posV][posH+1]==0)
-								map[posV][posH+1]=2;
-							if(map[posV-1][posH]==0)
-								map[posV-1][posH]=2;
-							if(map[posV+1][posH]==0)
-								map[posV+1][posH]=2;
-							if(map[posV-1][posH-1]==0)
-								map[posV-1][posH-1]=2;
-							if(map[posV-1][posH+1]==0)
-								map[posV-1][posH+1]=2;
-							if(map[posV+1][posH-1]==0)
-								map[posV+1][posH-1]=2;
-							if(map[posV+1][posH+1]==0)
-								map[posV+1][posH+1]=2;
-						}else if(posV!=0 && posH == 0){
-							if(map[posV-1][posH]==0)
-								map[posV-1][posH]=2;
-							if(map[posV+1][posH]==0)
-								map[posV+1][posH]=2;
-							if(map[posV-1][posH+1]==0)
-								map[posV-1][posH+1]=2;
-							if(map[posV+1][posH+1]==0)
-								map[posV+1][posH+1]=2;
-							if(map[posV][posH+1]==0)
-								map[posV][posH+1]=2;
-						}else if(posV==0 && posH != 0){
-							if(map[posV+1][posH-1]==0)
-								map[posV+1][posH-1]=2;
-							if(map[posV+1][posH+1]==0)
-								map[posV+1][posH+1]=2;
-							if(map[posV+1][posH]==0)
-								map[posV+1][posH]=2;
-							if(map[posV][posH-1]==0)
-								map[posV][posH-1]=2;
-							if(map[posV][posH+1]==0)
-								map[posV][posH+1]=2;
-							if(map[posV][posH+1]==0)
-								map[posV][posH+1]=2;
-						}
-						printf("%i",  map[i][k]);
-						sprintf(tempMap, "%d", map[i][k]);
-						bluetooth_write(tempMap);
-					}
-					printf("\n");
-					bluetooth_write("\n");
-				}
-			}
 		}		
+
+
+		//Dirección
+		//Estados de los infrarrojos
+		if(((L==0 && C==1 && R==0) || (L==1 && C==1 && R==1)) && L==0 && R==0){
+			wheels_cntrl_state_write(0);
+		}else if((LC==1 && C==0) || (L==1 && C==0 && R==0) || (L==1 && C==1 && R==0) ){
+			wheels_cntrl_state_write(1);
+		}else if((C==0 && RC==1) || (L==0 && C==0 && R==1) || (L==0 && C==1 && R==1)){
+			wheels_cntrl_state_write(2);
+		}else if(L==1 && LC==1 && C==1 && RC==1 && R==1){
+			wheels_cntrl_state_write(3);
+			int *d = US();
+			showD(d);
+
+			//Rotación
+			//d[0] derecha - d[1] centro - d[2] izquierda 
+			if(d[0] >= 35){
+				mp3(1);
+				wheels_cntrl_state_write(2);
+				delay_ms(400);
+				orientation = orientation + 1;
+			}else if(d[0] < 35 && d[1] >= 35){
+				wheels_cntrl_state_write(0);
+				delay_ms(200);
+				mp3(3);
+			}else if(d[0] < 35 && d[1] < 35 && d[2] >= 35){
+				mp3(2);
+				wheels_cntrl_state_write(1);
+				delay_ms(400);
+				orientation = orientation - 1;
+			}else{			
+				mp3(4);
+				wheels_cntrl_state_write(5);
+				delay_ms(200);
+				wheels_cntrl_state_write(4);
+				delay_ms(500);
+				orientation = orientation + 2;
+			}
+			
+			//Reset de la orientación
+			if(orientation >= 4)
+				orientation = orientation - 4; 
+			else if(orientation < 0) 
+				orientation = orientation + 4;
+
+			
+
+			//Desplazamiento de la matriz
+			if(posV < 0){
+				for(int i=10;i>=0;i--){
+					for(int k=0;k<10;k++){  
+						if(i == 0){
+							map[i][k] = 0;
+						}else{
+							map[i][k] = map[i-1][k];
+						}   
+					} 
+				}
+				posV++;
+			}
+
+			if(posH < 0){
+				for(int i=0;i<10;i++){
+					for(int k=10;k>=0;k--){  
+						if(k == 0){
+							map[i][k] = 0;
+						}else{
+							map[i][k] = map[i][k-1];
+						}   
+					} 
+				}
+				posH++;
+			}
+
+			//Actualización del mapa y envío por bluetooth
+			for(int i=0;i<10;i++){
+				for(int k=0;k<10;k++){
+					map[posV][posH] = 1;
+					printf("%i",  map[i][k]);
+					sprintf(tempMap, "%d", map[i][k]);
+					bluetooth_write(tempMap);
+				}
+				printf("\n");
+				bluetooth_write("\n");
+			}
+
+			//Orientación del carro en el laberinto
+			if(orientation == 0){
+				posH++;
+			}else if(orientation == 1){
+				posV++;
+			}else if(orientation == 2){
+				posH--;
+			}else if(orientation == 3){
+				posV--;
+			}
+		}
+				
 	}
 }
 
@@ -756,16 +499,6 @@ static void console_service(void)
 		help();
 	else if(strcmp(token, "reboot") == 0)
 		reboot();
-	else if(strcmp(token, "led") == 0)
-		led_test();
-	else if(strcmp(token, "switch") == 0)
-		switch_test();
-	else if(strcmp(token, "display") == 0)
-		display_test();
-	else if(strcmp(token, "rgbled") == 0)
-		rgbled_test();
-	else if(strcmp(token, "vga") == 0)
-		vga_test();
 	else if(strcmp(token, "camara") == 0)
 		camara_test();
 	else if(strcmp(token, "us") == 0)
