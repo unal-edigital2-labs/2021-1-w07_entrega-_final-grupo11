@@ -34,7 +34,7 @@ static void bluetooth_write(char *str){
 
 ```
 
-## mp3
+## MP3
 
 Para el mp3, lo que se planteó fue la ejecución de ciertos sonidos dependiendo de la dirección que tome nuestro robot cartógrafo. Para hacerlo, se realiza una función la cual debe incluir una cadena de datos específica, tomándola directamente del [documento](../datasheets/DFR0299-DFPlayer-Mini-Manual.pdf) del fabricante.
 
@@ -286,3 +286,6 @@ Cuando se reciben los datos, se pueden mostrar de forma visual por medio de alg�
 
 
 ![Alt text](/images/labP.png)
+
+## Pruebas funcionales
+
