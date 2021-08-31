@@ -282,7 +282,7 @@ Para su implementación desde python se llamo a cada uno de estos registros para
 ![Screenshot](/images/ImplementacionIR.JPG)
 
 <a name="Camara"></a>
-
+#Cámara
 La cámara utilizada fue la OV7670, esta cámara no tiene FIFO y fue necesario hacer uso de un arduino en modo maestro para para realizar la solicitud de los registros por medio de comunicación I2C esto se describe en el [documento](../datasheets/OV7670.pdf) del dispositivo con todos sus pines de entrada y salida, por motivo de la dificultad del modulo la descripción de hardware en su mayoría fue entregada en el paquete de trabajo 02 asignado por el profesor de la asignatura. Dicha descripción cuenta con los módulos buffer_ram_dp, VGA_driver, cam_read y test_cam siendo necesaria la modificación de los dos últimos para el funcionamiento de la cámara, adicionalmente se utiliza un modulo divisor de frecuencia de 24MHz para que pueda operar la cámara y 25MHz para la VGA.
 
 ![Screenshot](/images/OV7670.png)
