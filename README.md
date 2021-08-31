@@ -289,3 +289,5 @@ Cuando se reciben los datos, se pueden mostrar de forma visual por medio de alg√
 
 ## Pruebas funcionales
 
+[![Alt text](https://youtu.be/o-CeiBIfUA4)
+
