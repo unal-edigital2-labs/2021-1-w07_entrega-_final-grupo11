@@ -95,6 +95,7 @@ static void help(void)
 	puts("w				- wheels test");
 	puts("dir				- dir test");
 	puts("mp				- mp3 test");
+	puts("b				- bluetooth test");
 }
 
 static void reboot(void)
@@ -105,18 +106,7 @@ static void reboot(void)
 
 static void camara_test(void)
 {
-	// for(int y=0;y<480;y++){
-	// 	for(int x=0;x<640;x++){
-	// 		vga_cntrl_mem_we_write(0);
-	// 		vga_cntrl_mem_adr_write(y*640+x);
-	// 		if(x<160 && y<120){
-	// 			camara_cntrl_DP_RAM_addr_out_write(120*y+x);
-	// 			vga_cntrl_mem_data_w_write(camara_cntrl_data_mem_read());
-	// 		}else
-	// 			vga_cntrl_mem_data_w_write(0);
-	// 		vga_cntrl_mem_we_write(1);
-	// 	}	
-	// }
+
 }
 
 static int ultraSound_test(void)
@@ -518,7 +508,8 @@ static void console_service(void)
 		direction();
 	else if(strcmp(token, "mp") == 0)
 		mp_test();
-
+	else if(strcmp(token, "b") == 0)
+		bluetooth_write("Prueba de funcionamiento del bluetooth \n");
 		
 	prompt();
 }
