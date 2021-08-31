@@ -137,7 +137,7 @@ static int * US(void){
 	}
 }
 ```
-## Camara
+## Cámara
 
 Para la implementación de la cámara en C fue necesario reducir el tamaño de la imagen por 100 * 75 ya que al utilizar 160 * 120 no es posible cargar el menú del Soc, se crea una función para que muestre por la VGA la imagen del tamaño especificado.
 
