@@ -137,6 +137,30 @@ static int * US(void){
 	}
 }
 ```
+## Camara
+
+Para la implementación de la cámara en C fue necesario reducir el tamaño de la imagen por 100 * 75 ya que al utilizar 160 * 120 no es posible cargar el menú del Soc, se crea una función para que muestre por la VGA la imagen del tamaño especificado.
+
+``` c
+
+static void camara_test(void)
+{
+	 for(int y=0;y<480;y++){
+	 	for(int x=0;x<640;x++){
+	 		vga_cntrl_mem_we_write(0);
+	 		vga_cntrl_mem_adr_write(y*640+x);
+	 		if(x<100 && y<75){
+	 			camara_cntrl_DP_RAM_addr_out_write(75*y+x);
+	 			vga_cntrl_mem_data_w_write(camara_cntrl_data_mem_read());
+	 		}else
+	 			vga_cntrl_mem_data_w_write(0);
+	 		vga_cntrl_mem_we_write(1);
+	 	}	
+	 }
+}
+
+
+``` 
 
 
 ## Movimiento
