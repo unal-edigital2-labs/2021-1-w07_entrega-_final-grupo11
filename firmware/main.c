@@ -426,10 +426,10 @@ static void direction(void){
 			if(posV < 0){
 				for(int i=10;i>=0;i--){
 					for(int k=0;k<10;k++){  
-						if(i == 0){
-							map[i][k] = 0;
-						}else{
+						if(i != 0){
 							map[i][k] = map[i-1][k];
+						}else{
+							map[i][k] = 0;
 						}   
 					} 
 				}
@@ -439,10 +439,10 @@ static void direction(void){
 			if(posH < 0){
 				for(int i=0;i<10;i++){
 					for(int k=10;k>=0;k--){  
-						if(k == 0){
-							map[i][k] = 0;
-						}else{
+						if(k != 0){
 							map[i][k] = map[i][k-1];
+						}else{
+							map[i][k] = 0;
 						}   
 					} 
 				}
