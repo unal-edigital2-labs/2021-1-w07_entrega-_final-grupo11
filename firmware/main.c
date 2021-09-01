@@ -83,11 +83,6 @@ static void help(void)
 	puts("Available commands:");
 	puts("help                            - this command");
 	puts("reboot                          - reboot CPU");
-	puts("led                             - led test");
-	puts("switch                          - switch test");
-	puts("display                         - display test");
-	puts("rgbled                          - rgb led test");
-	puts("vga                             - vga test");
 	puts("camara                          - camara test");
 	puts("us				- ultraSound test");
 	puts("PWM				- PWM test");
