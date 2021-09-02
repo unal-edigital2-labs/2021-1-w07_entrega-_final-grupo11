@@ -32,6 +32,26 @@ En esta seccion se encuentra como se realizo el procesamiento desde software, re
 
 ## Construcción
 
+Para la construcción del carrito se utilizaron los siguientes materiales:
+1. Placa de MDF de 15cmx20cm
+2. 2 motorreductores junto con sus llantas
+3. 1 rueda loca
+4. 1 servomoto
+5. 1 ultrasonido HC-SR04
+6. 5 sensores infrarrojos con su driver
+7. 1 puente H L298N
+8. 1 Bluetooth HC-06
+9. 1 Protoboard
+10. 1 MP3 TF16P
+
+Bosquejo del carrito:
+
+![Screenshot](/images/plano.png)
+
+
+Para el laberinto se estableció un patron con cinta aislante, en cada linea perpendicular al camino principal el carrito se detiene y mide las distancias a su alrededor. Las paredes del laberinto tienen una separación aproximada de 40cm, el grosor de la cinta aislante es de aproximadamente 4cm, y las lineas que cortan el camino son de aproximadamente 25cm de largo:
+
+![Screenshot](/images/Laberinto.png)
 
 ## Pruebas funcionales
 
