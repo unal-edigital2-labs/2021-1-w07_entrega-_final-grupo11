@@ -226,6 +226,10 @@ Para las ruedas se utilizó un puente H (modelo L298N) conectado a los motores e
 
 ![Screenshot](/images/ruedas1.png)
 
+El espacio de memoria que se uso para las ruedas fue 0x82005. 
+
+![Screenshot](/images/ruedas1.png)
+
 La conexión se realiza partiendo de los 4 pines de la fpga que se conectan a 4 puertos del puente H, este asigna 2 pines a la rueda izquierda y 2 pines a la rueda derecha; en cada una de las ruedas se asigna un pin para mover la rueda en una dirección (hacia adelante/sentido horario) y otro para moverlo en la dirección contraria (hacia atrás/sentido antihorario), estos pines son activados con señales en 1 y 0, por lo que no pueden estar ambos pines en 1 a la misma vez.
 
 ![Screenshot](/images/puenteh.png)
