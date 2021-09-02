@@ -1,22 +1,3 @@
-# W07_Entrega-_final
-
-## Integrantes 
-
-- David Ariza
-
-- Juan Rubiano
-
-- Julian Villalobos
-
-- Ronneth Briceño
-
-- Camilo Zambrano
-
-## Introducción
-
-Este repositorio contiene la entrega final del proyecto de la materia Electrónica Digital II de la Universidad Nacional de Colombia. La propuesta del proyecto consiste en un robot cartográfico que recorre un laberinto identificando ciertos puntos de importancia, mapeando la distribución del laberinto mientras lo recorre. El robot contiene un módulo Bluetooth para la transmisión de datos y un módulo mp3 que indica en qué sentido se mueve el robot. Se utilizan los lenguajes de programación: Verilog, Python y C. 
-
-Cada módulo se encuentra explicado en la documentación dentro de la carpeta module, mientras que en este documento se explicará la integración y el funcionamiento conjunto de los periféricos.
 
 ## Uart
 El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
