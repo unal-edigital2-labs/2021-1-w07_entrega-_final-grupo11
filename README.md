@@ -17,3 +17,15 @@
 Este repositorio contiene la entrega final del proyecto de la materia Electrónica Digital II de la Universidad Nacional de Colombia. La propuesta del proyecto consiste en un robot cartográfico que recorre un laberinto identificando ciertos puntos de importancia, mapeando la distribución del laberinto mientras lo recorre. El robot contiene un módulo Bluetooth para la transmisión de datos y un módulo mp3 que indica en qué sentido se mueve el robot. Se utilizan los lenguajes de programación: Verilog, Python y C. 
 
 Cada módulo se encuentra explicado en la documentación dentro de la carpeta module, mientras que en este documento se explicará la integración y el funcionamiento conjunto de los periféricos.
+
+## SoC
+
+
+
+## Mapa de Memoria
+
+
+## Pruebas funcionales
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/o-CeiBIfUA4/0.jpg)](http://www.youtube.com/watch?v=o-CeiBIfUA4 "Video Title")
+
