@@ -300,7 +300,13 @@ self.submodules.wheels_cntrl = wheels.wheels(right, left)
 
 Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno tiene 2 pines, esto evita que se haga manualmente. En wheels_cntrl se definen los pines a usar, en este caso los elegidos anteriormente: right y left
 
-En la sección de firmware en esta documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
+El mapa de memoria para las ruedas es sencillo, como se muestra a continuación
+
+![Screenshot](/images/WheelsMem.png)
+
+Se toma en cuenta un único registro ubicado en el espacio de memoria 0x820058, este registro se refiere al estado que define cuál será el movimiento de las ruedas, así como se describe al principio de esta sección.
+
+En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
 
 
 
@@ -766,6 +772,57 @@ class Camara(Module,AutoCSR):
             o_CAM_vsync= self.CAM_vsync,
             o_CAM_href= self.CAM_href,
             i_DP_RAM_addr_out= self.DP_RAM_addr_out.storage)
+
+```
+
+<a name="display"></a>
+# Display
+
+``` python
+
+
+static void showD(int d[8]){ 
+	char distances[8];
+	distances[0] = d[0]/10; 
+	distances[1] = d[0]%10; 
+
+	distances[2] = DISPLAY_C;
+
+	distances[3] = d[1]/10;
+	distances[4] = d[1]%10;
+
+	distances[5] = DISPLAY_C;
+
+	distances[6] = d[2]/10;
+	distances[7] = d[2]%10;
+
+	for(int i = 0; i<8; i++){
+		switch(distances[i]){
+			case 0: distances[i] = DISPLAY_0;
+				break;
+			case 1: distances[i] = DISPLAY_1;
+				break;
+			case 2: distances[i] = DISPLAY_2;
+				break;
+			case 3: distances[i] = DISPLAY_3;
+				break;
+			case 4: distances[i] = DISPLAY_4;
+				break;
+			case 5: distances[i] = DISPLAY_5;
+				break;
+			case 6: distances[i] = DISPLAY_6;
+				break;
+			case 7: distances[i] = DISPLAY_7;
+				break;
+			case 8: distances[i] = DISPLAY_8;
+				break;
+			case 9: distances[i] = DISPLAY_9;
+				break;
+		}
+	}
+	display(distances);	
+}
+
 
 ```
 
