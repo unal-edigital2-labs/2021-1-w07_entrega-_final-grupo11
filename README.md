@@ -22,6 +22,8 @@ Cada módulo se encuentra explicado en la documentación dentro de la carpeta mo
 
 ## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
 
+## [ Firmware ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
+
 ## Construcción
 
 
