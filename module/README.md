@@ -7,7 +7,7 @@
 9. [ Timer. ](#timer)
 
 <a name="uart"></a>
-# UART
+# Uart
 El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
 
 ![Screenshot](/images/Uart.png)
@@ -332,12 +332,25 @@ La cámara utilizada fue la OV7670, esta cámara no tiene FIFO y fue necesario h
 
 ![Screenshot](/images/OV7670.png)
 
+## Diagrama estructural
+
+El diagrama muestra el modulo test_cam los módulos que lo componen y los registros que permiten que funcione la cámara, también el modulo I2C el cual se logra integrar al SoC para que le envie los registros correspondientes.
+
+![Screenshot](/images/estructura_camara.png)
+
+El hardware de la cámara cuenta con dos registros los cuales están ubicados en el espacio de memoria 0x82003800 y 82003804 como se observa en la imagen:
+
+
+![Screenshot](/images/map_cam.png)
+
 Para que la cámara funcione es necesario las señales SDL y SDA las cuales no son mas que dos señales de reloj sincronizadas para hacer posible que el arduino que en este caso actúa como maestro le solicite los registros a la cámara, por medio de estos registros es que se realiza la configuración de la imagen. También es necesario la conexión de dos resistencias de 10KΩ en estos puertos para que funcione la correctamente, de lo contrario la cámara no dará ninguna imagen.
 
 ![Screenshot](/images/SCL_SDA.png)
 
+Se logra hacer uso del modulo I2C que tiene configurado litex y se integra al SoC, se encuentra ubicado en el espacio de memoria 0x8200400 para escritura y 0x82004004 para lectura. 
 
-![Screenshot](/images/Conexion.png)
+![Screenshot](/images/i2c.png)
+
 
 Inicialmente se propone que el formato de la adquisición de datos sea RGB565 y por medio de la descripción de hardware se cambie a GB332, sin embargo se hace necesario cambiar a formato RGB444 para mayor facilidad a la hora de la salida de la imagen a la VGA.
 
