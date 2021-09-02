@@ -22,7 +22,11 @@ Cada módulo se encuentra explicado en la documentación dentro de la carpeta mo
 
 ## [ Mapa de Memoria ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
 
-## [ Firmware ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/module)
+En la presente sección se encuentran los diferentes perífericos que se usaron para la elaboración del robot cartógrafo junto con sus respectivos espacios en memoria que fueron utilizados y como cada uno de estos se creo en hardware y del mismoo modo se implemento.
+
+## [ Firmware ](https://github.com/unal-edigital2/w07_entrega-_final-grupo11/tree/main/firmware)
+
+En esta seccion se encuentra como se realizo el procesamiento desde software, realizando el codigo para las respectivas pruebas de cada periférico y como se ejecuto para su funcionamiento completo.
 
 ## Construcción
 
