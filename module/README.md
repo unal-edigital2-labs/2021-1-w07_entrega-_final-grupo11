@@ -1,10 +1,11 @@
-1. [_UART_](#uart)
-2. [ Ultra Sonido. ](#us)
-3. [ Servomotor del ultra sonido. ](#pwmus)
-4. [ Ruedas. ](#ruedas)
-5. [ InfraRojo ](#InfraRojo)
-6. [ Cámara ](#Camara)
-
+1. [ UART. ](#uart)
+3. [ Ultra Sonido. ](#us)
+4. [ Servomotor del ultra sonido. ](#pwmus)
+5. [ Ruedas. ](#ruedas)
+6. [ InfraRojo. ](#InfraRojo)
+7. [ Cámara. ](#Camara)
+8. [ Display. ](#display)
+9. [ Timer. ](#timer)
 
 <a name="uart"></a>
 # Uart
