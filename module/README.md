@@ -368,6 +368,11 @@ aproximando a 13, remplazando n por ese valor tenemos 2^13 = 8192, lo cual es su
 
 A continuación se muestra la descripción de hardware de los cuatro módulos:
 
+El mapa de memoria de la VGA se encuentra en la siguiente imagen:
+
+![Screenshot](/images/VGAMem.png)
+
+
 ### cam_read
 
 Este modulo se encarga de recolectar los datos y enviarlos a la memoria.
