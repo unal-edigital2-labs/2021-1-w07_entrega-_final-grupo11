@@ -27,5 +27,5 @@ Cada módulo se encuentra explicado en la documentación dentro de la carpeta mo
 
 ## Pruebas funcionales
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/o-CeiBIfUA4/0.jpg)](http://www.youtube.com/watch?v=o-CeiBIfUA4 "Video Title")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/XLlC-236xpk/0.jpg)](http://www.youtube.com/watch?v=XLlC-236xpk "Video Title")
 
