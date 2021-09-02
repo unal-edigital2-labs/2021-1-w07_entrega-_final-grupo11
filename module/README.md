@@ -1,6 +1,5 @@
 1. [ UART. ](#uart)
-3. [ Ultra Sonido. ](#us)
-4. [ Servomotor del ultra sonido. ](#pwmus)
+2. [ Radar. ](#radar)
 5. [ Ruedas. ](#ruedas)
 6. [ InfraRojo. ](#InfraRojo)
 7. [ Cámara. ](#Camara)
@@ -82,8 +81,16 @@ El módulo mp3 utilizado fue el DFPlayer mini:
 ![Screenshot](/images/mp3.jpg)
 
 
+
+<a name="radar"></a>
+# Radar
+El modulo del radar esta compuesto por el ultrasonido y un servomotor, cada registro se encuentra en el espacio de memoria 0x820040 y 0x820049 respectivamente. A continuación se explica como es su implementación en hardware:
+![Screenshot](/images/RadarMem.jpg)
+
+
+
 <a name="us"></a>
-# Ultrasonido
+## Ultrasonido
 
 Para este periferico se utilizo el ultrasonido HC-sr04, a partir del [documento](../datasheets/HCSR04.pdf) proporcionado por el fabricante, el ultrasonido debe recibir una señal de 10 us por el pin trig, de esta manera, se emiten 8 rafagas de sonido a 40 kHz, posteriormente, se cuenta el tiempo que transcurre hasta que el sonido vuelva. A partir de esto, se establece que la distancia es igual al tiempo en microsegundos dividido entre 58. Con estas indicaciones se implementa la siguiente maquina de estados:
 
@@ -164,7 +171,7 @@ En el archivo buildSoCproject se crea el submodulo y se importan los pines de en
 ```
 
 <a name="pwmus"></a>
-# Servomotor del ultra sonido
+## Servomotor del ultra sonido
 
 Para este modulo se utiliza el servomotor sg90. Segun el [datasheet](../datasheets/sg90_datasheet.pdf) la señal pwm debe ser de 50 Hz, a partir de esto, la posicion a 0° debe tener un ancho de pulso de 1 ms, mientras que para 180° el ancho debe ser de 2 ms. Con esto en mente, se implementa el siguiente codigo en verilog:
 
