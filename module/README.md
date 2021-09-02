@@ -55,7 +55,7 @@ El modulo bluetooth utilizado fue el HC-06:
 ![Screenshot](/images/blue.jpg)
 
 <a name="mp3"></a>
-### mp3
+### MP3
 
 De igual forma que el ooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
 
@@ -845,9 +845,15 @@ static void showD(int d[8]){
 ```
 <a name="perifericos"></a>
 # Otros Periféricos
-	 
+
+El timer es usado para establecer tiempos de espara en el procesador. Especificamente en el firmware es utilizado varias veces, por ejemplo, cuando el carrito arranca despues de realizar en una medición se realiza un time out para que los infrarrojos no midan y no se quede permanentemente detenido en la linea.
+
 ![Screenshot](/images/TimerMem.png)
 	 
+La GPIOS se utilizan tener comunicación con para los switchs y botones de la FPGA, en el proyecto se utilizan en varias ocaciones, una de ellas es para reiniciar la función direction del archivo main.c.
+
 ![Screenshot](/images/GPIOMem.png)
 	 
+	
+Otro modulo integrado son los LEDS, estos no estan siendo utilizados en el proyecto, sin embargo, se pueden probar con la función led_test del archivo main.c.
 ![Screenshot](/images/LEDMem.png)
