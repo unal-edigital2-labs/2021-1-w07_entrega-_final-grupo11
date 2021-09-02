@@ -59,5 +59,7 @@ Para el laberinto se estableció un patron con cinta aislante, en cada linea per
 
 ## Pruebas funcionales
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/XLlC-236xpk/0.jpg)](http://www.youtube.com/watch?v=XLlC-236xpk "Video Title")
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=XLlC-236xpk
+" target="_blank"><img src="http://img.youtube.com/vi/XLlC-236xpk/0.jpg" 
+alt="(http://img.youtube.com/vi/XLlC-236xpk/0.jpg)" width="400"/></a>
 
