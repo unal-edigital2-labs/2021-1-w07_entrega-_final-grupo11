@@ -4,7 +4,7 @@
 6. [ InfraRojo. ](#InfraRojo)
 7. [ Cámara. ](#Camara)
 8. [ Display. ](#display)
-9. [ Timer. ](#timer)
+9. [ Otros Periféricos ](#perifericos)
 
 <a name="uart"></a>
 # Uart
@@ -843,4 +843,11 @@ static void showD(int d[8]){
 
 
 ```
-
+<a name="perifericos></a>
+# Otros Periféricos
+	 
+![Screenshot](/images/TimerMem.png)
+	 
+![Screenshot](/images/GPIOMem.png)
+	 
+![Screenshot](/images/LEDMem.png)
