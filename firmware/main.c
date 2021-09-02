@@ -98,6 +98,23 @@ static void reboot(void)
 	ctrl_reset_write(1);
 }
 
+static void led_test(void)
+{
+	unsigned int i;
+	printf("Test del los leds... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+
+	for(i=1; i<65536; i=i*2) {
+		leds_out_write(i);
+		delay_ms(50);
+	}
+	for(i=32768;i>1; i=i/2) {
+		leds_out_write(i);
+		delay_ms(50);
+	}
+	}
+	
+}
 
 static void camara_test(void)
 {
@@ -493,6 +510,8 @@ static void console_service(void)
 		ultraSound_test();
 	else if(strcmp(token, "PWM") == 0)
 		PWMUS_test();
+	else if(strcmp(token, "led") == 0)
+		led_test();
 	else if(strcmp(token, "US") == 0)
 		US();
 	else if(strcmp(token, "IR") == 0)
