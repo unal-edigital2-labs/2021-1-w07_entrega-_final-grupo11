@@ -251,7 +251,4 @@ Cuando se reciben los datos, se pueden mostrar de forma visual por medio de alg√
 
 ![Alt text](/images/labP.png)
 
-## Pruebas funcionales
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/o-CeiBIfUA4/0.jpg)](http://www.youtube.com/watch?v=o-CeiBIfUA4 "Video Title")
 
