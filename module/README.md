@@ -843,7 +843,7 @@ static void showD(int d[8]){
 
 
 ```
-<a name="perifericos></a>
+<a name="perifericos"></a>
 # Otros Periféricos
 	 
 ![Screenshot](/images/TimerMem.png)
