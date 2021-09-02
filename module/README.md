@@ -300,13 +300,7 @@ self.submodules.wheels_cntrl = wheels.wheels(right, left)
 
 Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno tiene 2 pines, esto evita que se haga manualmente. En wheels_cntrl se definen los pines a usar, en este caso los elegidos anteriormente: right y left
 
-El mapa de memoria para las ruedas es sencillo, como se muestra a continuación
-
-![Screenshot](/images/WheelsMem.png)
-
-Se toma en cuenta un único registro ubicado en el espacio de memoria 0x820058, este registro se refiere al estado que define cuál será el movimiento de las ruedas, así como se describe al principio de esta sección.
-
-En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
+En la sección de firmware en esta documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
 
 
 
