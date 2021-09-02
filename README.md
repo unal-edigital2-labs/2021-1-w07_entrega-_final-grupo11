@@ -46,12 +46,14 @@ Para la construcción del carrito se utilizaron los siguientes materiales:
 
 Bosquejo del carrito:
 
-![Screenshot](/images/plano.png)
+![Screenshot](/images/plano.PNG)
 
+
+![Screenshot](/images/Carrito.jpeg)
 
 Para el laberinto se estableció un patron con cinta aislante, en cada linea perpendicular al camino principal el carrito se detiene y mide las distancias a su alrededor. Las paredes del laberinto tienen una separación aproximada de 40cm, el grosor de la cinta aislante es de aproximadamente 4cm, y las lineas que cortan el camino son de aproximadamente 25cm de largo:
 
-![Screenshot](/images/Laberinto.png)
+![Screenshot](/images/Laberinto.PNG)
 
 ## Pruebas funcionales
 
