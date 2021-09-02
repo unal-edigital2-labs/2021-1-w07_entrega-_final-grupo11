@@ -1,4 +1,4 @@
-1. [_UART_])(#uart)
+1. [_UART_](#uart)
 2. [ Ultra Sonido. ](#us)
 3. [ Servomotor del ultra sonido. ](#pwmus)
 4. [ Ruedas. ](#ruedas)
@@ -79,7 +79,7 @@ self.submodules.uart2_phy = uart.UARTPHY(
 El módulo mp3 utilizado fue el DFPlayer mini:
 
 ![Screenshot](/images/mp3.jpg)
-```
+
 
 <a name="us"></a>
 # Ultrasonido
