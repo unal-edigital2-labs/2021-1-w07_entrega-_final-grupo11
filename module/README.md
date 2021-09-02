@@ -55,7 +55,7 @@ El modulo bluetooth utilizado fue el HC-06:
 ![Screenshot](/images/blue.jpg)
 
 <a name="mp3"></a>
-### mp3
+### MP3
 
 De igual forma que el ooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
 
@@ -85,7 +85,8 @@ El módulo mp3 utilizado fue el DFPlayer mini:
 <a name="radar"></a>
 # Radar
 El modulo del radar esta compuesto por el ultrasonido y un servomotor, cada registro se encuentra en el espacio de memoria 0x820040 y 0x820049 respectivamente. A continuación se explica como es su implementación en hardware:
-![Screenshot](/images/RadarMem.jpg)
+![Screenshot](/images/RadarMem.png)
+
 
 
 
