@@ -1,10 +1,85 @@
-1. [ Ultra Sonido. ](#us)
-2. [ Servomotor del ultra sonido. ](#pwmus)
-3. [ Ruedas. ](#ruedas)
-4. [ Bluetooth. ](#blue)
-5. [ mp3. ](#mp3)
-6. [ InfraRojo ](#InfraRojo)
-7. [ Cámara ](#Camara)
+1. [_UART_])(#uart)
+2. [ Ultra Sonido. ](#us)
+3. [ Servomotor del ultra sonido. ](#pwmus)
+4. [ Ruedas. ](#ruedas)
+5. [ InfraRojo ](#InfraRojo)
+6. [ Cámara ](#Camara)
+
+
+<a name="uart"></a>
+# Uart
+El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
+
+![Screenshot](/images/Uart.png)
+
+Cada base corresponde cierto modulo, siendo la uart1 usada para bluetooth y el uart2 para el mp3. 
+
+### Bluetooth
+
+El Bluetooth se incluye con la intención de poder observar las distancias captadas por el ultrasonido de manera inalámbrica.
+
+A través del siguiente código lo que hace el bluetooth es recibir una cadena de caracteres que descompone y luego los escribe, añadiendo un delay para no perder información, ya que el módulo funciona a 9600 baudios y el reloj es más rápido.
+
+``` c
+static void bluetooth_write(char *str){
+	for(int i = 0;i<strlen(str);i++){
+		uart1_rxtx_write(str[i]);
+		delay_ms(1);
+	}
+}
+<a name="blue"></a>
+# Bluetooth
+
+El SoC usado incluía el modulo UART por lo que solo debía integrarse el modulo al buildSoCproject con sus pines, de esta manera:
+
+``` python
+from litex.soc.cores import uart
+		self.submodules.uart1_phy = uart.UARTPHY(
+			pads     = platform.request("uart1"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart1_phy", use_loc_if_exists=True)
+		self.csr.add("uart1", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart1", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+```
+
+El modulo bluetooth utilizado fue el HC-06:
+
+![Screenshot](/images/blue.jpg)
+
+<a name="mp3"></a>
+### mp3
+
+De igual forma que el ooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
+
+``` python
+self.submodules.uart2_phy = uart.UARTPHY(
+			pads     = platform.request("uart2"),
+			clk_freq = self.sys_clk_freq,
+			baudrate = 9600)
+		self.submodules.uart2 = ResetInserter()(uart.UART(self.uart2_phy,
+			tx_fifo_depth = 16,
+			rx_fifo_depth = 16))
+		self.csr.add("uart2_phy", use_loc_if_exists=True)
+		self.csr.add("uart2", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart2", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+```
+
+El módulo mp3 utilizado fue el DFPlayer mini:
+
+![Screenshot](/images/mp3.jpg)
+```
 
 <a name="us"></a>
 # Ultrasonido
@@ -212,58 +287,7 @@ Con esto se realiza un barrido de 1 a 2 en left y right debido a que cada uno ti
 
 En otras secciones de la documentación se puede conseguir la explicación del funcionamiento de las ruedas junto a los infrarrojos, mp3 y el ultrasonido.
 
-<a name="blue"></a>
-# Bluetooth
 
-El SoC usado incluía el modulo UART por lo que solo debía integrarse el modulo al buildSoCproject con sus pines, de esta manera:
-
-``` python
-from litex.soc.cores import uart
-		self.submodules.uart1_phy = uart.UARTPHY(
-			pads     = platform.request("uart1"),
-			clk_freq = self.sys_clk_freq,
-			baudrate = 9600)
-		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
-			tx_fifo_depth = 16,
-			rx_fifo_depth = 16))
-		self.csr.add("uart1_phy", use_loc_if_exists=True)
-		self.csr.add("uart1", use_loc_if_exists=True)
-		if hasattr(self.cpu, "interrupt"):
-			self.irq.add("uart1", use_loc_if_exists=True)
-		else:
-			self.add_constant("UART_POLLING")
-
-```
-
-El modulo bluetooth utilizado fue el HC-06:
-
-![Screenshot](/images/blue.jpg)
-
-<a name="mp3"></a>
-# mp3
-
-De igual forma que el Bluetooth, para el mp3 se hizo uso de una uart. Solo se integra al buildSoCproject, así:
-
-``` python
-self.submodules.uart2_phy = uart.UARTPHY(
-			pads     = platform.request("uart2"),
-			clk_freq = self.sys_clk_freq,
-			baudrate = 9600)
-		self.submodules.uart2 = ResetInserter()(uart.UART(self.uart2_phy,
-			tx_fifo_depth = 16,
-			rx_fifo_depth = 16))
-		self.csr.add("uart2_phy", use_loc_if_exists=True)
-		self.csr.add("uart2", use_loc_if_exists=True)
-		if hasattr(self.cpu, "interrupt"):
-			self.irq.add("uart2", use_loc_if_exists=True)
-		else:
-			self.add_constant("UART_POLLING")
-
-```
-
-El módulo mp3 utilizado fue el DFPlayer mini:
-
-![Screenshot](/images/mp3.jpg)
 
 
 <a name="InfraRojo"></a>
