@@ -1,27 +1,3 @@
-
-## Uart
-El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
-
-![Screenshot](/images/Uart.png)
-
-Cada base corresponde cierto modulo, siendo la uart1 usada para bluetooth y el uart2 para el mp3. 
-
-### Bluetooth
-
-El Bluetooth se incluye con la intención de poder observar las distancias captadas por el ultrasonido de manera inalámbrica.
-
-A través del siguiente código lo que hace el bluetooth es recibir una cadena de caracteres que descompone y luego los escribe, añadiendo un delay para no perder información, ya que el módulo funciona a 9600 baudios y el reloj es más rápido.
-
-``` c
-static void bluetooth_write(char *str){
-	for(int i = 0;i<strlen(str);i++){
-		uart1_rxtx_write(str[i]);
-		delay_ms(1);
-	}
-}
-
-```
-
 ### MP3
 
 Para el mp3, lo que se planteó fue la ejecución de ciertos sonidos dependiendo de la dirección que tome nuestro robot cartógrafo. Para hacerlo, se realiza una función la cual debe incluir una cadena de datos específica, tomándola directamente del [documento](../datasheets/DFR0299-DFPlayer-Mini-Manual.pdf) del fabricante.
