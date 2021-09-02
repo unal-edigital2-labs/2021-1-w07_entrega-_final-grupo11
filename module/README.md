@@ -85,6 +85,7 @@ El módulo mp3 utilizado fue el DFPlayer mini:
 <a name="radar"></a>
 # Radar
 El modulo del radar esta compuesto por el ultrasonido y un servomotor, cada registro se encuentra en el espacio de memoria 0x820040 y 0x820049 respectivamente. A continuación se explica como es su implementación en hardware:
+
 ![Screenshot](/images/RadarMem.jpg)
 
 
