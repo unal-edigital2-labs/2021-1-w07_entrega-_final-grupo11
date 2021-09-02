@@ -777,6 +777,11 @@ class Camara(Module,AutoCSR):
 
 <a name="display"></a>
 # Display
+Los display de la FPGA fueron usados para mostrar la distancia que calculaba el ultrasonido al momento de hacer su procesamiento con respecto a algún obstáculo. El espacio en memoria que se udo para estos fue 0x820018.
+
+![Screenshot](/images/Conexion.png)
+
+La implementación de este se realizó desde software por medio de un mutiplexor en donde se busco dividir las respectivas unidades del dato obtenido para que se mostraran en los display.
 
 ``` python
 
