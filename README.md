@@ -24,6 +24,8 @@ Cada módulo se encuentra explicado en la documentación dentro de la carpeta mo
 
 ## Mapa de Memoria
 
+## Construcción
+
 
 ## Pruebas funcionales
 
