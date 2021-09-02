@@ -1,8 +1,9 @@
-1. [ MP3. ](#us)
-2. [ Ultrasonido ](#pwmus)
-3. [ Cámara. ](#ruedas)
-4. [ Movimiento. ](#blue)
+1. [ MP3. ](#mp3)
+2. [ Ultrasonido ](us)
+3. [ Cámara. ](#camara)
+4. [ Movimiento. ](#movimiento)
 
+<a name="mp3"></a>
 ### MP3
 
 Para el mp3, lo que se planteó fue la ejecución de ciertos sonidos dependiendo de la dirección que tome nuestro robot cartógrafo. Para hacerlo, se realiza una función la cual debe incluir una cadena de datos específica, tomándola directamente del [documento](../datasheets/DFR0299-DFPlayer-Mini-Manual.pdf) del fabricante.
@@ -26,7 +27,7 @@ static void mp3(int track){
 
 ```
 
-
+<a name="us"></a>
 ## Ultrasonido
 
 Para la implementación del ultrasonido en C, se realizan 2 funciones, una para realizar una medición individual del ultrasonido y otra que implementa al servomotor y realiza tres mediciones, una en cada dirección. Para la primera:
@@ -106,6 +107,8 @@ static int * US(void){
 	}
 }
 ```
+
+<a name="camara"></a>
 ## Cámara
 
 Para la implementación de la cámara en C fue necesario reducir el tamaño de la imagen por 100 * 75 ya que al utilizar 160 * 120 no es posible cargar el menú del Soc, se crea una función para que muestre por la VGA la imagen del tamaño especificado.
@@ -131,7 +134,7 @@ static void camara_test(void)
 
 ``` 
 
-
+<a name="movimiento"></a>
 ## Movimiento
 
 El movimiento en el robot incluye las ruedas, los infrarrojos, el ultrasonido y el mp3. La sección de dirección en el main.c describe el funcionamiento en conjunto de estos periféricos. 
