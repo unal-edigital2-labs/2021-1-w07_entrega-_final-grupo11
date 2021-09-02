@@ -18,7 +18,14 @@ Este repositorio contiene la entrega final del proyecto de la materia Electróni
 
 Cada módulo se encuentra explicado en la documentación dentro de la carpeta module, mientras que en este documento se explicará la integración y el funcionamiento conjunto de los periféricos.
 
-## Bluetooth
+## Uart
+El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
+
+![Screenshot](/images/Uart.png)
+
+Cada base corresponde cierto modulo, siendo la uart1 usada para bluetooth y el uart2 para el mp3. 
+
+### Bluetooth
 
 El Bluetooth se incluye con la intención de poder observar las distancias captadas por el ultrasonido de manera inalámbrica.
 
@@ -34,7 +41,7 @@ static void bluetooth_write(char *str){
 
 ```
 
-## MP3
+### MP3
 
 Para el mp3, lo que se planteó fue la ejecución de ciertos sonidos dependiendo de la dirección que tome nuestro robot cartógrafo. Para hacerlo, se realiza una función la cual debe incluir una cadena de datos específica, tomándola directamente del [documento](../datasheets/DFR0299-DFPlayer-Mini-Manual.pdf) del fabricante.
 
