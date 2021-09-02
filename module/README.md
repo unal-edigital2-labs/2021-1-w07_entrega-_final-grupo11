@@ -7,7 +7,7 @@
 9. [ Otros Periféricos ](#perifericos)
 
 <a name="uart"></a>
-# Uart
+# UART
 El modulo Uart usado en el Soc, fue el generado por litex, con su configuración. Usando dos para los modulos de bluetooth y el de mp3, de esta manera:
 
 ![Screenshot](/images/Uart.png)
